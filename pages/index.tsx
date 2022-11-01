@@ -9,7 +9,6 @@ export default function Home() {
         <title>JoJo's Portfolio</title>
       </Head>
       
-      {/* Header */}
       <Header />
       {/* Hero */}
 
