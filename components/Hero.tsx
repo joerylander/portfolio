@@ -19,12 +19,8 @@ const Hero = (props: Props) => {
 	return (
 		<div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
 			<BackgroundCircle />
-			{/* <Image src='/joeviking.jpg' width={320} height={320} alt='Picture of the author' className='relative rounded-full mx-auto object-cover' /> */}
-			<img
-				src='/joeviking.jpg'
-				alt='Picture of the author'
-				className='relative rounded-full w-32 h-32 mx-auto object-cover'
-			/>
+			<Image src='/joeviking.jpg' width={128} height={128} alt='Picture of the author' className='relative rounded-full mx-auto object-cover' />
+
 			<div className='z-20'>
 				<h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
 					Software Engineer
@@ -45,6 +41,7 @@ const Hero = (props: Props) => {
 				<Link href='#projects'>
 					<button className='heroButton'>Projects</button>
 				</Link>
+
 			</div>
 		</div>
 	)

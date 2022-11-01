@@ -1,7 +1,9 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const About = () => {
+type Props = {}
+
+const About = (props: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
