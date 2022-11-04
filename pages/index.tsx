@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 				scrollbar-thumb-[#F7AB0A]'
 		>
 			<Head>
-				<title>JoJo's Portfolio</title>
+				<title>JoJo&apos;s Portfolio</title>
 			</Head>
 
 			<Header />
@@ -46,7 +46,7 @@ const Home: NextPage = () => {
 				<Contact />
 			</section>
 
-			<Link href='#hero'>
+			{/* <Link href='#hero'>
 				<footer className='sticky bottom-5 w-full cursor-pointer'>
 					<div className='flex items-center justify-center'>
 						<img
@@ -56,7 +56,7 @@ const Home: NextPage = () => {
 						/>
 					</div>
 				</footer>
-			</Link>
+			</Link> */}
 		</div>
 	)
 }

@@ -29,13 +29,13 @@ const Contact = (props: Props) => {
       <div className='flex flex-col space-y-10'>
         <h4 className='text-4xl font-semibold text-center'>
           I have got just what you need.
-          <span className='underline decoration-[#F7AB0A]/50'> Let's talk.</span>
+          <span className='underline decoration-[#F7AB0A]/50'> Let&apos;s talk.</span>
         </h4>
 
         <div className='space-y-10'>
           <div className='flex items-center space-x-5'>
             <PhoneIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-            <p className='text-2xl'>+123456789</p>
+            <p className='text-2xl'>+46761842847</p>
           </div>
 
           <div className='flex items-center space-x-5'>
@@ -45,7 +45,7 @@ const Contact = (props: Props) => {
 
           <div className='flex items-center space-x-5'>
             <MapPinIcon className='text-[#F7AB0A] h-7 w-7 animate-pulse' />
-            <p className='text-2xl'>123 Developer Lane</p>
+            <p className='text-2xl'>Lysviksgatan 40 | 123 42 | Stockholm, Sweden</p>
           </div>
         </div>
 
