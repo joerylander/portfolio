@@ -1,7 +1,7 @@
 import React from 'react'
+import Link from 'next/link'
 import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 import { Social } from '../typings'
 
 type Props = {
