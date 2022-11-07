@@ -1,18 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import { groq } from 'next-sanity'
 import { sanityClient } from "../../sanity"
-import { Social } from "../../typings"
+import { PageInfo } from "../../typings"
 
 const query = groq`
-  *[_type == "social"] 
+  *[_type == "pageInfo"][0]
 `
 
 type Data = {
-  socials: Social[]
+  pageInfo: PageInfo[]
 }
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const socials: Data[] = await sanityClient.fetch(query)
+  const pageInfo: Data[] = await sanityClient.fetch(query)
 
-  res.status(200).json({ socials })
+  res.status(200).json({ pageInfo })
 }
