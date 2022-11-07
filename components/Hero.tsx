@@ -3,13 +3,17 @@ import Image from 'next/image'
 import { Cursor, Typewriter, useTypewriter } from 'react-simple-typewriter'
 import BackgroundCircle from './BackgroundCircle'
 import Link from 'next/link'
+import { PageInfo } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+	pageInfo: PageInfo
+}
 
-const Hero = (props: Props) => {
+const Hero = ({ pageInfo }: Props) => {
 	const [text, count] = useTypewriter({
 		words: [
-			'Hi, the name is Joe Rylander',
+			`Hi, the name is ${pageInfo?.name || 'Joe Rylander'}`,
 			'Guy-who-loves-Coffee',
 			'<Coder />'
 		],
@@ -20,11 +24,12 @@ const Hero = (props: Props) => {
 	return (
 		<div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
 			<BackgroundCircle />
-			<Image src='/joeviking.jpg' width={128} height={128} alt='Picture of the author' className='relative rounded-full mx-auto object-cover' />
-
+			{/* Next Image bug when inserting Sanity image. Gotta troubleshoot */}
+			{/* <Image src={urlFor(pageInfo?.heroImage).url()} width={128} height={128} alt='Picture of the author' className='relative rounded-full mx-auto object-cover' /> */}
+			<img src={urlFor(pageInfo?.heroImage).url()} alt="" className='w-32 h-32 relative rounded-full mx-auto object-cover' />
 			<div className='z-20'>
 				<h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
-					Software Developer
+					{pageInfo?.role}
 				</h2>
 
 				<h1 className='text-5xl lg:text-6xl font-semibold px-10'>

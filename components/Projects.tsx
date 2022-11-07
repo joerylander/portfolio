@@ -1,11 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Project } from '../typings'
+import { urlFor } from '../sanity'
 
-type Props = {}
+type Props = {
+  projects: Project[]
+}
 
-const Projects = (props: Props) => {
-  const projects = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
+const Projects = ({ projects }: Props) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,7 +22,7 @@ const Projects = (props: Props) => {
 
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden
       snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]'>
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
 
           <div
             key={i}
@@ -34,17 +36,31 @@ const Projects = (props: Props) => {
               transition={{ duration: 1.2 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              src="/logo-bird.jpg" alt="bird" className='h-20 w-20' />
+              src={urlFor(project.image).url()}
+              alt=""
+              className='h-20 w-20' />
 
             <div className='sapce-y-10 px-0 md:px-10 max-w-6xl'>
               <h4 className='text-4xl font-semibold text-center'>
                 <span className='underline decoration-[#F7AB0A]/50'>
                   Case study {i + 1} of {projects.length}:
-                </span> UPS Clone
+                </span>
+                &nbsp; {project?.title}
               </h4>
 
+              <div className='flex items-center justify-center space-x-2 my-4'>
+                {project?.technologies.map(tech => (
+                  <img
+                    key={tech._id}
+                    src={urlFor(tech.image).url()}
+                    alt=""
+                    className='h-10 w-10'
+                  />
+                ))}
+              </div>
+
               <p className='text-lg text-center md:text-left'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nobis debitis incidunt porro ab pariatur doloribus vel reprehenderit recusandae assumenda? Eius amet, deserunt possimus expedita quidem corporis totam quae, dolore error minus adipisci natus accusantium libero voluptatibus dicta excepturi ipsum illo laudantium inventore. Molestias ex repellat eligendi assumenda, blanditiis sit error, maxime, quisquam eius quod consequatur voluptatum esse. Odio adipisci aspernatur, illum dicta eligendi nobis laudantium soluta a non doloribus consequuntur, est placeat? Modi iure illo nihil quia, odit nulla!
+                {project?.summary}
               </p>
             </div>
           </div>
