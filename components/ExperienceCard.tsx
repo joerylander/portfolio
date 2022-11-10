@@ -9,6 +9,8 @@ type Props = {
 }
 
 const ExperienceCard = ({ experience }: Props) => {
+  console.log(experience);
+
   return (
     <article
       className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
@@ -29,7 +31,7 @@ const ExperienceCard = ({ experience }: Props) => {
         />
       </motion.div> */}
 
-      <motion.img
+      {/* <motion.img
         initial={{
           y: -100,
           opacity: 0,
@@ -40,14 +42,14 @@ const ExperienceCard = ({ experience }: Props) => {
         src={urlFor(experience?.companyImage).url()}
         alt='logo'
         className='h-32 w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center'
-      />
+      /> */}
 
       <div className='px-0 md:px-10'>
         <h4 className='text-4xl font-light'>{experience?.jobTitle}</h4>
         <p className='font-bold text-2xl mt-1'>{experience?.company}</p>
 
         <div className='flex space-x-2 my-2'>
-          {experience?.technologies.map((tech) => (
+          {/* {experience?.technologies.map((tech) => (
             <img
               key={tech._id}
               src={urlFor(tech?.image).url()}
@@ -61,7 +63,7 @@ const ExperienceCard = ({ experience }: Props) => {
             //   height={10}
             //   className='rounded-full h-10 w-10' />
 
-          ))}
+          ))} */}
         </div>
 
         <p className='uppercase py-5 text-gray-300'>
@@ -71,11 +73,11 @@ const ExperienceCard = ({ experience }: Props) => {
             : new Date(experience.dateEnded).toDateString()}
         </p>
 
-        <ul className='list-disc space-y-4 ml-5 text-lg max-h-96 overflow-y-scroll pr-5 scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80'>
+        {/* <ul className='list-disc space-y-4 ml-5 text-lg max-h-96 overflow-y-scroll pr-5 scrollbar-thin scrollbar-track-black scrollbar-thumb-[#F7AB0A]/80'>
           {experience?.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </article>
   )

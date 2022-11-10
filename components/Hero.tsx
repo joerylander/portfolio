@@ -11,6 +11,8 @@ type Props = {
 }
 
 const Hero = ({ pageInfo }: Props) => {
+	// console.log(pageInfo);
+
 	const [text, count] = useTypewriter({
 		words: [
 			`Hi, the name is ${pageInfo?.name || 'Joe Rylander'}`,
@@ -26,7 +28,11 @@ const Hero = ({ pageInfo }: Props) => {
 			<BackgroundCircle />
 			{/* Next Image bug when inserting Sanity image. Gotta troubleshoot */}
 			{/* <Image src={urlFor(pageInfo?.heroImage).url()} width={128} height={128} alt='Picture of the author' className='relative rounded-full mx-auto object-cover' /> */}
-			<img src={urlFor(pageInfo?.heroImage).url()} alt="" className='w-32 h-32 relative rounded-full mx-auto object-cover' />
+			{/* <img
+				src={urlFor(pageInfo?.heroImage).url()}
+				alt=""
+				className='w-32 h-32 relative rounded-full mx-auto object-cover'
+			/> */}
 			<div className='z-20'>
 				<h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
 					{pageInfo?.role}
