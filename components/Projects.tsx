@@ -22,8 +22,8 @@ const Projects = ({ projects }: Props) => {
 
       <div className='relative w-full flex overflow-x-scroll overflow-y-hidden
       snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]'>
-        {projects?.map((project, i) => (
 
+        {/* {projects?.map((project, i) => (
           <div
             key={i}
             className='w-screen flex-shrink-0 snap-center flex flex-col
@@ -64,7 +64,8 @@ const Projects = ({ projects }: Props) => {
               </p>
             </div>
           </div>
-        ))}
+        ))} */}
+
       </div>
 
       <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12'></div>
