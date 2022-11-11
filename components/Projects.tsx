@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Project } from '../typings'
 import { urlFor } from '../sanity'
+import Link from 'next/link'
 
 type Props = {
   projects: Project[]
@@ -43,7 +44,7 @@ const Projects = ({ projects }: Props) => {
             <div className='sapce-y-10 px-0 md:px-10 max-w-6xl'>
               <h4 className='text-4xl font-semibold text-center'>
                 <span className='underline decoration-[#F7AB0A]/50'>
-                  Case study {i + 1} of {projects.length}:
+                  Project {i + 1} of {projects.length}:
                 </span>
                 &nbsp; {project?.title}
               </h4>
@@ -62,6 +63,8 @@ const Projects = ({ projects }: Props) => {
               <p className='text-lg text-center md:text-left'>
                 {project?.summary}
               </p>
+
+              {/* Add link / url to project site */}
             </div>
           </div>
         ))}
