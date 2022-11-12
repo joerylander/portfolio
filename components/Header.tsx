@@ -66,6 +66,9 @@ const Header = ({ socials }: Props) => {
 					Get in touch
 				</p>
 			</motion.div>
+			<div className="p-10 bg-[gray-light] text-highlight">
+				Hej
+			</div>
 			{/* </Link> */}
 		</header>
 	)
