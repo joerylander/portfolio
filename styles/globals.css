@@ -10,19 +10,13 @@
     --color-fill: #4338ca;
     --color-button-accent: #ffffff;
     --color-button-accent-hover: #eef2ff;
-    --color-button-muted: #6366f1;
-    --color-primary: #888;
+    --color-button-muted: 212, 255, 122;
+    --color-primary: #ffffff;
     --color-highlight: #F7AB0A;
     --color-secondary: #444b;
   }
-  /* .root,
-  #root,
-  #docs-root {
-    --primary-color: #fff;
-    --secondary-color: blue;
-    --red: #ff0000;
-  } */
 }
+
 @layer components {
   .heroButton {
     @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40
