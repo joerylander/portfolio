@@ -17,7 +17,7 @@ const Projects = ({ projects }: Props) => {
       className='h-screen relative flex overflow-hidden flex-col text-left
       md:flew-row max-w-full justify-evenly mx-auto items-center z-0'>
 
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
+      <h3 className='absolute top-24 uppercase tracking-[20px] text-th-text-base text-2xl'>
         Projects
       </h3>
 
@@ -43,7 +43,7 @@ const Projects = ({ projects }: Props) => {
 
             <div className='sapce-y-10 px-0 md:px-10 max-w-6xl'>
               <h4 className='text-4xl font-semibold text-center'>
-                <span className='underline decoration-[#F7AB0A]/50'>
+                <span className='underline decoration-th-highlight-50'>
                   Project {i + 1} of {projects.length}:
                 </span>
                 &nbsp; {project?.title}
@@ -71,7 +71,7 @@ const Projects = ({ projects }: Props) => {
 
       </div>
 
-      <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12'></div>
+      <div className='w-full absolute top-[30%] bg-th-highlight-10 left-0 h-[500px] -skew-y-12'></div>
     </motion.div>
   )
 }
