@@ -9,12 +9,10 @@ type Props = {
 }
 
 const ExperienceCard = ({ experience }: Props) => {
-  console.log(experience);
-
   return (
     <article
       className='flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-       w-[500px] h-[500px] md:w-[600px] md:h-[600px] xl:w-[900px] snap-center p-10 bg-[#292929] hover:opacity-100
+       w-[500px] h-[500px] md:w-[600px] md:h-[600px] xl:w-[900px] snap-center p-10 bg-th-bg-secondary hover:opacity-100
        opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'
     >
       <motion.img

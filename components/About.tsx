@@ -17,7 +17,7 @@ const About = ({ pageInfo }: Props) => {
       text-center md:text-left md:flew-row max-w-7xl
       px-10 justify-evenly mx-auto items-center'
     >
-      <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>
+      <h3 className='absolute top-24 uppercase tracking-[20px] text-th-text-base text-2xl'>
         About
       </h3>
 
@@ -37,8 +37,8 @@ const About = ({ pageInfo }: Props) => {
       />
 
       <div className='space-y-10 px-0 md:px-10'>
-        <h4 className='text-4xl font-semibold'>
-          Here is a <span className='underline decoration-[#F7AB0A]'>little</span> background
+        <h4 className='text-4xl font-semibold bg-highlight'>
+          Here is a <span className='underline decoration-th-highlight'>little</span> background
         </h4>
         <p className='text-base'>
           {pageInfo?.backgroundInformation}
