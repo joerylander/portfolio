@@ -27,7 +27,7 @@ const Hero = ({ pageInfo }: Props) => {
 			{/* <Image src={urlFor(pageInfo?.heroImage).url()} width={128} height={128} alt='Picture of the author' className='relative rounded-full mx-auto object-cover' /> */}
 			<img
 				src={urlFor(pageInfo?.heroImage).url()}
-				alt=""
+				alt="hero"
 				className='w-32 h-32 relative rounded-full mx-auto object-cover'
 			/>
 			<div className='z-20'>

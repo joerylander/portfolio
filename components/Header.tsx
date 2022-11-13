@@ -39,7 +39,7 @@ const Header = ({ socials }: Props) => {
 				))}
 			</motion.div>
 
-			{/* <Link href='#contact'> */}
+
 			<motion.div
 				initial={{
 					x: 500,
@@ -62,11 +62,13 @@ const Header = ({ socials }: Props) => {
 					fgColor='gray'
 					bgColor='transparent'
 				/>
-				<p className='uppercase hidden md:inline-flex text-sm text-gray-400'>
-					Get in touch
-				</p>
+				<Link href='#contact'>
+					<p className='uppercase hidden md:inline-flex text-sm text-gray-400'>
+						Get in touch
+					</p>
+				</Link>
 			</motion.div>
-			{/* </Link> */}
+
 		</header>
 	)
 }
