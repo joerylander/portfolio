@@ -14,6 +14,7 @@ import { fetchExperiences } from '../utils/fetchExperiences'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSocials } from '../utils/fetchSocials'
+import { urlFor } from '../sanity'
 
 type Props = {
 	pageInfo: PageInfo
@@ -31,7 +32,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 				scrollbar-thumb-[#F7AB0A]'
 		>
 			<Head>
-				<title>JoJo&apos;s Portfolio</title>
+				<title>Portfolio - Joe Rylander</title>
 			</Head>
 
 			<Header socials={socials} />
@@ -60,17 +61,17 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 				<Contact />
 			</section>
 
-			{/* <Link href='#hero'>
+			<Link href='#hero'>
 				<footer className='sticky bottom-5 w-full cursor-pointer'>
 					<div className='flex items-center justify-center'>
 						<img
 							className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
-							src='https://i.imgur.com/e2yvD6A.png'
-							alt=''
+							src={urlFor(pageInfo.heroImage).url()}
+							alt='hero'
 						/>
 					</div>
 				</footer>
-			</Link> */}
+			</Link>
 		</div>
 	)
 }
