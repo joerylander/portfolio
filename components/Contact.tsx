@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
 import emailjs from '@emailjs/browser'
@@ -13,35 +13,22 @@ type Inputs = {
 const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>()
 
-  // const onSubmit: SubmitHandler<Inputs> = async (formData: any) => {
-  //   // const { name, email, subject, message } = formData
-  //   // window.location.href = `mailto:rylander.j92@gmail.com?subject=${subject}&body=Hi, my name is ${name}, ${message}
-  //   // (${email})`
-  //   console.log(formData);
-  //   // try {
-
-  //   //   const result = await emailjs.sendForm('service_surjw0l', 'template_hnis1cq', formData, 'puPbdXgiCg0LvsyGS')
-  //   //   console.log(result.text);
-  //   // } catch (err: any) {
-  //   //   console.log(err);
-
-  //   // }
-  // }
-  const onSubmit = async (formData: any) => {
+  const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     try {
-      let result
-      result = await emailjs.send("service_surjw0l", "template_hnis1cq", formData, "puPbdXgiCg0LvsyGS")
-      console.log(result);
-      result.status = 404
+      const result = await emailjs.send(`${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY}`, `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY}`, formData, `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`)
+
       if (result.status !== 200) {
-        throw new Error('Something went wrong! Email not sent.')
+        throw new Error('Something went wrong!')
       }
-      // reset()
-    } catch (err: any) {
-      alert(err.message)
-      console.log(err);
+
+      reset()
+      return result
+    } catch (err) {
+      let message = 'Unknown Error'
+      if (err instanceof Error) message = err.message
+      reportError({ message })
     }
-  };
+  }
 
 
   return (
