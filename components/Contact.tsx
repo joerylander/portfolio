@@ -2,7 +2,7 @@ import React from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
 import emailjs from '@emailjs/browser'
-import getErrorMessages from '../utils/getErrorMessage'
+import { getErrorMessage, reportError } from '../utils/errorHandler'
 
 type Inputs = {
   name: string
@@ -16,7 +16,7 @@ const Contact = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     try {
-      const result = await emailjs.send(`${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY}`, `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY}`, formData, `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`)
+      const result = await emailjs.send(`service_surjw0l`, `template_hnis1cq`, formData, `puPbdXgiCg0LvsyGS`)
 
       if (result.status !== 200) {
         throw new Error('Something went wrong!')
@@ -25,7 +25,7 @@ const Contact = () => {
       reset()
       return result
     } catch (err) {
-      reportError({ message: getErrorMessages(err) })
+      // reportError({ message: getErrorMessages({ error: err }) })
     }
   }
 
