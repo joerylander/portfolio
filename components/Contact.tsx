@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
+import emailjs from '@emailjs/browser'
 
 type Inputs = {
   name: string
@@ -10,13 +11,38 @@ type Inputs = {
 }
 
 const Contact = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<Inputs>()
+  const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>()
 
-  const onSubmit: SubmitHandler<Inputs> = formData => {
-    const { name, email, subject, message } = formData
-    window.location.href = `mailto:rylander.j92@gmail.com?subject=${subject}&body=Hi, my name is ${name}, ${message}
-    (${email})`
-  }
+  // const onSubmit: SubmitHandler<Inputs> = async (formData: any) => {
+  //   // const { name, email, subject, message } = formData
+  //   // window.location.href = `mailto:rylander.j92@gmail.com?subject=${subject}&body=Hi, my name is ${name}, ${message}
+  //   // (${email})`
+  //   console.log(formData);
+  //   // try {
+
+  //   //   const result = await emailjs.sendForm('service_surjw0l', 'template_hnis1cq', formData, 'puPbdXgiCg0LvsyGS')
+  //   //   console.log(result.text);
+  //   // } catch (err: any) {
+  //   //   console.log(err);
+
+  //   // }
+  // }
+  const onSubmit = async (formData: any) => {
+    try {
+      let result
+      result = await emailjs.send("service_surjw0l", "template_hnis1cq", formData, "puPbdXgiCg0LvsyGS")
+      console.log(result);
+      result.status = 404
+      if (result.status !== 200) {
+        throw new Error('Something went wrong! Email not sent.')
+      }
+      // reset()
+    } catch (err: any) {
+      alert(err.message)
+      console.log(err);
+    }
+  };
+
 
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row
@@ -50,13 +76,12 @@ const Contact = () => {
 
         <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
           <div className='flex space-x-2'>
-            <input {...register('name')} placeholder='Name' className='contactInput' type="text" />
-            <input {...register('email')} placeholder='Email' className='contactInput' type="email" />
+            <input {...register('name')} placeholder='Name' name='name' className='contactInput' type="text" required />
+            <input {...register('email')} placeholder='Email' name='email' className='contactInput' type="email" required />
           </div>
 
-          <input {...register('subject')} placeholder='Subject' className='contactInput' type="text" />
-
-          <textarea {...register('message')} placeholder='Message' className='contactInput' />
+          <input {...register('subject')} placeholder='Subject' name='subject' className='contactInput' type="text" required />
+          <textarea {...register('message')} placeholder='Message' name='message' className='contactInput' required />
           <button
             type='submit'
             className='bg-th-highlight py-5 px-10 rounded-md text-black font-bold text-lg'>
