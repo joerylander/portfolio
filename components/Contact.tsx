@@ -2,7 +2,7 @@ import React from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
 import emailjs from '@emailjs/browser'
-import getErrorMessages from '../utils/getErrorMessage'
+import { getErrorMessage, reportError } from '../utils/errorHandler'
 
 type Inputs = {
   name: string
@@ -25,10 +25,11 @@ const Contact = () => {
       reset()
       return result
     } catch (err) {
-      reportError({ message: getErrorMessages(err) })
+      // reportError({ message: getErrorMessages({ error: err }) })
+      if (err instanceof Error)
+        console.error(err.message)
     }
   }
-
 
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row
