@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
 import emailjs from '@emailjs/browser'
@@ -13,6 +13,7 @@ type Inputs = {
 
 const Contact = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm<Inputs>()
+  const [submitted, setSubmitted] = useState(false)
 
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     try {
@@ -22,6 +23,7 @@ const Contact = () => {
         throw new Error('Something went wrong!')
       }
 
+      setSubmitted(true)
       reset()
       return result
     } catch (err) {
@@ -69,11 +71,17 @@ const Contact = () => {
 
           <input {...register('subject')} placeholder='Subject' name='subject' className='contactInput' type="text" required />
           <textarea {...register('message')} placeholder='Message' name='message' className='contactInput' required />
-          <button
+          {!submitted ? <button
             type='submit'
             className='bg-th-highlight py-5 px-10 rounded-md text-black font-bold text-lg'>
             Submit
           </button>
+            : <button
+              type='submit'
+              disabled={submitted}
+              className='bg-green-500 py-5 px-10 rounded-md text-black font-bold text-lg'>
+              Sent
+            </button>}
         </form>
       </div>
     </div>
