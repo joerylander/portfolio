@@ -16,7 +16,7 @@ const Contact = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     try {
-      const result = await emailjs.send(`service_surjw0l`, `template_hnis1cq`, formData, `puPbdXgiCg0LvsyGS`)
+      const result = await emailjs.send(`${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY}`, `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY}`, formData, `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`)
 
       if (result.status !== 200) {
         throw new Error('Something went wrong!')
@@ -26,9 +26,10 @@ const Contact = () => {
       return result
     } catch (err) {
       // reportError({ message: getErrorMessages({ error: err }) })
+      if (err instanceof Error)
+        console.error(err.message)
     }
   }
-
 
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row
