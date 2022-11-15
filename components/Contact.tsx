@@ -2,6 +2,7 @@ import React from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
 import emailjs from '@emailjs/browser'
+import getErrorMessages from '../utils/getErrorMessage'
 
 type Inputs = {
   name: string
@@ -24,9 +25,7 @@ const Contact = () => {
       reset()
       return result
     } catch (err) {
-      let message = 'Unknown Error'
-      if (err instanceof Error) message = err.message
-      reportError({ message })
+      reportError({ message: getErrorMessages(err) })
     }
   }
 
