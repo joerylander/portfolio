@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../components/Header'
@@ -8,7 +8,7 @@ import WorkExperience from '../components/WorkExperience'
 import Skills from '../components/Skills'
 import Projects from '../components/Projects'
 import Contact from '../components/Contact'
-import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { Experience, PageInfo, Project, Skill, Social, ContactType } from '../typings'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
 import { fetchExperiences } from '../utils/fetchExperiences'
 import { fetchSkills } from '../utils/fetchSkills'
@@ -96,5 +96,3 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 		revalidate: 120,
 	}
 }
-
-
