@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { PhoneIcon, MapPinIcon, EnvelopeIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form"
-import emailjs from '@emailjs/browser'
 import { getErrorMessage, reportError } from '../utils/errorHandler'
+import axios from 'axios'
 
 type Inputs = {
   name: string
@@ -17,15 +17,21 @@ const Contact = () => {
 
   const onSubmit: SubmitHandler<Inputs> = async (formData) => {
     try {
-      const result = await emailjs.send(`${process.env.NEXT_PUBLIC_EMAILJS_SERVICE_KEY}`, `${process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY}`, formData, `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`)
-
-      if (result.status !== 200) {
-        throw new Error('Something went wrong!')
+      const config = {
+        method: 'post',
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/contact`,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        data: formData
       }
+      const response = await axios(config)
 
-      setSubmitted(true)
-      reset()
-      return result
+      if (response.status === 200) {
+        setSubmitted(true)
+        reset()
+      }
+      return
     } catch (err) {
       // reportError({ message: getErrorMessages({ error: err }) })
       if (err instanceof Error)
@@ -35,7 +41,7 @@ const Contact = () => {
 
   return (
     <div className='h-screen flex relative flex-col text-center md:text-left md:flex-row
-    max-w-7xl px-10 justify-evenly mx-auto items-center'>
+        max-w-7xl px-10 justify-evenly mx-auto items-center'>
       <h3 className='absolute top-24 uppercase tracking-[20px] text-th-text-base text-2xl'>
         Contact
       </h3>
@@ -89,3 +95,15 @@ const Contact = () => {
 }
 
 export default Contact
+
+export const getStaticProps = async ({ formData }: any) => {
+  const contact = await fetch("http://localhost:3000/api/contactCall")
+  console.log(contact);
+
+  return {
+    props: {
+      contact
+    },
+    revalidate: 120,
+  }
+}

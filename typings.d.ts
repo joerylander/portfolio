@@ -65,3 +65,9 @@ export interface Social extends SanityBody {
   title: string
   url: string
 }
+
+export interface ContactType {
+  service_id: string
+  template_id: string
+  user_id: string
+}
