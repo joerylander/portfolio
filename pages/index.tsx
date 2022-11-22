@@ -1,6 +1,7 @@
 import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -34,7 +35,6 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 			<Head>
 				<title>Portfolio - Joe Rylander</title>
 			</Head>
-
 			<Header socials={socials} />
 
 			<section id='hero' className='snap-start'>
@@ -64,10 +64,13 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 			<Link href='#hero'>
 				<footer className='sticky bottom-5 w-full cursor-pointer'>
 					<div className='flex items-center justify-center'>
-						<img
+						<Image
 							className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
+							loader={() => urlFor(pageInfo?.heroImage).url()}
 							src={urlFor(pageInfo.heroImage).url()}
 							alt='hero'
+							width={40}
+							height={40}
 						/>
 					</div>
 				</footer>

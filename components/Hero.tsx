@@ -24,14 +24,15 @@ const Hero = ({ pageInfo }: Props) => {
 	return (
 		<div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
 			<BackgroundCircle />
-			{/* <Image src={urlFor(pageInfo?.heroImage).url()} width={128} height={128} alt='Picture of the author' className='relative rounded-full mx-auto object-cover' /> */}
-			<img
+			<Image
+				loader={() => urlFor(pageInfo?.heroImage).url()}
 				src={urlFor(pageInfo?.heroImage).url()}
-				alt="hero"
-				className='w-32 h-32 relative rounded-full mx-auto object-cover'
-			/>
-			<div className='z-20'>
+				width={128}
+				height={128}
+				alt='Picture of the author'
+				className='relative rounded-full mx-auto object-cover' />
 
+			<div className='z-20'>
 				<h2 className='uppercase text-gray-500 pb-2 tracking-[15px] text-xs sm:text-sm lg:text-base'>
 					{pageInfo?.role}
 				</h2>
