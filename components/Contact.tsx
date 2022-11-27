@@ -82,7 +82,6 @@ const Contact = () => {
             disabled={submitted}
             className={`${!submitted ? 'bg-th-highlight' : 'bg-green-500'} py-5 px-10 rounded-md text-black font-bold text-lg`}>
             {!submitted ? 'Submit' : 'Sent'}
-          </button>
         </form>
       </div>
     </div>
