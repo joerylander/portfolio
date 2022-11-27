@@ -46,7 +46,7 @@ const Projects = ({ projects }: Props) => {
                 width={320}
                 height={240}
                 alt="Project Image"
-                className='rounded-2xl h-[280px] w-[400px] md:h-[350px] md:w-[500px] mb-2 shadow-2xl'
+                className='rounded-2xl h-48 w-60 sm:h-[280px] sm:w-[400px] md:h-[350px] md:w-[500px] mb-2 shadow-2xl'
               />
             </motion.div>
 
