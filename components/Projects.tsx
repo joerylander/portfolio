@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Project } from '../typings'
 import { urlFor } from '../sanity'
-import Link from 'next/link'
 
 type Props = {
   projects: Project[]

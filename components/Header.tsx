@@ -61,6 +61,7 @@ const Header = ({ socials }: Props) => {
 					network='email'
 					fgColor='gray'
 					bgColor='transparent'
+					url={`${process.env.NEXT_PUBLIC_BASE_URL}/#contact`}
 				/>
 				<Link href='#contact'>
 					<p className='uppercase hidden md:inline-flex text-sm text-gray-400'>
