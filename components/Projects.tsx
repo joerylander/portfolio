@@ -43,21 +43,22 @@ const Projects = ({ projects }: Props) => {
               <Image
                 loader={() => urlFor(project?.image).url()}
                 src={urlFor(project.image).url()}
-                width={80}
-                height={80}
+                width={320}
+                height={240}
                 alt="Project Image"
+                className='rounded-2xl h-[280px] w-[400px] md:h-[350px] md:w-[500px] mb-2 shadow-2xl'
               />
             </motion.div>
 
-            <div className='sapce-y-10 px-0 md:px-10 max-w-6xl'>
-              <h4 className='text-4xl font-semibold text-center'>
+            <div className='space-y-7 px-0 md:px-10 max-w-6xl'>
+              <h4 className='text-xl sm:text-3xl lg:text-4xl font-semibold text-center'>
                 <span className='underline decoration-th-highlight-50'>
                   Project {i + 1} of {projects.length}:
                 </span>
                 &nbsp; {project?.title}
               </h4>
 
-              <div className='flex items-center justify-center space-x-2 my-4'>
+              <div className='flex items-center justify-center space-x-2 my-4 '>
                 {project?.technologies.map(tech => (
                   <Image
                     key={tech._id}
@@ -66,11 +67,12 @@ const Projects = ({ projects }: Props) => {
                     alt="tech"
                     width={40}
                     height={40}
+                    className='rounded-full border border-th-border-base object-cover'
                   />
                 ))}
               </div>
 
-              <p className='text-lg text-center md:text-left'>
+              <p className='text-base sm:text-lg text-center md:text-left'>
                 {project?.summary}
               </p>
 
