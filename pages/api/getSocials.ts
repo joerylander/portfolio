@@ -11,8 +11,10 @@ type Data = {
   socials: Social[]
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const getSocials = async (req: NextApiRequest, res: NextApiResponse) => {
   const socials: Data[] = await sanityClient.fetch(query)
 
   res.status(200).json({ socials })
 }
+
+export default getSocials

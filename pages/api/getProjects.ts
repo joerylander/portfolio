@@ -14,8 +14,10 @@ type Data = {
   projects: Project[]
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const getProjects = async (req: NextApiRequest, res: NextApiResponse) => {
   const projects: Data[] = await sanityClient.fetch(query)
 
   res.status(200).json({ projects })
 }
+
+export default getProjects
