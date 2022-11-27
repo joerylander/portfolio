@@ -77,17 +77,12 @@ const Contact = () => {
 
           <input {...register('subject')} placeholder='Subject' name='subject' className='contactInput' type="text" required />
           <textarea {...register('message')} placeholder='Message' name='message' className='contactInput' required />
-          {!submitted ? <button
+          <button
             type='submit'
-            className='bg-th-highlight py-5 px-10 rounded-md text-black font-bold text-lg'>
-            Submit
+            disabled={submitted}
+            className={`${!submitted ? 'bg-th-highlight' : 'bg-green-500'} py-5 px-10 rounded-md text-black font-bold text-lg`}>
+            {!submitted ? 'Submit' : 'Sent'}
           </button>
-            : <button
-              type='submit'
-              disabled={submitted}
-              className='bg-green-500 py-5 px-10 rounded-md text-black font-bold text-lg'>
-              Sent
-            </button>}
         </form>
       </div>
     </div>
@@ -95,15 +90,3 @@ const Contact = () => {
 }
 
 export default Contact
-
-export const getStaticProps = async ({ formData }: any) => {
-  const contact = await fetch("http://localhost:3000/api/contactCall")
-  console.log(contact);
-
-  return {
-    props: {
-      contact
-    },
-    revalidate: 120,
-  }
-}
