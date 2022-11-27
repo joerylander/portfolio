@@ -11,8 +11,10 @@ type Data = {
   pageInfo: PageInfo[]
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const getPageInfo = async (req: NextApiRequest, res: NextApiResponse) => {
   const pageInfo: Data[] = await sanityClient.fetch(query)
 
   res.status(200).json({ pageInfo })
 }
+
+export default getPageInfo

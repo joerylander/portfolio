@@ -11,8 +11,10 @@ type Data = {
   skills: Skill[]
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const getSkills = async (req: NextApiRequest, res: NextApiResponse) => {
   const skills: Data[] = await sanityClient.fetch(query)
 
   res.status(200).json({ skills })
 }
+
+export default getSkills

@@ -14,8 +14,10 @@ type Data = {
   experiences: Experience[]
 }
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const getExperience = async (req: NextApiRequest, res: NextApiResponse) => {
   const experiences: Data[] = await sanityClient.fetch(query)
 
   res.status(200).json({ experiences })
 }
+
+export default getExperience
