@@ -28,7 +28,7 @@ const WorkExperience = ({ experiences }: Props) => {
           <ExperienceCard key={exp._id} experience={exp} />
         ))}
       </div> */}
-      <div className='w-full flex p-10 snap-x snap-mandatory'>
+      <div className='w-full flex md:p-10 snap-x snap-mandatory'>
         <Carousel
           slide={false}
         >

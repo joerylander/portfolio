@@ -13,7 +13,7 @@ const ExperienceCard = ({ experience }: Props) => {
   return (
     <article
       className='w-full flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
-       snap-center p-10 bg-th-bg-secondary hover:opacity-100
+       snap-center p-5 bg-th-bg-secondary hover:opacity-100
        opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden'
     >
       <motion.div
@@ -37,7 +37,7 @@ const ExperienceCard = ({ experience }: Props) => {
         <h4 className='text-2xl md:text-4xl font-light'>{experience?.jobTitle}</h4>
         <p className='font-bold md:text-2xl mt-1'>{experience?.company}</p>
 
-        <div className='flex flex-wrap space-x-2 my-2'>
+        <div className='hidden sm:flex flex-wrap space-x-2 my-2'>
           {experience?.technologies.map((tech) => (
             <Image
               key={tech._id}
