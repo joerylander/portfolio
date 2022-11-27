@@ -9,7 +9,6 @@ type Props = {
 }
 
 const ExperienceCard = ({ experience }: Props) => {
-
   return (
     <article
       className='w-full flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
@@ -33,6 +32,7 @@ const ExperienceCard = ({ experience }: Props) => {
           className='h-24 w-24 sm:h-32 sm:w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center'
         />
       </motion.div>
+      
       <div className='px-0 md:px-10'>
         <h4 className='text-2xl md:text-4xl font-light'>{experience?.jobTitle}</h4>
         <p className='font-bold md:text-2xl mt-1'>{experience?.company}</p>
@@ -47,7 +47,6 @@ const ExperienceCard = ({ experience }: Props) => {
               width={40}
               height={10}
               className='rounded-full h-10 w-10' />
-
           ))}
         </div>
 
