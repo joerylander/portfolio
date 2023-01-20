@@ -1,42 +1,46 @@
 export default {
-  name: 'project',
-  title: 'Project',
-  type: 'document',
+  name: "project",
+  title: "Project",
+  type: "document",
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string'
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      name: "image",
+      title: "Image",
+      type: "image",
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
-      name: 'summary',
-      title: 'Summary',
-      type: 'string'
+      name: "summary",
+      title: "Summary",
+      type: "string",
     },
     {
-      name: 'technologies',
-      title: 'Technologies',
-      type: 'array',
+      name: "technologies",
+      title: "Technologies",
+      type: "array",
       of: [
         {
-          type: 'reference',
-          to: { type: 'skill' }
-        }
-      ]
+          type: "reference",
+          to: { type: "skill" },
+        },
+      ],
     },
     {
-      name: 'linkToBuild',
-      title: 'LinkToBuild',
-      type: 'url'
+      name: "linkToBuild",
+      title: "LinkToBuild",
+      type: "url",
     },
-
+    {
+      name: "linkToSite",
+      title: "LinkToSite",
+      type: "url",
+    },
   ],
-}
+};

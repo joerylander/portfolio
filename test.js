@@ -29,11 +29,8 @@
 // console.log(color);
 
 async function hello() {
-
-  return await Promise.resolve('Hello!')
+  return await Promise.resolve("Hello!");
 }
-const data = hello()
-console.log(data)
+const data = hello();
+console.log(data);
 console.log(Promise.resolve(123));
-
-if (true && true) console.log('Hello World!')

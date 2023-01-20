@@ -4,6 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Project } from "../typings";
 import { urlFor } from "../sanity";
+import { SocialIcon } from "react-social-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faAmbulance,
+  faEye,
+  faEyeDropper,
+} from "@fortawesome/free-solid-svg-icons";
+import { EyeIcon } from "@heroicons/react/24/solid";
 
 type Props = {
   projects: Project[];
@@ -51,33 +59,55 @@ const Projects = ({ projects }: Props) => {
               />
             </motion.div>
 
-            <div className="space-y-7 px-0 md:px-10 max-w-6xl">
+            <div className="space-y-7 px-0 md:px-10 max-w-5xl">
               <h4 className="text-xl sm:text-3xl lg:text-4xl font-semibold text-center">
                 <span className="underline decoration-th-highlight-50">
-                  Project {i + 1} of {projects.length}:
+                  Project {i + 1} / {projects.length}:
                 </span>
                 &nbsp; {project?.title}
               </h4>
 
-              <div className="flex items-center justify-center space-x-2 my-4 ">
-                {project?.technologies.map((tech) => (
-                  <Image
-                    key={tech._id}
-                    loader={() => urlFor(tech.image).url()}
-                    src={urlFor(tech.image).url()}
-                    alt="tech"
-                    width={40}
-                    height={40}
-                    className="rounded-full border border-th-border-base object-cover"
+              <div className="flex flex-col items-center justify-evenly sm:flex-row">
+                <div className="flex items-center justify-center space-x-2 my-4">
+                  <SocialIcon
+                    key={project?._id}
+                    url={project?.linkToBuild}
+                    fgColor="gray"
+                    bgColor="transparent"
+                    style={{ height: 60, width: 60 }}
                   />
-                ))}
+                  <Link
+                    href={project?.linkToSite}
+                    as={project?.linkToSite}
+                    legacyBehavior
+                  >
+                    <a target="_blank">
+                      <FontAwesomeIcon
+                        style={{ height: 30, width: 30 }}
+                        icon={faEye}
+                      />
+                    </a>
+                  </Link>
+                </div>
+
+                <div className="flex items-center justify-center space-x-2 my-4">
+                  {project?.technologies.map((tech) => (
+                    <Image
+                      key={tech?._id}
+                      loader={() => urlFor(tech.image).url()}
+                      src={urlFor(tech.image).url()}
+                      alt="tech"
+                      width={40}
+                      height={40}
+                      className="rounded-full border border-th-border-base object-cover"
+                    />
+                  ))}
+                </div>
               </div>
 
-              <p className="text-base sm:text-lg text-center md:text-left">
+              <p className="text-base sm:text-lg text-center xl:m-24 md:text-left">
                 {project?.summary}
               </p>
-
-              {/* Add link / url to project site */}
             </div>
           </div>
         ))}
