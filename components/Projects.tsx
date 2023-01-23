@@ -6,12 +6,7 @@ import { Project } from "../typings";
 import { urlFor } from "../sanity";
 import { SocialIcon } from "react-social-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAmbulance,
-  faEye,
-  faEyeDropper,
-} from "@fortawesome/free-solid-svg-icons";
-import { EyeIcon } from "@heroicons/react/24/solid";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 type Props = {
   projects: Project[];
@@ -74,7 +69,7 @@ const Projects = ({ projects }: Props) => {
                     url={project?.linkToBuild}
                     fgColor="gray"
                     bgColor="transparent"
-                    style={{ height: 60, width: 60 }}
+                    style={{ height: 55, width: 55 }}
                   />
                   <Link
                     href={project?.linkToSite}
