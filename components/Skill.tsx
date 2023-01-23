@@ -1,18 +1,16 @@
-import React from 'react'
-import Image from 'next/image'
-import { motion } from 'framer-motion'
-import { Skill as SkillType } from '../typings'
-import { urlFor } from '../sanity'
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { Skill as SkillType } from "../typings";
+import { urlFor } from "../sanity";
 
 type Props = {
-  skill: SkillType
-  directionLeft?: boolean
-}
+  skill: SkillType;
+};
 
-const Skill = ({ skill, directionLeft }: Props) => {
+const Skill = ({ skill }: Props) => {
   return (
-    <div className='group relative flex cursor-pointer'>
-
+    <div className="group relative flex cursor-pointer">
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -21,24 +19,27 @@ const Skill = ({ skill, directionLeft }: Props) => {
         <Image
           loader={() => urlFor(skill?.image).url()}
           src={urlFor(skill?.image).url()}
-          alt='skill'
+          alt="skill"
           width={40}
           height={10}
-          className='rounded-full border border-th-border-base object-cover w-14 h-14 sm:w-20 sm:h-20
-        md:w-24 md:h-24 xl:w-28 xl:h-28 filter group-hover:grayscale transition duration-300 ease-out'
+          className="rounded-full border border-th-border-base object-cover w-14 h-14 sm:w-20 sm:h-20
+        md:w-24 md:h-24 xl:w-28 xl:h-28 filter group-hover:grayscale transition duration-300 ease-out"
         />
       </motion.div>
-      
-      <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out
+
+      <div
+        className="absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out
        group-hover:bg-white w-14 h-14 sm:w-20 sm:h-20
-       md:w-24 md:h-24 xl:w-28 xl:h-28 rounded-full z-0'
+       md:w-24 md:h-24 xl:w-28 xl:h-28 rounded-full z-0"
       >
-        <div className='flex items-center justify-center h-full'>
-          <p className=' text-lg sm:text-3xl font-bold text-black opacity-100'>{skill?.progress}%</p>
+        <div className="flex items-center justify-center h-full">
+          <p className=" text-lg sm:text-3xl font-bold text-black opacity-100">
+            {skill?.progress}%
+          </p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Skill
+export default Skill;
