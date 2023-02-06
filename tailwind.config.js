@@ -11,7 +11,6 @@ function withOpacity(variableName) {
 
 module.exports = {
   content: [
-    "./node_modules/flowbite-react/**/*.js",
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
@@ -42,6 +41,6 @@ module.exports = {
         smvw: "3vw",
       },
     },
-    plugins: [require("tailwind-scrollbar"), require("flowbite/plugin")],
+    plugins: [require("tailwind-scrollbar")],
   },
 };

@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import { Experience } from "../typings";
-import { Carousel } from "flowbite-react";
 
 type Props = {
   experiences: Experience[];
