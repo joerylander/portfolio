@@ -24,14 +24,15 @@ const ExperienceCard = ({ experience }: Props) => {
         transition={{ duration: 1.2 }}
         viewport={{ once: true }}
       >
-        <Image
-          loader={() => urlFor(experience?.companyImage).url()}
-          src={urlFor(experience?.companyImage).url()}
-          alt="logo"
-          width={96}
-          height={96}
-          className="h-24 w-24 sm:h-32 sm:w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        />
+        <div className="relative h-24 w-24 sm:h-32 sm:w-32 xl:w-[200px] xl:h-[200px]">
+          <Image
+            loader={() => urlFor(experience?.companyImage).url()}
+            src={urlFor(experience?.companyImage).url()}
+            alt="logo"
+            fill
+            className="rounded-full object-cover object-center"
+          />
+        </div>
       </motion.div>
 
       <div className="px-0 md:px-10">
