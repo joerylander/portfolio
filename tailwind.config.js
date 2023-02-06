@@ -38,6 +38,9 @@ module.exports = {
       screens: {
         "phone-h": { raw: "(max-height: 820px)" },
       },
+      spacing: {
+        smvw: "3vw",
+      },
     },
     plugins: [require("tailwind-scrollbar"), require("flowbite/plugin")],
   },
