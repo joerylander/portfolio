@@ -16,15 +16,18 @@ const Skill = ({ skill }: Props) => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
       >
-        <Image
-          loader={() => urlFor(skill?.image).url()}
-          src={urlFor(skill?.image).url()}
-          alt="skill"
-          width={40}
-          height={10}
-          className="rounded-full border border-th-border-base object-cover w-14 h-14 sm:w-20 sm:h-20
-        md:w-24 md:h-24 xl:w-28 xl:h-28 filter group-hover:grayscale transition duration-300 ease-out"
-        />
+        <div
+          className="relative border border-th-border-base  w-14 h-14 sm:w-20 sm:h-20
+        md:w-24 md:h-24 xl:w-28 xl:h-28 filter group-hover:grayscale transition duration-300 ease-out border-none"
+        >
+          <Image
+            loader={() => urlFor(skill?.image).url()}
+            src={urlFor(skill?.image).url()}
+            alt="skill"
+            fill
+            className="rounded-full object-cover object-center border border-th-border-base"
+          />
+        </div>
       </motion.div>
 
       <div

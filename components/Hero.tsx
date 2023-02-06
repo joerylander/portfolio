@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Cursor, Typewriter, useTypewriter } from "react-simple-typewriter";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
 import BackgroundCircle from "./BackgroundCircle";
 import { PageInfo } from "../typings";
 import { urlFor } from "../sanity";
@@ -26,14 +26,16 @@ const Hero = ({ pageInfo }: Props) => {
   return (
     <div className="h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden">
       <BackgroundCircle />
-      <Image
-        loader={() => urlFor(pageInfo?.heroImage).url()}
-        src={urlFor(pageInfo?.heroImage).url()}
-        width={128}
-        height={128}
-        alt="Picture of the author"
-        className="relative rounded-full mx-auto object-cover"
-      />
+      <div className="relative h-24 w-24 sm:h-40 sm:w-40 ">
+        <Image
+          loader={() => urlFor(pageInfo?.heroImage).url()}
+          src={urlFor(pageInfo?.heroImage).url()}
+          priority
+          fill
+          alt="Author Image"
+          className="rounded-full object-cover"
+        />
+      </div>
 
       <div className="z-20">
         <h2 className="uppercase text-gray-500 pb-2 tracking-[15px] text-xs sm:text-sm lg:text-base">
