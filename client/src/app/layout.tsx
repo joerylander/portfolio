@@ -21,9 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.variable} ${azaret_mono.variable} antialiased`}>
+      <body
+        className={`${inter.variable} ${azaret_mono.variable} mx-6 flex min-h-screen w-full flex-col justify-self-center antialiased`}
+      >
         <Header />
-        <main className="mx-auto my-12 max-w-6xl">{children}</main>
+        <main className="mx-6 my-12 max-w-7xl">{children}</main>
         <Footer />
       </body>
     </html>

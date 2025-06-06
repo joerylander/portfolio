@@ -1,23 +1,26 @@
 import { azaret_mono, inter } from '@/lib/fonts';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import Logo from '@/components/shared/logo';
 
 export default function Header() {
   return (
-    <header className="mx-auto my-12 flex max-w-6xl justify-between px-6">
+    <header className="mx-6 flex h-42 items-center justify-between">
       {/* Logo */}
-      <h1 className={inter.className}>Header from component</h1>
+      <Logo />
       {/* Navbar */}
-      <nav className="flex gap-2">
-        <Link href="/" className={azaret_mono.className}>
-          Home
+      <nav className="space-x-24">
+        <Link href="#services" className={azaret_mono.className}>
+          Service
         </Link>
         <Link href="/" className={azaret_mono.className}>
-          Home
+          Projects
         </Link>
         <Link href="/" className={azaret_mono.className}>
-          Home
+          Testimonials
         </Link>
       </nav>
+      <Button size={'lg'}>Book us</Button>
     </header>
   );
 }
