@@ -21,7 +21,7 @@ export default function SectionWrapper({
     return (
       <motion.section
         id={id}
-        className={`snap-start scroll-m-20 py-10 ${className || ''}`}
+        className={`flex w-full snap-start scroll-m-20 py-10 ${className || ''}`}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -33,7 +33,10 @@ export default function SectionWrapper({
   }
 
   return (
-    <section id={id} className={`py-10' ${className || ''}`}>
+    <section
+      id={id}
+      className={`snap-start scroll-m-20 py-10 ${className || ''}`}
+    >
       {children}
     </section>
   );

@@ -125,17 +125,14 @@ h1 {
   @apply text-4xl font-extrabold tracking-tight lg:text-5xl;
 }
 h2 {
-  @apply text-3xl font-semibold tracking-tight transition-colors;
+  @apply text-4xl tracking-tight transition-colors lg:text-3xl;
 }
-
 h3 {
-  @apply text-2xl font-normal tracking-tight transition-colors;
+  @apply text-3xl font-normal tracking-tight transition-colors lg:text-2xl;
 }
-
 a {
   @apply hover:text-accent-foreground text-base;
 }
-
 p {
-  @apply text-base transition-colors;
+  @apply transition-colors;
 }
