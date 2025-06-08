@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import { inter } from '@/lib/fonts';
 import { Button } from '../ui/button';
 import SectionWrapper from '../layout/sectionWrapper';
-import Image from 'next/image';
 
 export default function Hero() {
   return (
