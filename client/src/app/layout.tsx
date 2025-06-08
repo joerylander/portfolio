@@ -25,9 +25,7 @@ export default function RootLayout({
         className={`${inter.variable} ${azaret_mono.variable} mx-6 flex w-full flex-col justify-self-center scroll-smooth antialiased`}
       >
         <Header />
-        <main className="mx-6 w-full max-w-7xl snap-y snap-mandatory self-center">
-          {children}
-        </main>
+        {children}
         <Footer />
       </body>
     </html>

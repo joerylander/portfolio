@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <header className="mx-6 flex h-42 items-center justify-between">
       <Logo />
-      <nav className="space-x-24">
+      <nav className="flex gap-24">
         <Link href="#services" className={azaret_mono.className}>
           Service
         </Link>
