@@ -1,4 +1,4 @@
-import SectionWrapper from '../layout/sectionWrapper';
+import { azaret_mono } from '@/lib/fonts';
 import {
   Card,
   CardAction,
@@ -32,7 +32,7 @@ export default function Services() {
   ];
 
   return (
-    <SectionWrapper id="services" className="flex flex-col gap-10 md:flex-row">
+    <>
       {services.map((service) => (
         <Card
           key={service.id}
@@ -44,10 +44,12 @@ export default function Services() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="font-normal">{service.description}</p>
+            <p className={`${azaret_mono.className} font-light`}>
+              {service.description}
+            </p>
           </CardContent>
         </Card>
       ))}
-    </SectionWrapper>
+    </>
   );
 }
