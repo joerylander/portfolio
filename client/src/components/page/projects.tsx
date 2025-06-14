@@ -1,5 +1,4 @@
-import { azaret_mono } from '@/lib/fonts';
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { azaret_mono, inter } from '@/lib/fonts';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { services } from '@/db/data.json';
@@ -7,10 +6,10 @@ import { services } from '@/db/data.json';
 export default function Projects() {
   return (
     <>
-      <h2>Projects</h2>
-      <div className="grid w-full grid-cols-2 gap-x-20 gap-y-10">
+      <h2 className={inter.className}>Projects</h2>
+      <div className="grid w-full grid-cols-2 gap-x-4 gap-y-8">
         {services.map((service) => (
-          <Card
+          <article
             key={service.id}
             className="group cursor-pointer justify-self-center p-0"
           >
@@ -23,16 +22,19 @@ export default function Projects() {
               />
               <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="translate-y-4 transform transition-transform duration-300 group-hover:translate-y-0">
-                  <h3 className="mb-2 text-xl font-bold text-white">
+                  <h3
+                    className={`${inter.className} mb-2 text-xl font-bold text-white`}
+                  >
                     Mountain Adventure
                   </h3>
-                  <p className="mb-4 line-clamp-3 text-sm text-white/90">
+                  <p
+                    className={`${inter.className} mb-4 line-clamp-3 text-sm text-white/90`}
+                  >
                     Discover breathtaking views and unforgettable experiences in
                     the heart of nature. Perfect for hiking enthusiasts and
                     adventure seekers.
                   </p>
 
-                  {/* Action buttons */}
                   <div className="flex gap-2">
                     <Button
                       size="sm"
@@ -51,7 +53,7 @@ export default function Projects() {
                 </div>
               </div>
             </div>
-          </Card>
+          </article>
         ))}
       </div>
     </>

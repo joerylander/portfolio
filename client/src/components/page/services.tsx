@@ -1,4 +1,4 @@
-import { azaret_mono } from '@/lib/fonts';
+import { azaret_mono, inter } from '@/lib/fonts';
 import {
   Card,
   CardAction,
@@ -8,32 +8,12 @@ import {
   CardHeader,
   CardTitle,
 } from '../ui/card';
+import { services } from '@/db/data.json';
 
 export default function Services() {
-  const services = [
-    {
-      id: 1,
-      title: 'modern design',
-      description:
-        'Your website will look stunning and function perfectly on any device – desktop, tablet, or mobile. No outdated designs, just sleek, modern, and user-friendly experiences.',
-    },
-    {
-      id: 2,
-      title: 'comprehensive',
-      description:
-        'What’s the point of a website if no one finds it? We build websites with SEO best practices to help you rank on Google and attract organic traffic.',
-    },
-    {
-      id: 3,
-      title: 'support & maintenance',
-      description:
-        'A website needs updates, security checks, and tweaks to stay relevant. We offer post-launch support, troubleshooting, and maintenance so you never have to worry.',
-    },
-  ];
-
   return (
     <>
-      <h2 className="">
+      <h2 className={inter.className}>
         Your Website Should Do more Than Just Look Good - It Should Convert
       </h2>
       <div className="flex flex-col gap-10 md:flex-row">
