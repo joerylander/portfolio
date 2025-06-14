@@ -125,7 +125,7 @@ h1 {
   @apply text-4xl font-extrabold tracking-tight lg:text-5xl;
 }
 h2 {
-  @apply text-4xl tracking-tight transition-colors lg:text-3xl;
+  @apply text-4xl font-bold tracking-tight transition-colors lg:text-3xl;
 }
 h3 {
   @apply text-3xl tracking-tight transition-colors lg:text-2xl;
