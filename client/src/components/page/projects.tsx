@@ -2,18 +2,19 @@ import { azaret_mono, inter } from '@/lib/fonts';
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { services } from '@/db/data.json';
+import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
   return (
     <>
       <h2 className={inter.className}>Projects</h2>
-      <div className="grid w-full grid-cols-2 gap-x-4 gap-y-8">
+      <div className="grid h-[1200px] w-full grid-cols-2 gap-x-14 gap-y-8">
         {services.map((service) => (
           <article
             key={service.id}
-            className="group cursor-pointer justify-self-center p-0"
+            className="group h-full w-full cursor-pointer justify-self-center p-0"
           >
-            <div className="relative h-96 w-96 transition-transform duration-300 group-hover:scale-110">
+            <div className="relative h-full w-full transition-transform duration-300 group-hover:scale-110">
               <Image
                 src="/images/profile.jpg"
                 alt="project"
@@ -40,14 +41,8 @@ export default function Projects() {
                       size="sm"
                       className="bg-white text-black hover:bg-white/90"
                     >
-                      Explore
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-white text-white hover:bg-white hover:text-black"
-                    >
-                      Save
+                      Visit site
+                      <ExternalLink />
                     </Button>
                   </div>
                 </div>
