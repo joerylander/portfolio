@@ -3,6 +3,7 @@ import Hero from '@/components/page/hero';
 import Services from '@/components/page/services';
 import Projects from '@/components/page/projects';
 import Testimonials from '@/components/page/testimonials';
+import Contact from '@/components/page/contact';
 
 export default function Home() {
   return (
@@ -35,6 +36,13 @@ export default function Home() {
           className="flex flex-col items-center gap-20"
         >
           <Testimonials />
+        </SectionWrapper>
+
+        <SectionWrapper
+          id="contact"
+          className="flex flex-col items-center gap-20"
+        >
+          <Contact />
         </SectionWrapper>
       </main>
     </>
