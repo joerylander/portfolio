@@ -6,9 +6,13 @@ export default function Hero() {
   return (
     <>
       <div className="ml-7 flex w-full max-w-2xl flex-col gap-5">
-        <h3 className={`${inter.variable} font-normal`}>Hi there, I'm Joe</h3>
-        <h1 className={`${inter.variable} `}>Designer &amp; Developer</h1>
-        <p className={`${azaret_mono.variable} text-lg`}>
+        <h3 className={`${inter.variable} text-3xl font-normal`}>
+          Hi there, I'm Joe
+        </h3>
+        <h1 className={`${inter.variable} text-5xl`}>
+          Designer &amp; Developer
+        </h1>
+        <p className={`${azaret_mono.variable} text-xl`}>
           I help people and brands to reach their goals by designing and
           building user-centric digital products and interactive experiences
         </p>

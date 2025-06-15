@@ -122,13 +122,13 @@
 }
 
 h1 {
-  @apply text-4xl font-extrabold tracking-tight lg:text-5xl;
+  @apply font-extrabold tracking-tight;
 }
 h2 {
-  @apply text-4xl font-bold tracking-tight transition-colors lg:text-3xl;
+  @apply font-bold tracking-tight transition-colors;
 }
 h3 {
-  @apply text-3xl tracking-tight transition-colors lg:text-2xl;
+  @apply tracking-tight transition-colors;
 }
 a {
   @apply hover:text-accent-foreground text-base;

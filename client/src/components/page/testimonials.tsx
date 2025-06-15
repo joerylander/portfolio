@@ -2,22 +2,13 @@
 
 import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '../ui/card';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-import { azaret_mono } from '@/lib/fonts';
+import { azaret_mono, inter } from '@/lib/fonts';
 
 export default function Testimonials() {
   const autoplay = useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true, stopOnMouseEnter: true }),
+    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true }),
   );
   return (
     <Carousel
@@ -30,21 +21,28 @@ export default function Testimonials() {
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, i) => (
           <CarouselItem key={i}>
-            <Card className="flex h-[500px]">
-              <CardContent className="flex flex-col items-center gap-10">
-                <Avatar>
+            <article className="flex h-[500px] max-w-fit">
+              <div className="flex flex-col items-center justify-evenly">
+                <Avatar className="h-48 w-48">
                   <AvatarImage src="/images/profile.jpg" alt="avatar" />
-                  <AvatarFallback>Profile</AvatarFallback>
+                  <AvatarFallback>Initials</AvatarFallback>
                 </Avatar>
-                <CardDescription className={azaret_mono.className}>
+
+                <p className={`${azaret_mono.className} text-center`}>
                   From day one, the execution was tight and timelines were
                   respected. Our site looks and feels premium, and feedback has
                   been all fire.
-                </CardDescription>
-                <CardTitle>Morgan Freeman {i}</CardTitle>
-                <h4>Product Manager</h4>
-              </CardContent>
-            </Card>
+                </p>
+                <h3 className={`${inter.className} text-4xl font-bold`}>
+                  Morgan Freeman {i}
+                </h3>
+                <h4
+                  className={`${azaret_mono.className} font-semibold opacity-80`}
+                >
+                  Product Manager
+                </h4>
+              </div>
+            </article>
           </CarouselItem>
         ))}
       </CarouselContent>

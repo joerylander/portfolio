@@ -1,19 +1,11 @@
 import { azaret_mono, inter } from '@/lib/fonts';
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from '../ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { services } from '@/db/data.json';
 
 export default function Services() {
   return (
     <>
-      <h2 className={inter.className}>
+      <h2 className={`${inter.className} text-4xl font-bold`}>
         Your Website Should Do more Than Just Look Good - It Should Convert
       </h2>
       <div className="flex flex-col gap-10 md:flex-row">
@@ -24,7 +16,7 @@ export default function Services() {
           >
             <CardHeader>
               <CardTitle>
-                <h3 className="font-bold">{service.title}</h3>
+                <h3 className="text-xl font-bold">{service.title}</h3>
               </CardTitle>
             </CardHeader>
             <CardContent>

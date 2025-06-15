@@ -7,7 +7,7 @@ import { ExternalLink } from 'lucide-react';
 export default function Projects() {
   return (
     <>
-      <h2 className={inter.className}>Projects</h2>
+      <h2 className={`${inter.className} text-4xl font-bold`}>Projects</h2>
       <div className="grid h-[1200px] w-full grid-cols-2 gap-x-14 gap-y-8">
         {services.map((service) => (
           <article
@@ -24,21 +24,21 @@ export default function Projects() {
               <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                 <div className="translate-y-4 transform transition-transform duration-300 group-hover:translate-y-0">
                   <h3
-                    className={`${inter.className} mb-2 text-xl font-bold text-white`}
+                    className={`${inter.className} mb-2 text-2xl font-bold text-white`}
                   >
-                    Mountain Adventure
+                    Website Title
                   </h3>
                   <p
-                    className={`${inter.className} mb-4 line-clamp-3 text-sm text-white/90`}
+                    className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90`}
                   >
-                    Discover breathtaking views and unforgettable experiences in
-                    the heart of nature. Perfect for hiking enthusiasts and
-                    adventure seekers.
+                    <b>Description text:</b> Discover breathtaking views and
+                    unforgettable experiences in the heart of nature. Perfect
+                    for hiking enthusiasts and adventure seekers.
                   </p>
 
                   <div className="flex gap-2">
                     <Button
-                      size="sm"
+                      size="lg"
                       className="bg-white text-black hover:bg-white/90"
                     >
                       Visit site
