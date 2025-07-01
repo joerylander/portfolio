@@ -7,6 +7,8 @@ export default function Footer() {
   const githubIcon: IconProp = 'fa-brands fa-github';
   // @ts-ignore
   const linkedinIcon: IconProp = 'fa-brands fa-linkedin';
+  // @ts-ignore
+  const xTwitterIcon: IconProp = 'fa-brands fa-x-twitter';
   return (
     <footer className="mx-6 flex min-h-20 items-center justify-between">
       <p className={`${azaret_mono.className} whitespace-nowrap capitalize`}>
@@ -27,6 +29,13 @@ export default function Footer() {
           target="_blank"
         >
           <FontAwesomeIcon icon={linkedinIcon} />
+        </a>
+        <a
+          className="h-10 w-10"
+          href="https://x.com/CyberJojo9"
+          target="_blank"
+        >
+          <FontAwesomeIcon icon={xTwitterIcon} />
         </a>
       </div>
 
