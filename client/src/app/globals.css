@@ -131,7 +131,7 @@ h3 {
   @apply tracking-tight transition-colors;
 }
 a {
-  @apply hover:text-accent-foreground text-base;
+  @apply hover:text-accent-foreground cursor-pointer text-base;
 }
 p {
   @apply transition-colors;

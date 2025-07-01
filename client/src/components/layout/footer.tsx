@@ -1,16 +1,33 @@
 import { azaret_mono } from '@/lib/fonts';
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Footer() {
+  // @ts-ignore
+  const githubIcon: IconProp = 'fa-brands fa-github';
+  // @ts-ignore
+  const linkedinIcon: IconProp = 'fa-brands fa-linkedin';
   return (
     <footer className="mx-6 flex min-h-20 items-center justify-between">
-      <p className={`${azaret_mono.className} capitalize`}>
-        &#169; rylander media 2025. all rights reserved
+      <p className={`${azaret_mono.className} whitespace-nowrap capitalize`}>
+        &#169;rylander media 2025. all rights reserved
       </p>
 
-      <div className="flex">
-        <div className="">Github</div>
-        <div className="">Linkedin</div>
-        <div className="">Instagram</div>
+      <div className="flex space-x-12">
+        <a
+          className="h-10 w-10"
+          href="https://github.com/joerylander"
+          target="_blank"
+        >
+          <FontAwesomeIcon icon={githubIcon} />
+        </a>
+        <a
+          className="h-10 w-10"
+          href="https://www.linkedin.com/in/joerylander/"
+          target="_blank"
+        >
+          <FontAwesomeIcon icon={linkedinIcon} />
+        </a>
       </div>
 
       <a

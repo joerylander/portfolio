@@ -3,6 +3,7 @@ import './globals.css';
 import { azaret_mono, inter } from '@/lib/fonts';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
+import '@/lib/fontawesome';
 
 // static metadata
 export const metadata: Metadata = {
