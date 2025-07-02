@@ -5,16 +5,25 @@ import Logo from '@/components/shared/logo';
 
 export default function Header() {
   return (
-    <header className="mx-6 flex h-42 items-center justify-between">
+    <header className="bg-background/95 border-border/40 sticky top-0 z-50 mx-6 flex h-16 items-center justify-between border-b backdrop-blur-sm">
       <Logo />
       <nav className="flex gap-24">
-        <Link href="#services" className={azaret_mono.className}>
+        <Link
+          href="#services"
+          className={`${azaret_mono.className} hover:text-primary transition-colors`}
+        >
           Service
         </Link>
-        <Link href="/" className={azaret_mono.className}>
+        <Link
+          href="#projects"
+          className={`${azaret_mono.className} hover:text-primary transition-colors`}
+        >
           Projects
         </Link>
-        <Link href="/" className={azaret_mono.className}>
+        <Link
+          href="#testimonials"
+          className={`${azaret_mono.className} hover:text-primary transition-colors`}
+        >
           Testimonials
         </Link>
       </nav>

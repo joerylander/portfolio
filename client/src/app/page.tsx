@@ -8,43 +8,37 @@ import Contact from '@/components/page/contact';
 export default function Home() {
   return (
     <>
-      <main className="min-h-screen w-full max-w-7xl self-center px-6">
-        <SectionWrapper
-          id="hero"
-          className="min-h-[calc(100vh-168px)] items-center justify-between"
-          animate={true}
-        >
-          <Hero />
-        </SectionWrapper>
+      <SectionWrapper id="hero" className="snap-center" animate={true}>
+        <Hero />
+      </SectionWrapper>
 
-        <SectionWrapper
-          id="services"
-          className="flex flex-col items-center gap-20"
-        >
-          <Services />
-        </SectionWrapper>
+      <SectionWrapper
+        id="services"
+        className="flex snap-start flex-col items-center gap-20"
+      >
+        <Services />
+      </SectionWrapper>
 
-        <SectionWrapper
-          id="projects"
-          className="flex flex-col items-center gap-20"
-        >
-          <Projects />
-        </SectionWrapper>
+      <SectionWrapper
+        id="projects"
+        className="flex snap-start flex-col items-center gap-20"
+      >
+        <Projects />
+      </SectionWrapper>
 
-        <SectionWrapper
-          id="testimonials"
-          className="flex flex-col items-center gap-20"
-        >
-          <Testimonials />
-        </SectionWrapper>
+      <SectionWrapper
+        id="testimonials"
+        className="flex snap-start flex-col items-center gap-20"
+      >
+        <Testimonials />
+      </SectionWrapper>
 
-        <SectionWrapper
-          id="contact"
-          className="flex flex-col items-center gap-20"
-        >
-          <Contact />
-        </SectionWrapper>
-      </main>
+      <SectionWrapper
+        id="contact"
+        className="flex snap-center flex-col items-center gap-20"
+      >
+        <Contact />
+      </SectionWrapper>
     </>
   );
 }

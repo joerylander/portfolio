@@ -4,8 +4,16 @@ import { Button } from '../ui/button';
 
 export default function Hero() {
   return (
-    <>
-      <div className="ml-7 flex w-full max-w-2xl flex-col gap-5">
+    <div className="relative flex w-full flex-col justify-center">
+      <Image
+        src="/images/hero_banner.png"
+        alt="Hero Background"
+        fill
+        className="-z-10 object-cover"
+        priority
+        quality={85}
+      />
+      <section className="z-10 flex w-full max-w-2xl flex-col gap-5 pl-20">
         <h3 className={`${inter.variable} text-3xl font-normal`}>
           Hi there, I'm Joe
         </h3>
@@ -17,15 +25,7 @@ export default function Hero() {
           building user-centric digital products and interactive experiences
         </p>
         <Button className="mt-4 w-56 text-white">Let's get started</Button>
-      </div>
-      <div className="relative h-60 w-60">
-        <Image
-          src="/images/profile.jpg"
-          alt="profile image"
-          className="object-cover"
-          fill
-        ></Image>
-      </div>
-    </>
+      </section>
+    </div>
   );
 }

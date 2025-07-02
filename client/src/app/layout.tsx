@@ -23,11 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${inter.variable} ${azaret_mono.variable} mx-6 flex w-full flex-col justify-self-center scroll-smooth antialiased`}
+        className={`${inter.variable} ${azaret_mono.variable} flex h-screen w-full flex-col justify-self-center antialiased`}
       >
         <Header />
-        {children}
-        <Footer />
+        <main className="scrollbar-hide flex-1 snap-y snap-mandatory overflow-y-auto scroll-smooth">
+          {children}
+          <Footer />
+        </main>
       </body>
     </html>
   );
