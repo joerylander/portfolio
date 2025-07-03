@@ -34,5 +34,13 @@
       "external_link": "https://rylandermedia.wixstudio.com/ptjonraynor"
     }
   ],
-  "testimonials": []
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Morgan Freeman",
+      "title": "product manager",
+      "testimonial": "From day one, the execution was tight and timelines were respected. Our site looks and feels premium, and feedback has been all fire.",
+      "img_src": "profile.jpg"
+    }
+  ]
 }
