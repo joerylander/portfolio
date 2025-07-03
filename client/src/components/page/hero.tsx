@@ -24,7 +24,9 @@ export default function Hero() {
           I help people and brands to reach their goals by designing and
           building user-centric digital products and interactive experiences
         </p>
-        <Button className="mt-4 w-56 text-white">Let's get started</Button>
+        <Button size={'lg'} className="mt-8 w-1/2">
+          Let's get started!
+        </Button>
       </section>
     </div>
   );

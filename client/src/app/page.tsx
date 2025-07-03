@@ -14,28 +14,28 @@ export default function Home() {
 
       <SectionWrapper
         id="services"
-        className="flex snap-start flex-col items-center gap-20"
+        className="mx-8 flex snap-start flex-col items-center gap-20"
       >
         <Services />
       </SectionWrapper>
 
       <SectionWrapper
         id="projects"
-        className="flex snap-start flex-col items-center gap-20"
+        className="mx-8 flex snap-start flex-col items-center gap-20"
       >
         <Projects />
       </SectionWrapper>
 
       <SectionWrapper
         id="testimonials"
-        className="flex snap-start flex-col items-center gap-20"
+        className="mx-8 flex snap-start flex-col items-center gap-20"
       >
         <Testimonials />
       </SectionWrapper>
 
       <SectionWrapper
         id="contact"
-        className="flex snap-center flex-col items-center gap-20"
+        className="mx-8 flex snap-center flex-col items-center gap-20"
       >
         <Contact />
       </SectionWrapper>

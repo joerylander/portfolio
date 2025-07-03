@@ -5,7 +5,7 @@ import Logo from '@/components/shared/logo';
 
 export default function Header() {
   return (
-    <header className="bg-background/95 border-border/40 sticky top-0 z-50 mx-6 flex h-16 items-center justify-between border-b backdrop-blur-sm">
+    <header className="bg-background/95 border-border/40 sticky top-0 z-50 mx-8 flex h-16 items-center justify-between border-b backdrop-blur-sm">
       <Logo />
       <nav className="flex gap-24">
         <Link
@@ -27,7 +27,9 @@ export default function Header() {
           Testimonials
         </Link>
       </nav>
-      <Button size={'lg'}>Book us</Button>
+      <Button variant={'default'} size={'lg'}>
+        Book us
+      </Button>
     </header>
   );
 }

@@ -48,7 +48,7 @@ export default function Contact() {
             placeholder="Describe what you need help with..."
             className={`${azaret_mono.className} h-32`}
           />
-          <Button type="submit" className="mx-auto h-12 w-1/2">
+          <Button type="submit" size={'lg'} className="mx-auto h-12 w-1/2">
             Let's get started!
           </Button>
         </form>
