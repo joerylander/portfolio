@@ -3,12 +3,12 @@
     {
       "id": 1,
       "title": "modern design",
-      "description": "Your website will look stunning and function perfectly on any device – desktop, tablet, or mobile. No outdated designs, just sleek, modern, and user-friendly experiences."
+      "description": "Your website will look stunning and function perfectly on any device - desktop, tablet, or mobile. No outdated designs, just sleek, modern, and user-friendly experiences."
     },
     {
       "id": 2,
       "title": "comprehensive",
-      "description": "What’s the point of a website if no one finds it? We build websites with SEO best practices to help you rank on Google and attract organic traffic."
+      "description": "What's the point of a website if no one finds it? We build websites with SEO best practices to help you rank on Google and attract organic traffic."
     },
     {
       "id": 3,
@@ -19,11 +19,19 @@
   "projects": [
     {
       "id": 1,
-      "title": "napparaten",
-      "description": "a website",
-      "img_alt": "napparaten banner",
+      "title": "Napparaten",
+      "description": "A responsive website for a Stockholm-based naprapathy clinic. Designed to highlight services, build trust, and simplify appointment bookings.",
+      "img_alt": "Homepage of Napparaten, a Stockholm naprapathy clinic, with clean layout, calming visuals, and a prominent call-to-action to book an appointment",
       "img_src": "napparaten.png",
       "external_link": "https://napparaten.se/"
+    },
+    {
+      "id": 2,
+      "title": "Jon Raynor PT",
+      "description": "A modern site for a personal trainer, built to showcase training programs and client results. Focused on clarity, motivation, and conversion.",
+      "img_alt": "Homepage of personal trainer Jon Raynor, featuring bold fitness imagery, a motivational headline, and links to training services.",
+      "img_src": "pt_jonraynor.png",
+      "external_link": "https://rylandermedia.wixstudio.com/ptjonraynor"
     }
   ],
   "testimonials": []

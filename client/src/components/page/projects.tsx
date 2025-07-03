@@ -33,7 +33,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <p
-                    className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90`}
+                    className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90 capitalize`}
                   >
                     {project.description}
                   </p>
