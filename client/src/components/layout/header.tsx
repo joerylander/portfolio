@@ -1,9 +1,13 @@
-import { azaret_mono } from '@/lib/fonts';
+'use client';
+
 import Link from 'next/link';
+import { azaret_mono } from '@/lib/fonts';
+import { useNavigateTo } from '@/lib/navigation';
 import { Button } from '@/components/ui/button';
 import Logo from '@/components/shared/logo';
 
 export default function Header() {
+  const { goToContact } = useNavigateTo();
   return (
     <header className="bg-background/95 border-border/40 sticky top-0 z-50 mx-8 flex h-16 items-center justify-between border-b backdrop-blur-sm">
       <Logo />
@@ -27,7 +31,7 @@ export default function Header() {
           Testimonials
         </Link>
       </nav>
-      <Button variant={'default'} size={'lg'}>
+      <Button variant={'default'} size={'lg'} onClick={goToContact}>
         Book us
       </Button>
     </header>

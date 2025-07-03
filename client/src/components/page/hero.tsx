@@ -1,8 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 import { azaret_mono, inter } from '@/lib/fonts';
 import { Button } from '../ui/button';
+import { useNavigateTo } from '@/lib/navigation';
 
 export default function Hero() {
+  const { goToContact } = useNavigateTo();
+
   return (
     <div className="relative flex w-full flex-col justify-center">
       <Image
@@ -24,7 +29,7 @@ export default function Hero() {
           I help people and brands to reach their goals by designing and
           building user-centric digital products and interactive experiences
         </p>
-        <Button size={'lg'} className="mt-8 w-1/2">
+        <Button size={'lg'} className="mt-8 w-1/2" onClick={goToContact}>
           Let's get started!
         </Button>
       </section>
