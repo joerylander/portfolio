@@ -1,23 +1,27 @@
-import { azaret_mono, inter } from '@/lib/fonts';
+'use client';
+
 import Image from 'next/image';
+import { useNavigateTo } from '@/lib/navigation';
+import { azaret_mono, inter } from '@/lib/fonts';
 import { Button } from '../ui/button';
-import { services } from '@/db/data.json';
+import { projects } from '@/db/data.json';
 import { ExternalLink } from 'lucide-react';
 
 export default function Projects() {
+  const { openInNewTab } = useNavigateTo();
   return (
     <>
       <h2 className={`${inter.className} text-4xl font-bold`}>Projects</h2>
-      <div className="grid h-[1200px] w-full grid-cols-2 gap-x-14 gap-y-8">
-        {services.map((service) => (
+      <div className="grid w-full auto-rows-[400px] grid-cols-2 gap-x-14 gap-y-8">
+        {projects.map((project) => (
           <article
-            key={service.id}
-            className="group h-full w-full cursor-pointer justify-self-center p-0"
+            key={project.id}
+            className="group h-full w-full justify-self-center p-0"
           >
-            <div className="relative h-full w-full transition-transform duration-300 group-hover:scale-110">
+            <div className="relative h-full w-full transition-transform duration-300 group-hover:scale-105">
               <Image
-                src="/images/profile.jpg"
-                alt="project"
+                src={`/images/portfolio/${project.img_src}`}
+                alt={project.img_alt}
                 fill
                 className="object-cover"
               />
@@ -26,20 +30,19 @@ export default function Projects() {
                   <h3
                     className={`${inter.className} mb-2 text-2xl font-bold text-white`}
                   >
-                    Website Title
+                    {project.title}
                   </h3>
                   <p
                     className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90`}
                   >
-                    <b>Description text:</b> Discover breathtaking views and
-                    unforgettable experiences in the heart of nature. Perfect
-                    for hiking enthusiasts and adventure seekers.
+                    {project.description}
                   </p>
 
                   <div className="flex gap-2">
                     <Button
                       size="lg"
                       className="bg-white text-black hover:bg-white/90"
+                      onClick={() => openInNewTab(project.external_link)}
                     >
                       Visit site
                       <ExternalLink />

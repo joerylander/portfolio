@@ -16,5 +16,15 @@
       "description": "A website needs updates, security checks, and tweaks to stay relevant. We offer post-launch support, troubleshooting, and maintenance so you never have to worry."
     }
   ],
-  "projects": []
+  "projects": [
+    {
+      "id": 1,
+      "title": "napparaten",
+      "description": "a website",
+      "img_alt": "napparaten banner",
+      "img_src": "napparaten.png",
+      "external_link": "https://napparaten.se/"
+    }
+  ],
+  "testimonials": []
 }

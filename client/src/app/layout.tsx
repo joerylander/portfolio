@@ -26,7 +26,7 @@ export default function RootLayout({
         className={`${inter.variable} ${azaret_mono.variable} flex h-screen w-full flex-col justify-self-center antialiased`}
       >
         <Header />
-        <main className="scrollbar-hide flex-1 snap-y snap-mandatory overflow-y-auto scroll-smooth">
+        <main className="scrollbar-hide flex-1 snap-y snap-proximity overflow-y-auto scroll-smooth">
           {children}
           <Footer />
         </main>
