@@ -33,8 +33,6 @@ export const useFetch = <T>(
       }
 
       const result = await response.json();
-      console.log(result);
-
       setData(result);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An error occurred');
