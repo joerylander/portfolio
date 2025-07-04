@@ -60,8 +60,10 @@ export default function Contact() {
         }),
       });
 
-      if (res.ok) console.log('Message sent successfully');
-      else console.error('Submission failed');
+      if (res.ok) {
+        form.reset();
+        console.log('Message sent successfully');
+      } else console.error('Submission failed');
     } catch (e) {
       console.error(
         e instanceof Error ? e.message : 'Error: Could not submit message',
