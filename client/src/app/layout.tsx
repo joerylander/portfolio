@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
 import './globals.css';
+import type { Metadata } from 'next';
 import { azaret_mono, inter } from '@/lib/fonts';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
