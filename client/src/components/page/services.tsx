@@ -15,7 +15,7 @@ export default function Services() {
   if (loading) return <div>Loading services...</div>;
   return (
     <>
-      <h2 className={`${inter.className} text-4xl font-bold`}>
+      <h2 className={`${inter.className} text-center text-4xl font-bold`}>
         Your Website Should Do more Than Just Look Good - It Should Convert
       </h2>
       <div className="flex flex-col gap-10 md:flex-row">

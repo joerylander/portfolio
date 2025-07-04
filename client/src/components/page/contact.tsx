@@ -20,17 +20,17 @@ export default function Contact() {
     firstName: z
       .string()
       .min(2, { message: 'First name must be at least 2 characters.' })
-      .max(50, { message: 'First name can maximum be 50 characters long.' }),
+      .max(30, { message: 'First name can maximum be 30 characters long.' }),
     lastName: z
       .string()
       .min(2, { message: 'Last name must be at least 2 characters.' })
-      .max(50, { message: 'Last name can maximum be 50 characters long.' }),
-    email: z
+      .max(30, { message: 'Last name can maximum be 30 characters long.' }),
+    email: z.string(),
+    message: z
       .string()
-      .min(2, { message: 'Email must be at least 2 characters.' })
-      .max(50, { message: 'Email can maximum be 50 characters long.' }),
-    message: z.string().min(10).max(200),
+      .min(10, { message: 'Message must be at least 10 characters.' }),
   });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -41,8 +41,32 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(value: z.infer<typeof formSchema>) {
-    console.log(value);
+  async function onSubmit(formData: z.infer<typeof formSchema>) {
+    const { firstName, lastName, email, message } = formData;
+
+    try {
+      const res = await fetch('https://formspree.io/f/mzzgwwlv', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: `${firstName} ${lastName}`,
+          firstName,
+          lastName,
+          email,
+          message,
+        }),
+      });
+
+      if (res.ok) console.log('Message sent successfully');
+      else console.error('Submission failed');
+    } catch (e) {
+      console.error(
+        e instanceof Error ? e.message : 'Error: Could not submit message',
+      );
+    }
   }
 
   return (
@@ -64,7 +88,7 @@ export default function Contact() {
                       id="firstName"
                       type="text"
                       className={azaret_mono.className}
-                      placeholder="First Name"
+                      placeholder="First name"
                       {...field}
                     />
                   </FormControl>
@@ -82,7 +106,7 @@ export default function Contact() {
                       id="lastName"
                       type="text"
                       className={azaret_mono.className}
-                      placeholder="Last Name"
+                      placeholder="Last name"
                       {...field}
                     />
                   </FormControl>
