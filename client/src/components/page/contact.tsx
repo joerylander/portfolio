@@ -7,10 +7,8 @@ import { Button } from '../ui/button';
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from '../ui/form';
 import { Input } from '../ui/input';
@@ -128,31 +126,6 @@ export default function Contact() {
               </FormItem>
             )}
           />
-          {/* <div className="flex gap-10">
-            <Input
-              id="firstName"
-              type="text"
-              placeholder="First Name"
-              className={azaret_mono.className}
-            />
-            <Input
-              id="lastName"
-              type="text"
-              placeholder="Last Name"
-              className={azaret_mono.className}
-            />
-          </div>
-          <Input
-            id="email"
-            type="text"
-            placeholder="E-mail"
-            className={azaret_mono.className}
-          />
-          <Textarea
-            id="message"
-            placeholder="Describe what you need help with..."
-            className={`${azaret_mono.className} h-32`}
-          />*/}
           <Button type="submit" size="lg" className="mx-auto h-12 w-1/2">
             Let's get started!
           </Button>
