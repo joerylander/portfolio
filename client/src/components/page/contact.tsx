@@ -3,6 +3,7 @@
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { toast } from 'sonner';
 import { Button } from '../ui/button';
 import {
   Form,
@@ -43,8 +44,7 @@ export default function Contact() {
 
   async function onSubmit(formData: z.infer<typeof formSchema>) {
     const { firstName, lastName, email, message } = formData;
-
-    try {
+    const submission = async () => {
       const res = await fetch('https://formspree.io/f/mzzgwwlv', {
         method: 'POST',
         headers: {
@@ -60,15 +60,26 @@ export default function Contact() {
         }),
       });
 
-      if (res.ok) {
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(
+          errorData.message || 'Failed to send message. Please try again.',
+        );
+      }
+
+      return res;
+    };
+
+    toast.promise(submission(), {
+      loading: 'Sending message...',
+      success: () => {
         form.reset();
-        console.log('Message sent successfully');
-      } else console.error('Submission failed');
-    } catch (e) {
-      console.error(
-        e instanceof Error ? e.message : 'Error: Could not submit message',
-      );
-    }
+        return 'Message sent successfully!';
+      },
+      error: (err: Error) =>
+        err.message ||
+        'Something went wrong. Try instead sending to the email at the bottom of the page...',
+    });
   }
 
   return (
