@@ -33,7 +33,7 @@ export default function Hero() {
           I help people and brands to reach their goals by designing and
           building user-centric digital products and interactive experiences
         </h4>
-        <CtaBtn text="Grow your business now" className="mt-8 w-1/2" />
+        <CtaBtn text="Let's work together" className="mt-8 w-1/2" />
       </section>
     </div>
   );
