@@ -1,12 +1,7 @@
 import { azaret_mono, inter } from '@/lib/fonts';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { useFetch } from '@/lib/fetch';
-
-interface Service {
-  id: number;
-  title: string;
-  description: string;
-}
+import { Service } from '@/types/types';
 
 export default function Services() {
   const { data, loading } = useFetch<Service[]>(

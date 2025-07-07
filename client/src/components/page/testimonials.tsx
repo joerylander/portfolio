@@ -6,14 +6,7 @@ import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { azaret_mono, inter } from '@/lib/fonts';
 import { useFetch } from '@/lib/fetch';
-
-interface Testimonial {
-  id: number;
-  name: string;
-  title: string;
-  testimonial: string;
-  img_src: string;
-}
+import { Testimonial } from '@/types/types';
 
 export default function Testimonials() {
   const { data, loading } = useFetch<Testimonial[]>(

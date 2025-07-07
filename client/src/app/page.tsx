@@ -27,28 +27,28 @@ export default function Home() {
 
       <SectionWrapper
         id="services"
-        className="mt-16 snap-start flex-col items-center gap-20 px-8 md:mt-0"
+        className="mt-16 snap-start flex-col items-center gap-20 px-8"
       >
         <Services />
       </SectionWrapper>
 
       <SectionWrapper
         id="projects"
-        className="mt-16 snap-start flex-col items-center gap-20 px-8 md:mt-0"
+        className="mt-16 snap-start flex-col items-center gap-20 px-8"
       >
         <Projects />
       </SectionWrapper>
 
       <SectionWrapper
         id="testimonials"
-        className="mt-16 snap-start flex-col items-center gap-20 px-8 md:mt-0"
+        className="mt-16 snap-start flex-col items-center gap-20 px-8"
       >
         <Testimonials />
       </SectionWrapper>
 
       <SectionWrapper
         id="contact"
-        className="mt-16 snap-center flex-col items-center gap-20 px-8 md:mt-0"
+        className="mt-16 snap-center flex-col items-center gap-20 px-8"
       >
         <Contact />
       </SectionWrapper>

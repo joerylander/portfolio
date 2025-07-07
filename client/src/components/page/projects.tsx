@@ -6,15 +6,7 @@ import { inter } from '@/lib/fonts';
 import { Button } from '../ui/button';
 import { ExternalLink } from 'lucide-react';
 import { useFetch } from '@/lib/fetch';
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  img_src: string;
-  img_alt: string;
-  external_link: string;
-}
+import { Project } from '@/types/types';
 
 export default function Projects() {
   const { openInNewTab } = useNavigateTo();
