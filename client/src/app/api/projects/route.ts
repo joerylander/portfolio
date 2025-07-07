@@ -6,6 +6,7 @@ export async function GET() {
     const projects = await getDataByType<'projects'>('projects');
     return NextResponse.json(projects);
   } catch (error) {
+    console.error('Error loading projects:', error);
     return NextResponse.json(
       { error: 'Failed to load projects' },
       { status: 500 },

@@ -6,6 +6,7 @@ export async function GET() {
     const services = await getDataByType<'services'>('services');
     return NextResponse.json(services);
   } catch (error) {
+    console.error('Error loading services:', error);
     return NextResponse.json(
       { error: 'Failed to load services' },
       { status: 500 },
