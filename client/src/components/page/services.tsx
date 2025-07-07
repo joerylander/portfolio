@@ -4,9 +4,7 @@ import { useFetch } from '@/lib/fetch';
 import { Service } from '@/types/types';
 
 export default function Services() {
-  const { data, loading } = useFetch<Service[]>(
-    'http://localhost:4000/services',
-  );
+  const { data, loading } = useFetch<Service[]>('/api/services');
   if (loading) return <div>Loading services...</div>;
   return (
     <>

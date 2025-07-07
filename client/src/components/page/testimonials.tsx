@@ -9,9 +9,7 @@ import { useFetch } from '@/lib/fetch';
 import { Testimonial } from '@/types/types';
 
 export default function Testimonials() {
-  const { data, loading } = useFetch<Testimonial[]>(
-    'http://localhost:4000/testimonials',
-  );
+  const { data, loading } = useFetch<Testimonial[]>('/api/testimonials');
 
   const autoplay = useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true }),

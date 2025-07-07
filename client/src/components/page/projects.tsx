@@ -10,9 +10,7 @@ import { Project } from '@/types/types';
 
 export default function Projects() {
   const { openInNewTab } = useNavigateTo();
-  const { data, loading } = useFetch<Project[]>(
-    'http://localhost:4000/projects',
-  );
+  const { data, loading } = useFetch<Project[]>('/api/projects');
   if (loading) return <div>Loading projects...</div>;
   return (
     <>
