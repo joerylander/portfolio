@@ -11,9 +11,10 @@ export default function Hero() {
         src="/images/hero_banner.png"
         alt="Hero Background"
         fill
-        className="-z-10 object-cover"
+        className="-z-10 object-cover object-right sm:object-left"
         priority
-        quality={85}
+        quality={90}
+        sizes="100vw"
       />
       <section className="z-10 flex max-w-2xl min-w-xs flex-col items-center gap-5 px-4 sm:w-full sm:items-start sm:px-0 sm:pl-20">
         <h3
