@@ -37,10 +37,17 @@
   "testimonials": [
     {
       "id": 1,
-      "name": "Morgan Freeman",
-      "title": "product manager",
+      "name": "Daniel Yeoh",
+      "title": "naprapath",
+      "testimonial": "I hired Joe to build my website and was very satisfied with the collaboration. He worked professionally, paid attention to detail, and contributed valuable ideas throughout the process. I can highly recommend him.",
+      "img_src": "daniel_yeoh.png"
+    },
+    {
+      "id": 2,
+      "name": "Edwina Sun",
+      "title": "Project Manager",
       "testimonial": "From day one, the execution was tight and timelines were respected. Our site looks and feels premium, and feedback has been all fire.",
-      "img_src": "profile.jpg"
+      "img_src": "edwina_sun.jpg"
     }
   ]
 }
