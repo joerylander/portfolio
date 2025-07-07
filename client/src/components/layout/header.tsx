@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import { Menu } from 'lucide-react';
 import { azaret_mono } from '@/lib/fonts';
 import { Button } from '@/components/ui/button';
@@ -21,6 +22,8 @@ import {
 import CtaBtn from '../shared/cta-btn';
 
 export default function Header() {
+  const [openNav, setOpenNav] = useState(false);
+
   return (
     <header className="bg-background/95 border-border/40 sticky top-0 z-50 mx-8 flex h-16 items-center justify-between border-b backdrop-blur-sm">
       <Logo />
@@ -59,7 +62,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div className="md:hidden">
-        <Sheet>
+        <Sheet open={openNav} onOpenChange={setOpenNav}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
               <Menu className="size-6" />
@@ -77,24 +80,31 @@ export default function Header() {
               <Link
                 href="#services"
                 className={`${azaret_mono.className} hover:text-primary transition-colors hover:underline`}
+                onClick={() => setOpenNav(false)}
               >
                 Services
               </Link>
               <Link
                 href="#projects"
                 className={`${azaret_mono.className} hover:text-primary transition-colors hover:underline`}
+                onClick={() => setOpenNav(false)}
               >
                 Projects
               </Link>
               <Link
                 href="#testimonials"
                 className={`${azaret_mono.className} hover:text-primary transition-colors hover:underline`}
+                onClick={() => setOpenNav(false)}
               >
                 Testimonials
               </Link>
             </nav>
 
-            <CtaBtn text="Book us" className="mx-auto mt-8 w-1/2" />
+            <CtaBtn
+              text="Book us"
+              className="mx-auto mt-8 w-1/2"
+              onClick={() => setOpenNav(false)}
+            />
           </SheetContent>
         </Sheet>
       </div>
