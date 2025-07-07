@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface UseFetchOptions {
   immediate?: boolean; // Whether to fetch immediately on mount
@@ -21,7 +21,7 @@ export const useFetch = <T>(
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     setLoading(true);
     setError(null);
 
@@ -39,13 +39,13 @@ export const useFetch = <T>(
     } finally {
       setLoading(false);
     }
-  };
+  }, [url]);
 
   useEffect(() => {
     if (options.immediate) {
       fetchData();
     }
-  }, [url, options.immediate]);
+  }, [fetchData, options.immediate]);
 
   return { data, loading, error, refetch: fetchData };
 };

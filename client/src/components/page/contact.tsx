@@ -168,7 +168,7 @@ export default function Contact() {
             )}
           />
           <Button type="submit" size="lg" className="mx-auto h-12 w-1/2">
-            Let's connect!
+            Let&apos;s connect!
           </Button>
         </form>
       </Form>

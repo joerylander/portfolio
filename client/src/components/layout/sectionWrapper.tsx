@@ -2,21 +2,19 @@
 
 import { motion } from 'motion/react';
 
-namespace SectionWrapper {
-  export type Props = {
-    id: string;
-    children: React.ReactNode;
-    className?: string;
-    animate?: boolean;
-  };
-}
+export type SectionWrapperProps = {
+  id: string;
+  children: React.ReactNode;
+  className?: string;
+  animate?: boolean;
+};
 
 export default function SectionWrapper({
   id,
   children,
   className,
   animate,
-}: SectionWrapper.Props) {
+}: SectionWrapperProps) {
   if (animate) {
     return (
       <motion.section

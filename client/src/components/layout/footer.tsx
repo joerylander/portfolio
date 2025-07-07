@@ -3,11 +3,11 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Footer() {
-  // @ts-ignore
+  // @ts-expect-error currently only way to insert icon type inside FontAwesome
   const githubIcon: IconProp = 'fa-brands fa-github';
-  // @ts-ignore
+  // @ts-expect-error currently only way to insert icon type inside FontAwesome
   const linkedinIcon: IconProp = 'fa-brands fa-linkedin';
-  // @ts-ignore
+  // @ts-expect-error currently only way to insert icon type inside FontAwesome
   const xTwitterIcon: IconProp = 'fa-brands fa-x-twitter';
   return (
     <footer className="mx-0 mb-4 flex max-h-36 min-h-28 snap-start flex-col items-center justify-between px-8 lg:mx-8 lg:mb-0 lg:flex-row lg:px-0">

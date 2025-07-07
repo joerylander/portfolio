@@ -20,7 +20,7 @@ export default function Hero() {
         <h3
           className={`${inter.variable} text-xl font-normal sm:text-2xl md:text-3xl`}
         >
-          Hi there, I'm Joe
+          Hi there, I&apos;m Joe
         </h3>
         <h1
           className={`${inter.variable} text-center text-3xl sm:text-4xl md:text-5xl`}
