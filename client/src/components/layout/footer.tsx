@@ -10,7 +10,7 @@ export default function Footer() {
   // @ts-ignore
   const xTwitterIcon: IconProp = 'fa-brands fa-x-twitter';
   return (
-    <footer className="mx-0 flex h-28 min-h-20 snap-start flex-col items-center justify-between lg:mx-8 lg:flex-row">
+    <footer className="mx-0 flex max-h-28 min-h-20 snap-start flex-col items-center justify-between px-8 lg:mx-8 lg:flex-row lg:px-0">
       <p
         className={`${azaret_mono.className} text-sm break-all capitalize md:break-normal`}
       >

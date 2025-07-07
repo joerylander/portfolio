@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useNavigateTo } from '@/lib/navigation';
-import { azaret_mono, inter } from '@/lib/fonts';
+import { inter } from '@/lib/fonts';
 import { Button } from '../ui/button';
 import { ExternalLink } from 'lucide-react';
 import { useFetch } from '@/lib/fetch';
@@ -24,7 +24,11 @@ export default function Projects() {
   if (loading) return <div>Loading projects...</div>;
   return (
     <>
-      <h2 className={`${inter.className} text-4xl font-bold`}>Projects</h2>
+      <h2
+        className={`${inter.className} text-center text-2xl font-bold md:text-3xl lg:text-4xl`}
+      >
+        Projects
+      </h2>
       <div className="grid w-full auto-rows-[400px] grid-cols-1 gap-x-14 gap-y-8 md:grid-cols-2">
         {data &&
           data.map((p) => (
@@ -38,6 +42,7 @@ export default function Projects() {
                   alt={p.img_alt}
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-6 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <div className="translate-y-4 transform transition-transform duration-300 group-hover:translate-y-0">

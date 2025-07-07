@@ -26,7 +26,7 @@ export default function Contact() {
       .string()
       .min(2, { message: 'Last name must be at least 2 characters.' })
       .max(30, { message: 'Last name can maximum be 30 characters long.' }),
-    email: z.string(),
+    email: z.string().email(),
     message: z
       .string()
       .min(10, { message: 'Message must be at least 10 characters.' }),
@@ -84,13 +84,17 @@ export default function Contact() {
 
   return (
     <>
-      <h2 className={`${inter.className} text-4xl font-bold`}>Contact</h2>
+      <h2
+        className={`${inter.className} text-center text-2xl font-bold md:text-3xl lg:text-4xl`}
+      >
+        Contact
+      </h2>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex h-[600px] w-full max-w-3xl flex-col gap-8"
         >
-          <div className="flex gap-8">
+          <div className="flex flex-col gap-8 md:flex-row">
             <FormField
               control={form.control}
               name="firstName"
@@ -100,7 +104,7 @@ export default function Contact() {
                     <Input
                       id="firstName"
                       type="text"
-                      className={azaret_mono.className}
+                      className={`${azaret_mono.className} placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
                       placeholder="First name"
                       {...field}
                     />
@@ -118,7 +122,7 @@ export default function Contact() {
                     <Input
                       id="lastName"
                       type="text"
-                      className={azaret_mono.className}
+                      className={`${azaret_mono.className} placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
                       placeholder="Last name"
                       {...field}
                     />
@@ -137,7 +141,7 @@ export default function Contact() {
                   <Input
                     id="email"
                     type="email"
-                    className={azaret_mono.className}
+                    className={`${azaret_mono.className} placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
                     placeholder="E-mail"
                     {...field}
                   />
@@ -154,7 +158,7 @@ export default function Contact() {
                 <FormControl>
                   <Textarea
                     id="message"
-                    className={`${azaret_mono.className} h-32`}
+                    className={`${azaret_mono.className} h-32 placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
                     placeholder="Describe what you need help with..."
                     {...field}
                   />

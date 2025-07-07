@@ -13,6 +13,7 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -67,6 +68,9 @@ export default function Header() {
           <SheetContent side="right" className="w-64">
             <SheetHeader>
               <SheetTitle>Menu</SheetTitle>
+              <SheetDescription>
+                Use the links below to navigate through the site.
+              </SheetDescription>
             </SheetHeader>
 
             <nav className="mt-6 flex flex-col items-center gap-8">
