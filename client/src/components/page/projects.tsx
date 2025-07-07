@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <>
       <h2 className={`${inter.className} text-4xl font-bold`}>Projects</h2>
-      <div className="grid w-full auto-rows-[400px] grid-cols-2 gap-x-14 gap-y-8">
+      <div className="grid w-full auto-rows-[400px] grid-cols-1 gap-x-14 gap-y-8 md:grid-cols-2">
         {data &&
           data.map((p) => (
             <article

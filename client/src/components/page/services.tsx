@@ -16,7 +16,7 @@ export default function Services() {
   return (
     <>
       <h2
-        className={`${inter.className} mt-8 text-center text-2xl font-bold sm:text-3xl md:mt-0 md:text-4xl`}
+        className={`${inter.className} text-center text-2xl font-bold md:text-3xl lg:text-4xl`}
       >
         Your Website Should Do more Than Just Look Good - It Should Convert
       </h2>

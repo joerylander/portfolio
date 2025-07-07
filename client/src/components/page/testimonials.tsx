@@ -26,50 +26,57 @@ export default function Testimonials() {
 
   if (loading) return <div>Loading testimonials...</div>;
   return (
-    <Carousel
-      plugins={[autoplay.current]}
-      opts={{ loop: true, align: 'center' }}
-      className="w-full max-w-xl"
-      onMouseEnter={autoplay.current.stop}
-      onMouseLeave={autoplay.current.reset}
-    >
-      <CarouselContent>
-        {data &&
-          data.map((t) => {
-            const nameParts = t.name.split(' ');
-            const initials = nameParts[0][0] + nameParts[1][0];
-            return (
-              <CarouselItem key={t.id}>
-                <article className="flex h-[500px] max-w-fit">
-                  <div className="flex flex-col items-center justify-evenly">
-                    <Avatar className="h-40 w-40">
-                      <AvatarImage
-                        src={`/images/testimonials/${t.img_src}`}
-                        alt={`avatar of ${t.name.toLowerCase()}`}
-                        className="object-cover"
-                      />
-                      <AvatarFallback>{initials}</AvatarFallback>
-                    </Avatar>
+    <>
+      <h2
+        className={`${inter.className} text-center text-2xl font-bold md:text-3xl lg:text-4xl`}
+      >
+        What people say about us
+      </h2>
+      <Carousel
+        plugins={[autoplay.current]}
+        opts={{ loop: true, align: 'center' }}
+        className="w-full max-w-xl"
+        onMouseEnter={autoplay.current.stop}
+        onMouseLeave={autoplay.current.reset}
+      >
+        <CarouselContent>
+          {data &&
+            data.map((t) => {
+              const nameParts = t.name.split(' ');
+              const initials = nameParts[0][0] + nameParts[1][0];
+              return (
+                <CarouselItem key={t.id}>
+                  <article className="flex h-[500px] max-w-fit">
+                    <div className="flex flex-col items-center justify-evenly">
+                      <Avatar className="h-40 w-40">
+                        <AvatarImage
+                          src={`/images/testimonials/${t.img_src}`}
+                          alt={`avatar of ${t.name.toLowerCase()}`}
+                          className="object-cover"
+                        />
+                        <AvatarFallback>{initials}</AvatarFallback>
+                      </Avatar>
 
-                    <p className={`${azaret_mono.className} text-center`}>
-                      {t.testimonial}
-                    </p>
-                    <h3
-                      className={`${inter.className} text-4xl font-bold capitalize`}
-                    >
-                      {t.name}
-                    </h3>
-                    <h4
-                      className={`${azaret_mono.className} font-semibold uppercase opacity-80`}
-                    >
-                      {t.title}
-                    </h4>
-                  </div>
-                </article>
-              </CarouselItem>
-            );
-          })}
-      </CarouselContent>
-    </Carousel>
+                      <p className={`${azaret_mono.className} text-center`}>
+                        {t.testimonial}
+                      </p>
+                      <h3
+                        className={`${inter.className} text-4xl font-bold capitalize`}
+                      >
+                        {t.name}
+                      </h3>
+                      <h4
+                        className={`${azaret_mono.className} font-semibold uppercase opacity-80`}
+                      >
+                        {t.title}
+                      </h4>
+                    </div>
+                  </article>
+                </CarouselItem>
+              );
+            })}
+        </CarouselContent>
+      </Carousel>
+    </>
   );
 }
