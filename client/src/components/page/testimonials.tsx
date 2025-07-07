@@ -47,8 +47,8 @@ export default function Testimonials() {
               return (
                 <CarouselItem key={t.id}>
                   <article className="flex h-[500px] max-w-fit">
-                    <div className="flex flex-col items-center justify-evenly">
-                      <Avatar className="h-40 w-40">
+                    <div className="flex flex-col items-center gap-6 sm:justify-evenly sm:gap-0">
+                      <Avatar className="size-24 sm:size-32 md:size-40">
                         <AvatarImage
                           src={`/images/testimonials/${t.img_src}`}
                           alt={`avatar of ${t.name.toLowerCase()}`}
@@ -61,12 +61,12 @@ export default function Testimonials() {
                         {t.testimonial}
                       </p>
                       <h3
-                        className={`${inter.className} text-4xl font-bold capitalize`}
+                        className={`${inter.className} text-2xl font-bold capitalize sm:text-3xl md:text-4xl`}
                       >
                         {t.name}
                       </h3>
                       <h4
-                        className={`${azaret_mono.className} font-semibold uppercase opacity-80`}
+                        className={`${azaret_mono.className} text-base font-semibold uppercase opacity-80 sm:text-xl md:text-2xl`}
                       >
                         {t.title}
                       </h4>
