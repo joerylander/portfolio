@@ -25,7 +25,6 @@ export default function Header() {
       <Logo />
 
       {/* Desktop Navigation */}
-
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList className="gap-8 md:gap-12 lg:gap-16 xl:gap-24">
           <NavigationMenuItem>

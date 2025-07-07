@@ -131,10 +131,10 @@ h3 {
   @apply tracking-tight transition-colors;
 }
 a {
-  @apply hover:text-accent-foreground cursor-pointer text-base;
+  @apply hover:text-accent-foreground cursor-pointer text-xs sm:text-sm md:text-base;
 }
 p {
-  @apply transition-colors;
+  @apply text-xs transition-colors sm:text-sm md:text-base;
 }
 
 button {
