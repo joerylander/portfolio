@@ -101,7 +101,7 @@ export default function Header() {
             </nav>
 
             <CtaBtn
-              text="Book us"
+              text="Book now"
               className="mx-auto mt-8 w-1/2"
               onClick={() => setOpenNav(false)}
             />
