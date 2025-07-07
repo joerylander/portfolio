@@ -20,16 +20,16 @@
     {
       "id": 1,
       "title": "Napparaten",
-      "description": "A responsive website for a Stockholm-based naprapathy clinic. Designed to highlight services, build trust, and simplify appointment bookings.",
-      "img_alt": "Homepage of Napparaten, a Stockholm naprapathy clinic, with clean layout, calming visuals, and a prominent call-to-action to book an appointment",
+      "description": "A responsive website for a Stockholm-based naprapathy clinic. Designed to highlight services, build trust and simplify appointment bookings.",
+      "img_alt": "Homepage of Napparaten, a Stockholm naprapathy clinic, with clean layout, calming visuals and a prominent call-to-action to book an appointment",
       "img_src": "napparaten.png",
       "external_link": "https://napparaten.se/"
     },
     {
       "id": 2,
       "title": "Jon Raynor PT",
-      "description": "A modern site for a personal trainer, built to showcase training programs and client results. Focused on clarity, motivation, and conversion.",
-      "img_alt": "Homepage of personal trainer Jon Raynor, featuring bold fitness imagery, a motivational headline, and links to training services.",
+      "description": "A modern site for a personal trainer, built to showcase training programs and client results. Focused on clarity, motivation and conversion.",
+      "img_alt": "Homepage of personal trainer Jon Raynor, featuring bold fitness imagery, a motivational headline and links to training services.",
       "img_src": "pt_jonraynor.png",
       "external_link": "https://rylandermedia.wixstudio.com/ptjonraynor"
     }
