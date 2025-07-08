@@ -6,12 +6,12 @@ import CtaBtn from '../shared/cta-btn';
 
 export default function Hero() {
   return (
-    <div className="relative flex w-full flex-col justify-center">
+    <div className="relative flex min-h-[60vh] w-full flex-col justify-center sm:min-h-[70vh] md:min-h-[80vh]">
       <Image
-        src="/images/hero_banner.png"
+        src="/images/hero_banner.webp"
         alt="Hero Background"
         fill
-        className="-z-10 object-cover object-right sm:object-left"
+        className="-z-10 object-cover object-right"
         priority
         quality={90}
         sizes="100vw"
