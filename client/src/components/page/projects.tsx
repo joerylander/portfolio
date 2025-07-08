@@ -18,7 +18,7 @@ export default function Projects() {
       <h2
         className={`${inter.className} text-center text-2xl font-bold capitalize md:text-3xl lg:text-4xl`}
       >
-        See some of our work
+        Featured projects
       </h2>
 
       <div className="grid w-full auto-rows-[400px] grid-cols-1 gap-x-14 gap-y-8 md:grid-cols-2">
