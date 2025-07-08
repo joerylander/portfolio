@@ -11,15 +11,13 @@ import { Testimonial } from '@/types/types';
 export default function Testimonials() {
   const { data, loading } = useFetch<Testimonial[]>('/api/testimonials');
 
-  const autoplay = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true }),
-  );
+  const autoplay = useRef(Autoplay({ delay: 3000 }));
 
   if (loading) return <div>Loading testimonials...</div>;
   return (
     <>
       <h2
-        className={`${inter.className} text-center text-2xl font-bold md:text-3xl lg:text-4xl`}
+        className={`${inter.className} text-center text-2xl font-bold capitalize md:text-3xl lg:text-4xl`}
       >
         What people say about us
       </h2>
@@ -27,11 +25,12 @@ export default function Testimonials() {
         plugins={[autoplay.current]}
         opts={{ loop: true, align: 'center' }}
         className="w-full max-w-xl"
-        onMouseEnter={autoplay.current.stop}
-        onMouseLeave={autoplay.current.reset}
+        onMouseEnter={() => autoplay.current.stop()}
+        onMouseLeave={() => autoplay.current.play()}
       >
         <CarouselContent>
-          {data &&
+          {!loading &&
+            data &&
             data.map((t) => {
               const nameParts = t.name.split(' ');
               const initials = nameParts[0][0] + nameParts[1][0];
