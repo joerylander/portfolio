@@ -85,7 +85,7 @@ export default function Contact() {
   return (
     <>
       <h2
-        className={`${inter.className} text-center text-2xl font-bold md:text-3xl lg:text-4xl`}
+        className={`${inter.className} text-center text-2xl font-bold capitalize md:text-3xl lg:text-4xl`}
       >
         Connect with us
       </h2>
