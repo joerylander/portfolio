@@ -30,7 +30,7 @@ export default function Hero() {
         <h4
           className={`${azaret_mono.variable} text-center text-base sm:text-left sm:text-lg md:text-xl`}
         >
-          I craft fast, beautiful websites that grow your brand.
+          I craft fast, beautiful websites that help grow your brand.
         </h4>
         <CtaBtn text="Let's work together" className="mt-8 w-1/2" />
       </section>
