@@ -14,7 +14,7 @@ export default function Services() {
         Your Website Should Do more Than Just Look Good - It Should Convert
       </h2>
       <div className="flex flex-col gap-10 lg:flex-row">
-        {!loading
+        {loading
           ? Array.from({ length: 3 }).map((_, index) => (
               <Card
                 key={`skeleton-${index}`}
