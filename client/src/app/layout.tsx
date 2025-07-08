@@ -9,8 +9,8 @@ import { Toaster } from '@/components/ui/sonner';
 // static metadata
 export const metadata: Metadata = {
   title: {
-    default: 'Portfolio',
-    template: '%s | Portfolio',
+    default: 'Rylander Media Portfolio',
+    template: '%s | Rylander Media Portfolio',
     absolute: '',
   },
   description:
