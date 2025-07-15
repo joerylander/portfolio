@@ -16,7 +16,7 @@ export default function Projects() {
   return (
     <>
       <h2
-        className={`${inter.className} text-center text-2xl font-bold capitalize md:text-3xl lg:text-4xl`}
+        className={`${inter.className} text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl`}
       >
         Featured projects
       </h2>

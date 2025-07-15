@@ -9,7 +9,7 @@ export default function Services() {
   return (
     <>
       <h2
-        className={`${inter.className} text-center text-2xl font-bold md:text-3xl lg:text-4xl`}
+        className={`${inter.className} text-center text-2xl font-bold text-balance md:text-3xl lg:text-4xl`}
       >
         Your Website Should Do more Than Just Look Good - It Should Convert
       </h2>
@@ -48,7 +48,9 @@ export default function Services() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className={`${azaret_mono.className} font-light`}>
+                  <p
+                    className={`${azaret_mono.className} font-light text-pretty`}
+                  >
                     {service.description}
                   </p>
                 </CardContent>

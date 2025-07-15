@@ -18,17 +18,17 @@ export default function Hero() {
       />
       <section className="z-10 flex max-w-2xl min-w-xs flex-col items-center gap-5 px-4 sm:w-full sm:items-start sm:px-0 sm:pl-20">
         <h3
-          className={`${inter.variable} text-xl font-normal sm:text-2xl md:text-3xl`}
+          className={`${inter.variable} text-xl font-normal text-balance sm:text-2xl md:text-3xl`}
         >
           Hey, I&apos;m Joe - a digital artisan.
         </h3>
         <h1
-          className={`${inter.variable} text-center text-3xl sm:text-4xl md:text-5xl`}
+          className={`${inter.variable} text-center text-3xl text-balance sm:text-4xl md:text-5xl`}
         >
           Designer &amp; Developer
         </h1>
         <h4
-          className={`${azaret_mono.variable} text-center text-base sm:text-left sm:text-lg md:text-xl`}
+          className={`${azaret_mono.variable} text-center text-base text-pretty sm:text-left sm:text-lg md:text-xl`}
         >
           I craft fast, beautiful websites that help grow your brand.
         </h4>
