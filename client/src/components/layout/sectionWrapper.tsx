@@ -2,7 +2,7 @@
 
 import { motion } from 'motion/react';
 
-export type SectionWrapperProps = {
+export type Props = {
   id: string;
   children: React.ReactNode;
   className?: string;
@@ -14,12 +14,15 @@ export default function SectionWrapper({
   children,
   className,
   animate,
-}: SectionWrapperProps) {
+}: Props) {
+  const tailwindClasses =
+    'flex min-h-screen w-full scroll-mt-16 justify-center';
+
   if (animate) {
     return (
       <motion.section
         id={id}
-        className={`flex min-h-screen w-full scroll-mt-16 justify-center ${className ?? ''}`}
+        className={`${tailwindClasses} ${className ?? ''}`}
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -31,10 +34,7 @@ export default function SectionWrapper({
   }
 
   return (
-    <section
-      id={id}
-      className={`flex min-h-screen w-full scroll-mt-16 justify-center ${className ?? ''}`}
-    >
+    <section id={id} className={`${tailwindClasses} ${className ?? ''}`}>
       {children}
     </section>
   );
