@@ -34,7 +34,7 @@ export default function Footer() {
         </a>
         <a
           className="h-6 w-6 md:h-8 md:w-8"
-          href="https://x.com/CyberJojo9"
+          href="https://x.com/Overload_JR"
           target="_blank"
         >
           <FontAwesomeIcon icon={xTwitterIcon} />
