@@ -1,8 +1,8 @@
 interface CalendlyOptions {
   url: string;
   parentElement?: HTMLElement;
-  prefill?: Record<string, any>;
-  utm?: Record<string, any>;
+  prefill?: Record<string, unknown>;
+  utm?: Record<string, unknown>;
 }
 
 interface CalendlyWidget {
