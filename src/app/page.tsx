@@ -7,6 +7,7 @@ import Services from '@/components/page/services';
 import Projects from '@/components/page/projects';
 import Testimonials from '@/components/page/testimonials';
 import Contact from '@/components/page/contact';
+import About from '@/components/page/about';
 
 export default function Home() {
   useEffect(() => {
@@ -44,6 +45,13 @@ export default function Home() {
         className="mt-16 snap-start flex-col items-center gap-20 px-8"
       >
         <Testimonials />
+      </SectionWrapper>
+
+      <SectionWrapper
+        id="about"
+        className="mt-16 snap-start flex-col items-center gap-20 px-8"
+      >
+        <About />
       </SectionWrapper>
 
       <SectionWrapper

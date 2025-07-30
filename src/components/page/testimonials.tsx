@@ -16,9 +16,7 @@ export default function Testimonials() {
 
   return (
     <>
-      <h2
-        className={`${inter.className} text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl`}
-      >
+      <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
         What people say about us
       </h2>
       {loading ? (
@@ -68,14 +66,10 @@ export default function Testimonials() {
                           <AvatarFallback>{initials}</AvatarFallback>
                         </Avatar>
 
-                        <p
-                          className={`${azaret_mono.className} text-center text-pretty`}
-                        >
+                        <p className="text-center text-pretty">
                           {t.testimonial}
                         </p>
-                        <h3
-                          className={`${inter.className} text-2xl font-bold text-balance capitalize sm:text-3xl md:text-4xl`}
-                        >
+                        <h3 className="text-2xl font-bold text-balance capitalize sm:text-3xl md:text-4xl">
                           {t.name}
                         </h3>
                         <h4

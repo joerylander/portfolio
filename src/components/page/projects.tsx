@@ -15,9 +15,7 @@ export default function Projects() {
 
   return (
     <>
-      <h2
-        className={`${inter.className} text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl`}
-      >
+      <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
         Featured projects
       </h2>
 
@@ -52,9 +50,7 @@ export default function Projects() {
                   {/* Overlay */}
                   <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
                     <div className="translate-y-0 transform transition-transform duration-300 md:translate-y-4 md:group-hover:translate-y-0">
-                      <h3
-                        className={`${inter.className} mb-2 text-2xl font-bold text-white`}
-                      >
+                      <h3 className="mb-2 text-2xl font-bold text-white">
                         {project.title}
                       </h3>
                       <p
