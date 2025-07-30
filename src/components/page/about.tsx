@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
 export default function About() {
-  const paragraphStyle = 'text-xl text-pretty';
+  const paragraphStyle = '';
   return (
     <>
-      <div className="border-accent-foreground relative size-60 overflow-hidden rounded-full border-2">
+      <div className="border-accent-foreground relative size-48 overflow-hidden rounded-full border-2 md:size-60">
         <Image
           src="/images/profile_transparent_bg.png"
           alt="profile image"
@@ -18,29 +18,23 @@ export default function About() {
       <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
         My story
       </h2>
-      <article className="flex max-w-2xl flex-col gap-2">
-        <p className={paragraphStyle}>
-          Hello there, I&apos;m Joe Rylander, a web developer and designer
-          focused on helping fitness professionals and small businesses build
-          high-performing, conversion-focused websites.
+      <article className="flex max-w-2xl flex-col gap-4 text-justify text-pretty hyphens-auto">
+        <p>
+          Hello there, I&apos;m Joe Rylander, a professional web developer with
+          focus on helping fitness professionals and small businesses build
+          clean, high-performing &amp; conversion-focused websites.
         </p>
-        <p className={paragraphStyle}>
-          With a background in modern web technologies like Next.js, React,
-          Laravel &amp; Wordpress , I create fast, responsive sites that not
-          only look great — they work hard to grow your business.
+        <p>
+          I use modern tools like React, WordPress, and Laravel to build sites
+          that are fast, SEO-friendly, and easy to manage — whether you're
+          starting fresh or updating an existing one.
         </p>
-        <p className={paragraphStyle}>
-          Whether you&apos;re a personal trainer, gym owner, or wellness coach,
-          I understand what your clients are looking for online — trust,
-          transformation, and simplicity. I make sure your website delivers just
-          that. You focus on changing lives — I&apos;ll take care of the tech.
-        </p>
-        <p className={paragraphStyle}>
-          When I&apos;m not working, you&apos;ll often find me in the gym doing
-          calisthenics focued workout (
+        <p>
+          When I&apos;m not working, you&apos;ll often find me training
+          calisthenics (
           <span className="italic">pull-ups, push-ups, handstands</span>).
         </p>
-        <p className={paragraphStyle}>Let&apos;s build together!</p>
+        <p>Let&apos;s build together!</p>
       </article>
     </>
   );
