@@ -19,7 +19,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '@/components/ui/sheet';
-import CtaBtn from '../shared/cta-btn';
+import CalendlyBtn from '../shared/calendlyBtn';
 
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);
@@ -58,7 +58,7 @@ export default function Header() {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <CtaBtn text="Book us" className="hidden md:block" />
+      <CalendlyBtn text="Book us" className="hidden md:block" />
 
       {/* Mobile Menu */}
       <div className="md:hidden">
@@ -100,10 +100,10 @@ export default function Header() {
               </Link>
             </nav>
 
-            <CtaBtn
+            <CalendlyBtn<void>
               text="Book now"
               className="mx-auto mt-8 w-1/2"
-              onClick={() => setOpenNav(false)}
+              callback={() => setOpenNav(false)}
             />
           </SheetContent>
         </Sheet>

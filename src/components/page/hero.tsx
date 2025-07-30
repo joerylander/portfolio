@@ -2,7 +2,7 @@
 
 import { azaret_mono, inter } from '@/lib/fonts';
 import Image from 'next/image';
-import CtaBtn from '../shared/cta-btn';
+import CtaBtn from '../shared/ctaBtn';
 
 export default function Hero() {
   return (
