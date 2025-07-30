@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 export default function About() {
-  const paragraphStyle = '';
   return (
     <>
       <div className="border-accent-foreground relative size-48 overflow-hidden rounded-full border-2 md:size-60">
@@ -20,13 +19,13 @@ export default function About() {
       </h2>
       <article className="flex max-w-2xl flex-col gap-4 text-justify text-pretty hyphens-auto">
         <p>
-          Hello there, I&apos;m Joe Rylander, a professional web developer with
+          Hello there! I&apos;m Joe Rylander, a professional web developer with
           focus on helping fitness professionals and small businesses build
           clean, high-performing &amp; conversion-focused websites.
         </p>
         <p>
           I use modern tools like React, WordPress, and Laravel to build sites
-          that are fast, SEO-friendly, and easy to manage — whether you're
+          that are fast, SEO-friendly, and easy to manage — whether you&apos;re
           starting fresh or updating an existing one.
         </p>
         <p>
