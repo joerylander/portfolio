@@ -1,6 +1,5 @@
 'use client';
 
-import { azaret_mono, inter } from '@/lib/fonts';
 import Image from 'next/image';
 import CtaBtn from '../shared/ctaBtn';
 

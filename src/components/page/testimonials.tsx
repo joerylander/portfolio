@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Autoplay from 'embla-carousel-autoplay';
 import { Carousel, CarouselContent, CarouselItem } from '../ui/carousel';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-import { azaret_mono, inter } from '@/lib/fonts';
+import { azaret_mono } from '@/lib/fonts';
 import { useFetch } from '@/lib/fetch';
 import { Testimonial } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';

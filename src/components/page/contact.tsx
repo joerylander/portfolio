@@ -14,7 +14,7 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
-import { azaret_mono, inter } from '@/lib/fonts';
+import { azaret_mono } from '@/lib/fonts';
 
 export default function Contact() {
   const formSchema = z.object({
