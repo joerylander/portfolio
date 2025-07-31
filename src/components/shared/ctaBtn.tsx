@@ -5,15 +5,21 @@ type CtaProps = {
   text: string;
   className?: string;
   onClick?: () => void;
+  navigate?: boolean;
 };
 
-export default function CtaBtn({ text, className, onClick }: CtaProps) {
+export default function CtaBtn({
+  text,
+  className,
+  onClick,
+  navigate = true,
+}: CtaProps) {
   const { goToContact } = useNavigateTo();
 
   const handleClick = () => {
     if (onClick) onClick();
 
-    goToContact();
+    if (navigate) goToContact();
   };
   return (
     <Button

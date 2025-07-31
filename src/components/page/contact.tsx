@@ -14,7 +14,7 @@ import {
 } from '../ui/form';
 import { Input } from '../ui/input';
 import { Textarea } from '../ui/textarea';
-import { azaret_mono, inter } from '@/lib/fonts';
+import { azaret_mono } from '@/lib/fonts';
 
 export default function Contact() {
   const formSchema = z.object({
@@ -84,9 +84,7 @@ export default function Contact() {
 
   return (
     <>
-      <h2
-        className={`${inter.className} text-center text-2xl font-bold capitalize md:text-3xl lg:text-4xl`}
-      >
+      <h2 className="text-center text-2xl font-bold capitalize md:text-3xl lg:text-4xl">
         Connect with us
       </h2>
       <Form {...form}>
