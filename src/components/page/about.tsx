@@ -24,14 +24,14 @@ export default function About() {
           clean, high-performing &amp; conversion-focused websites.
         </p>
         <p>
-          I use modern tools like React, WordPress, and Laravel to build sites
-          that are fast, SEO-friendly, and easy to manage — whether you&apos;re
-          starting fresh or updating an existing one.
+          I use modern tools like React, WordPress, and Laravel to build
+          websites that are fast, SEO-friendly, and easy to manage — whether
+          you&apos;re starting fresh or updating an existing one.
         </p>
         <p>
           When I&apos;m not working, you&apos;ll often find me training
           calisthenics (
-          <span className="italic">pull-ups, push-ups, handstands</span>).
+          <span className="italic">bodyweight training &amp; skills</span>).
         </p>
         <p>Let&apos;s build together!</p>
       </article>
