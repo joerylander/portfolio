@@ -98,7 +98,9 @@ export default function ResumeLayout({
             </ul>
           </nav>
         </header>
-        <main className="flex-1 overflow-y-auto scroll-smooth">{children}</main>
+        <main className="scrollbar-hide flex-1 overflow-y-auto scroll-smooth">
+          {children}
+        </main>
       </body>
     </html>
   );
