@@ -7,7 +7,7 @@ export default function Services() {
   const { data, loading } = useFetch<Service[]>('/api/services');
   return (
     <>
-      <h2 className="text-center text-2xl font-bold text-balance md:text-3xl lg:text-4xl">
+      <h2 className="h2-responsive text-center text-balance">
         Your Website Should Do more Than Just Look Good - It Should Convert
       </h2>
       <div className="flex flex-col gap-10 lg:flex-row">
@@ -39,13 +39,11 @@ export default function Services() {
               >
                 <CardHeader>
                   <CardTitle>
-                    <h3 className="text-base font-bold sm:text-lg md:text-xl">
-                      {service.title}
-                    </h3>
+                    <h5 className="h5-responsive">{service.title}</h5>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-light text-pretty">
+                  <p className="text-responsive font-light text-pretty">
                     {service.description}
                   </p>
                 </CardContent>

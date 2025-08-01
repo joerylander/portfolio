@@ -14,15 +14,14 @@ export default function Resume() {
           quality={90}
           sizes="100vw"
         />
-        <div className="flex flex-col">
-          <h1 className="text-7xl">Joe Rylander</h1>
+        <div className="flex min-w-xs flex-col gap-4 pl-20">
+          <h1 className="h1-responsive">Joe Rylander</h1>
           <Typewriter
-            prefix="I'm a "
+            prefix="I'm a"
             words={['Freelancer', 'Developer']}
-            className="text-3xl"
+            className="h3-responsive"
             speed={100}
           />
-          {/* <Typewriter words={['hello world']} showCaret={true} /> */}
         </div>
       </section>
     </>

@@ -84,9 +84,7 @@ export default function Contact() {
 
   return (
     <>
-      <h2 className="text-center text-2xl font-bold capitalize md:text-3xl lg:text-4xl">
-        Connect with us
-      </h2>
+      <h2 className="h2-responsive text-center capitalize">Get in Touch</h2>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -102,7 +100,7 @@ export default function Contact() {
                     <Input
                       id="firstName"
                       type="text"
-                      className={`${azaret_mono.className} placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
+                      className={`${azaret_mono.className} placeholder-responsive`}
                       placeholder="First name"
                       {...field}
                     />
@@ -120,7 +118,7 @@ export default function Contact() {
                     <Input
                       id="lastName"
                       type="text"
-                      className={`${azaret_mono.className} placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
+                      className={`${azaret_mono.className} placeholder-responsive`}
                       placeholder="Last name"
                       {...field}
                     />
@@ -139,7 +137,7 @@ export default function Contact() {
                   <Input
                     id="email"
                     type="email"
-                    className={`${azaret_mono.className} placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
+                    className={`${azaret_mono.className} placeholder-responsive`}
                     placeholder="E-mail"
                     {...field}
                   />
@@ -156,7 +154,7 @@ export default function Contact() {
                 <FormControl>
                   <Textarea
                     id="message"
-                    className={`${azaret_mono.className} h-32 placeholder:text-sm placeholder:italic placeholder:sm:text-base`}
+                    className={`${azaret_mono.className} placeholder-responsive h-32`}
                     placeholder="Describe what you need help with..."
                     {...field}
                   />

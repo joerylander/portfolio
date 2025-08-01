@@ -74,10 +74,10 @@ export default function Typewriter({
   useEffect(() => {
     if (!isClient || !words.length) return;
 
-    let currentWordIndex = 0;
-    let currentCharIndex = 0;
-    let isTyping = true;
-    let timer: NodeJS.Timeout;
+    let currentWordIndex = 0,
+      currentCharIndex = 0,
+      isTyping = true,
+      timer: NodeJS.Timeout;
 
     const typeNext = () => {
       const currentWord = words[currentWordIndex];
@@ -86,7 +86,7 @@ export default function Typewriter({
         // Typing phase
         if (currentCharIndex <= currentWord.length) {
           const currentText = currentWord.slice(0, currentCharIndex);
-          setDisplayText(prefix + currentText + suffix);
+          setDisplayText(currentText + suffix);
           currentCharIndex++;
           timer = setTimeout(typeNext, speed);
         } else {
@@ -113,7 +113,7 @@ export default function Typewriter({
         if (currentCharIndex > 0) {
           currentCharIndex--;
           const currentText = currentWord.slice(0, currentCharIndex);
-          setDisplayText(prefix + currentText + suffix);
+          setDisplayText(currentText + suffix);
           timer = setTimeout(typeNext, backspaceSpeed);
         } else {
           // Finished backspacing, move to next word
@@ -153,19 +153,27 @@ export default function Typewriter({
   // Show static text during SSR and before hydration
   if (!isClient) {
     return (
-      <span className={cn('inline-block', className)}>
-        {prefix}
-        {words[0] || ''}
-        {suffix}
-      </span>
+      <p className={className}>
+        {prefix ? prefix + ' ' : ''}
+        <span className={cn('inline-block')}>
+          {words[0] || ''}
+          {suffix}
+        </span>
+      </p>
     );
   }
 
   return (
-    <span
-      className={cn('inline-block', showCaret && 'blinking-caret', className)}
-    >
-      {displayText}
-    </span>
+    <p className={className}>
+      {prefix ? prefix + ' ' : ''}
+      <span
+        className={cn(
+          'border-b-accent-foreground inline-block border-b-2',
+          showCaret && 'blinking-caret',
+        )}
+      >
+        {displayText}
+      </span>
+    </p>
   );
 }

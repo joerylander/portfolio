@@ -66,14 +66,14 @@ export default function Testimonials() {
                           <AvatarFallback>{initials}</AvatarFallback>
                         </Avatar>
 
-                        <p className="text-center text-pretty">
+                        <p className="text-responsive text-center text-pretty">
                           {t.testimonial}
                         </p>
-                        <h3 className="text-2xl font-bold text-balance capitalize sm:text-3xl md:text-4xl">
+                        <h3 className="h3-responsive font-bold text-balance capitalize">
                           {t.name}
                         </h3>
                         <h4
-                          className={`${azaret_mono.className} text-base font-semibold text-balance uppercase opacity-80 sm:text-xl md:text-2xl`}
+                          className={`${azaret_mono.className} h4-responsive font-semibold text-balance uppercase opacity-80`}
                         >
                           {t.title}
                         </h4>

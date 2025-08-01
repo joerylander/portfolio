@@ -15,14 +15,14 @@ export default function Hero() {
         quality={90}
         sizes="100vw"
       />
-      <section className="z-10 flex max-w-2xl min-w-xs flex-col items-center gap-5 px-4 sm:w-full sm:items-start sm:px-0 sm:pl-20">
-        <h3 className="text-xl font-normal text-balance sm:text-2xl md:text-3xl">
+      <section className="z-10 flex max-w-3xl min-w-xs flex-col items-center gap-5 px-4 sm:w-full sm:items-start sm:px-0 sm:pl-20">
+        <h3 className="h3-responsive text-center font-normal text-balance sm:text-left">
           Hey, I&apos;m Joe - a digital artisan.
         </h3>
-        <h1 className="text-center text-3xl text-balance sm:text-4xl md:text-5xl">
+        <h1 className="h1-responsive text-center text-balance sm:text-left">
           Designer &amp; Developer
         </h1>
-        <h4 className="text-center text-base text-pretty sm:text-left sm:text-lg md:text-xl">
+        <h4 className="h4-responsive text-center text-pretty sm:text-left">
           I craft fast, beautiful websites that help grow your brand.
         </h4>
         <CtaBtn text="Let's work together" className="mt-8 w-1/2" />

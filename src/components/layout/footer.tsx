@@ -10,7 +10,7 @@ export default function Footer() {
   const xTwitterIcon: IconProp = 'fa-brands fa-x-twitter';
   return (
     <footer className="mx-0 mb-4 flex max-h-36 min-h-28 snap-start flex-col items-center justify-between px-8 lg:mx-8 lg:mb-0 lg:flex-row lg:px-0">
-      <p className="text-sm break-all capitalize md:break-normal">
+      <p className="text-responsive break-all capitalize md:break-normal">
         &#169;rylander media 2025. all rights reserved
       </p>
 

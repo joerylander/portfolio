@@ -142,12 +142,16 @@ h4 {
   @apply tracking-tight transition-colors;
   font-family: var(--font-inter);
 }
+h5 {
+  @apply tracking-tight transition-colors;
+  font-family: var(--font-inter);
+}
 a {
   @apply hover:text-accent-foreground cursor-pointer text-xs sm:text-sm md:text-base;
   font-family: var(--font-azaret_mono);
 }
 p {
-  @apply text-xs transition-colors sm:text-sm md:text-base;
+  @apply transition-colors;
   font-family: var(--font-azaret_mono);
 }
 
@@ -155,9 +159,34 @@ button {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-.scrollbar-hide {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
+/* Responsive heading utility classes */
+.h1-responsive {
+  @apply text-4xl font-extrabold tracking-tight transition-colors sm:text-5xl md:text-6xl;
+}
+
+.h2-responsive {
+  @apply text-2xl font-bold tracking-tight transition-colors md:text-3xl lg:text-4xl;
+}
+
+.h3-responsive {
+  @apply text-xl font-medium tracking-tight transition-colors sm:text-2xl md:text-3xl;
+}
+
+.h4-responsive {
+  @apply text-lg tracking-tight transition-colors sm:text-xl md:text-2xl;
+}
+
+.h5-responsive {
+  @apply text-base tracking-tight transition-colors sm:text-lg md:text-xl;
+}
+
+/* Responsive text utility class */
+.text-responsive {
+  @apply text-xs transition-colors sm:text-sm md:text-base;
+}
+
+.placeholder-responsive {
+  @apply placeholder:text-xs placeholder:italic placeholder:sm:text-sm placeholder:md:text-base;
 }
 
 /* Typewriter Effect Animations */
@@ -203,9 +232,14 @@ button {
 
 /* Blinking caret for JavaScript typewriter */
 .blinking-caret::after {
-  content: ' |';
+  content: '|';
   color: currentColor;
   animation: blink-caret 1s step-end infinite;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
