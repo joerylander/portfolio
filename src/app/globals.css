@@ -41,6 +41,11 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Typewriter Animation */
+  --animation-typewriter: typewriter var(--typewriter-duration, 3s)
+    steps(var(--typewriter-steps, 40), end) forwards;
+  --animation-blink-caret: blink-caret 1s step-end infinite;
 }
 
 :root {
@@ -154,6 +159,55 @@ button {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
+
+/* Typewriter Effect Animations */
+@keyframes typewriter {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Typewriter utility classes */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 0;
+  animation: var(--animation-typewriter), var(--animation-blink-caret);
+}
+
+.typewriter-no-caret {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 0;
+  animation: var(--animation-typewriter);
+}
+
+/* Blinking caret for JavaScript typewriter */
+.blinking-caret::after {
+  content: ' |';
+  color: currentColor;
+  animation: blink-caret 1s step-end infinite;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
