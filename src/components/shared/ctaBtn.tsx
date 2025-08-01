@@ -4,8 +4,8 @@ import { Button } from '../ui/button';
 type CtaProps = {
   text: string;
   className?: string;
-  onClick?: () => void;
   navigate?: boolean;
+  onClick?: () => void;
 };
 
 export default function CtaBtn({

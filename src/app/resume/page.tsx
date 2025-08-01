@@ -1,3 +1,5 @@
+import SectionWrapper from '@/components/layout/sectionWrapper';
+import Testimonials from '@/components/page/testimonials';
 import Typewriter from '@/components/shared/typewriter';
 import Image from 'next/image';
 
@@ -24,6 +26,9 @@ export default function Resume() {
           />
         </div>
       </section>
+      <SectionWrapper id="testimonials" className="flex flex-col items-center">
+        <Testimonials />
+      </SectionWrapper>
     </>
   );
 }

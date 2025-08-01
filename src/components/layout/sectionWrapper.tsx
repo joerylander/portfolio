@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 export type Props = {
   id: string;
   children: React.ReactNode;
-  className?: string;
+  className: string;
   animate?: boolean;
 };
 

@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function About() {
   return (
     <>
-      <div className="border-accent-foreground relative size-48 overflow-hidden rounded-full border-2 md:size-60">
+      <div className="border-accent-foreground relative size-48 overflow-hidden rounded-full border-8 md:size-60">
         <Image
           src="/images/profile_transparent_bg.png"
           alt="profile image"
