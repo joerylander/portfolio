@@ -2,9 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { useFetch } from '@/lib/fetch';
 import { Service } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
+import { ApiEndpoints } from '@/lib/constants';
 
 export default function Services() {
-  const { data, loading } = useFetch<Service[]>('/api/services');
+  const { data, loading } = useFetch<Service[]>(ApiEndpoints.services);
   return (
     <>
       <h2 className="h2-responsive text-center text-balance">

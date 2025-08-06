@@ -20,3 +20,21 @@ export interface Testimonial {
   testimonial: string;
   img_src: string;
 }
+
+export interface ExperienceItem {
+  id: number;
+  period: string;
+  company: string;
+  position: string;
+  description: string;
+}
+
+export type ContentType =
+  | 'services'
+  | 'projects'
+  | 'testimonials'
+  | 'experienceItems';
+
+export type ApiEndpointKeys = {
+  [K in ContentType]: `/api/${K}`;
+};

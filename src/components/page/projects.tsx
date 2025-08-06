@@ -8,10 +8,11 @@ import { ExternalLink } from 'lucide-react';
 import { useFetch } from '@/lib/fetch';
 import { Project } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
+import { ApiEndpoints } from '@/lib/constants';
 
 export default function Projects() {
   const { openInNewTab } = useNavigateTo();
-  const { data, loading } = useFetch<Project[]>('/api/projects');
+  const { data, loading } = useFetch<Project[]>(ApiEndpoints.projects);
 
   return (
     <>

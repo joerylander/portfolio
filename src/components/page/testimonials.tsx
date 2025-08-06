@@ -8,9 +8,10 @@ import { azaret_mono } from '@/lib/fonts';
 import { useFetch } from '@/lib/fetch';
 import { Testimonial } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
+import { ApiEndpoints } from '@/lib/constants';
 
 export default function Testimonials() {
-  const { data, loading } = useFetch<Testimonial[]>('/api/testimonials');
+  const { data, loading } = useFetch<Testimonial[]>(ApiEndpoints.testimonials);
 
   const autoplay = useRef(Autoplay({ delay: 3000 }));
 
