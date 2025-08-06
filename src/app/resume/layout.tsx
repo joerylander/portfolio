@@ -4,7 +4,13 @@ import type { Metadata, Viewport } from 'next';
 import { azaret_mono, inter } from '@/lib/fonts';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
-import { FileText, GalleryHorizontalEnd, House, User } from 'lucide-react';
+import {
+  FileDown,
+  FileText,
+  GalleryHorizontalEnd,
+  House,
+  User,
+} from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Resume | Rylander Media',
@@ -72,27 +78,39 @@ export default function ResumeLayout({
           <nav className="w-full">
             <ul className={`${azaret_mono.className} flex flex-col gap-4`}>
               <li>
-                <a href="#home" className="flex gap-2 px-2 py-4">
+                <a href="#home" className="flex gap-2 px-2 py-4 capitalize">
                   <House />
                   Home
                 </a>
               </li>
               <li>
-                <a href="#about" className="flex gap-2 px-2 py-4">
+                <a href="#about" className="flex gap-2 px-2 py-4 capitalize">
                   <User />
                   About
                 </a>
               </li>
               <li>
-                <a href="#resume" className="flex gap-2 px-2 py-4">
+                <a href="#resume" className="flex gap-2 px-2 py-4 capitalize">
                   <FileText />
                   Resumé
                 </a>
               </li>
               <li>
-                <a href="#portfolio" className="flex gap-2 px-2 py-4">
+                <a
+                  href="#portfolio"
+                  className="flex gap-2 px-2 py-4 capitalize"
+                >
                   <GalleryHorizontalEnd />
                   Portfolio
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  className="flex gap-2 px-2 py-4 capitalize"
+                >
+                  <FileDown />
+                  Download CV
                 </a>
               </li>
             </ul>
