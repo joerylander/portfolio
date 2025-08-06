@@ -11,22 +11,16 @@ export default function ExperienceTimeline() {
   );
 
   return (
-    <article
-      className="relative min-h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage:
-          'linear-gradient(rgba(9, 19, 48, 0.35), rgb(9, 19, 48, 0.7)), url("https://static.wixstatic.com/media/035244_1f9f5504879f46cc90c68e323a18ea59~mv2_d_1920_3986_s_2.jpg/v1/fill/w_1920,h_3031,al_c,q_90,enc_avif,quality_auto/035244_1f9f5504879f46cc90c68e323a18ea59~mv2_d_1920_3986_s_2.jpg")',
-      }}
-    >
-      {/* src="https://static.wixstatic.com/media/035244_1f9f5504879f46cc90c68e323a18ea59~mv2_d_1920_3986_s_2.jpg/v1/fill/w_1920,h_3031,al_c,q_90,enc_avif,quality_auto/035244_1f9f5504879f46cc90c68e323a18ea59~mv2_d_1920_3986_s_2.jpg" */}
-      {/* <Image
-        src="/images/mountain_slopes.jpg"
-        alt="background image of mountains"
+    <article className="relative min-h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat">
+      <Image
+        src="/images/snowy_mountains.avif"
+        alt="background image of mountain ranges"
         fill
         priority
         quality={90}
         sizes="100vw"
-      /> */}
+        className="-z-10 scale-100 object-cover"
+      />
       <div className="container mx-auto px-4 py-16 lg:py-24">
         {/* Header */}
         <header className="mb-16 text-center lg:mb-24">
@@ -43,38 +37,77 @@ export default function ExperienceTimeline() {
 
             {/* Timeline Items */}
             <div className="space-y-8 lg:space-y-16">
-              {data &&
-                data.map((item, index) => (
-                  <div key={item.id} className="relative">
-                    {/* Timeline Dot */}
-                    <div className="bg-accent-foreground border-accent-foreground absolute left-1/2 z-10 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 shadow-lg"></div>
-
-                    {/* Content */}
+              {loading
+                ? // Skeleton loading state
+                  Array.from({ length: 3 }).map((_, index) => (
                     <div
-                      className={`flex items-start ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
+                      key={`skeleton-${index}`}
+                      className="relative animate-pulse"
                     >
-                      {/* Left/Right Content */}
-                      <article
-                        className={`w-1/2 text-left ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}
+                      {/* Timeline Dot Skeleton */}
+                      <div className="absolute left-1/2 z-10 h-4 w-4 -translate-x-1/2 transform rounded-full bg-gray-600 shadow-lg"></div>
+
+                      {/* Content Skeleton */}
+                      <div
+                        className={`flex items-start ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
                       >
-                        <div className="bg-opacity-30 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
-                          <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
-                            {item.period}
-                          </h5>
-                          <h3 className="mb-2 text-2xl font-bold tracking-wide text-white lg:text-3xl">
-                            {item.company}
-                          </h3>
-                          <h4 className="mb-4 text-lg font-medium text-gray-300">
-                            {item.position}
-                          </h4>
-                          <p className="text-sm leading-relaxed text-gray-400">
-                            {item.description}
-                          </p>
-                        </div>
-                      </article>
+                        {/* Left/Right Content Skeleton */}
+                        <article
+                          className={`w-1/2 text-left ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}
+                        >
+                          <div className="rounded-lg border border-gray-700 bg-gray-800/30 p-6 shadow-xl backdrop-blur-sm">
+                            {/* Period skeleton */}
+                            <div className="mb-2 h-4 w-24 rounded bg-gray-600"></div>
+
+                            {/* Company name skeleton */}
+                            <div className="mb-2 h-8 w-48 rounded bg-gray-600"></div>
+
+                            {/* Position skeleton */}
+                            <div className="mb-4 h-6 w-40 rounded bg-gray-600"></div>
+
+                            {/* Description skeleton - multiple lines */}
+                            <div className="space-y-2">
+                              <div className="h-4 w-full rounded bg-gray-600"></div>
+                              <div className="h-4 w-5/6 rounded bg-gray-600"></div>
+                              <div className="h-4 w-4/5 rounded bg-gray-600"></div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))
+                : data &&
+                  data.map((item, index) => (
+                    <div key={item.id} className="relative">
+                      {/* Timeline Dot */}
+                      <div className="bg-accent-foreground border-accent-foreground absolute left-1/2 z-10 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 shadow-lg"></div>
+
+                      {/* Content */}
+                      <div
+                        className={`flex items-start ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
+                      >
+                        {/* Left/Right Content */}
+                        <article
+                          className={`w-1/2 text-left ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}
+                        >
+                          <div className="bg-opacity-30 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
+                            <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
+                              {item.period}
+                            </h5>
+                            <h3 className="mb-2 text-2xl font-bold tracking-wide text-white lg:text-3xl">
+                              {item.company}
+                            </h3>
+                            <h4 className="mb-4 text-lg font-medium text-gray-300">
+                              {item.position}
+                            </h4>
+                            <p className="text-sm leading-relaxed text-gray-400">
+                              {item.description}
+                            </p>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  ))}
             </div>
           </div>
         </section>
@@ -87,36 +120,66 @@ export default function ExperienceTimeline() {
 
             {/* Timeline Items */}
             <div className="space-y-12">
-              {data &&
-                data.map((item) => (
-                  <div key={item.id} className="relative">
-                    {/* Timeline Dot */}
-                    <div className="border-accent-foreground bg-accent-foreground absolute -left-2 h-4 w-4 rounded-full border-4 shadow-lg"></div>
+              {loading
+                ? // Mobile Skeleton loading state
+                  Array.from({ length: 3 }).map((_, index) => (
+                    <div
+                      key={`mobile-skeleton-${index}`}
+                      className="relative animate-pulse"
+                    >
+                      {/* Timeline Dot Skeleton */}
+                      <div className="absolute -left-2 h-4 w-4 rounded-full bg-gray-600 shadow-lg"></div>
 
-                    {/* Content */}
-                    <article className="bg-opacity-30 ml-8 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
-                      <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
-                        {item.period}
-                      </h5>
-                      <h3 className="mb-2 text-xl font-bold tracking-wide text-white">
-                        {item.company}
-                      </h3>
-                      <h4 className="mb-3 text-base font-medium text-gray-300">
-                        {item.position}
-                      </h4>
-                      <p className="text-sm leading-relaxed text-gray-400">
-                        {item.description}
-                      </p>
-                    </article>
-                  </div>
-                ))}
+                      {/* Content Skeleton */}
+                      <article className="ml-8 rounded-lg border border-gray-700 bg-gray-800/30 p-6 shadow-xl backdrop-blur-sm">
+                        {/* Period skeleton */}
+                        <div className="mb-2 h-4 w-20 rounded bg-gray-600"></div>
+
+                        {/* Company name skeleton */}
+                        <div className="mb-2 h-6 w-36 rounded bg-gray-600"></div>
+
+                        {/* Position skeleton */}
+                        <div className="mb-3 h-5 w-32 rounded bg-gray-600"></div>
+
+                        {/* Description skeleton - multiple lines */}
+                        <div className="space-y-2">
+                          <div className="h-4 w-full rounded bg-gray-600"></div>
+                          <div className="h-4 w-5/6 rounded bg-gray-600"></div>
+                          <div className="h-4 w-3/4 rounded bg-gray-600"></div>
+                        </div>
+                      </article>
+                    </div>
+                  ))
+                : data &&
+                  data.map((item) => (
+                    <div key={item.id} className="relative">
+                      {/* Timeline Dot */}
+                      <div className="border-accent-foreground bg-accent-foreground absolute -left-2 h-4 w-4 rounded-full border-4 shadow-lg"></div>
+
+                      {/* Content */}
+                      <article className="bg-opacity-30 ml-8 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
+                        <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
+                          {item.period}
+                        </h5>
+                        <h3 className="mb-2 text-xl font-bold tracking-wide text-white">
+                          {item.company}
+                        </h3>
+                        <h4 className="mb-3 text-base font-medium text-gray-300">
+                          {item.position}
+                        </h4>
+                        <p className="text-sm leading-relaxed text-gray-400">
+                          {item.description}
+                        </p>
+                      </article>
+                    </div>
+                  ))}
             </div>
           </div>
         </section>
       </div>
 
       {/* Background Overlay for Better Text Contrast */}
-      {/* <div className="pointer-events-none absolute inset-0 bg-black/70"></div> */}
+      <div className="absolute inset-0 -z-5 bg-gradient-to-b from-[rgba(9,19,48,0.35)] to-[rgba(9,19,48,0.7)]"></div>
     </article>
   );
 }
