@@ -22,41 +22,42 @@ export default function Home() {
 
   return (
     <>
-      <SectionWrapper id="hero" className="snap-center" animate={true}>
+      <SectionWrapper
+        id="hero"
+        className="snap-center p-0 lg:p-0"
+        animate={true}
+      >
         <Hero />
       </SectionWrapper>
 
       <SectionWrapper
         id="services"
-        className="mt-16 snap-start flex-col items-center gap-20 px-8"
+        className="snap-start flex-col items-center"
       >
         <Services />
       </SectionWrapper>
 
       <SectionWrapper
         id="projects"
-        className="mt-16 snap-start flex-col items-center gap-20 px-8"
+        className="snap-start flex-col items-center"
       >
         <Projects />
       </SectionWrapper>
 
       <SectionWrapper
         id="testimonials"
-        className="mt-16 snap-start flex-col items-center gap-20 px-8"
+        className="snap-start flex-col items-center"
       >
         <Testimonials />
       </SectionWrapper>
 
-      <SectionWrapper
-        id="about"
-        className="mt-16 snap-start flex-col items-center gap-20 px-8"
-      >
+      <SectionWrapper id="about" className="snap-start flex-col items-center">
         <About />
       </SectionWrapper>
 
       <SectionWrapper
         id="contact"
-        className="mt-16 snap-center flex-col items-center gap-20 px-8"
+        className="snap-center flex-col items-center"
       >
         <Contact />
       </SectionWrapper>

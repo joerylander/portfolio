@@ -1,5 +1,7 @@
 import SectionWrapper from '@/components/layout/sectionWrapper';
+import About from '@/components/page/about';
 import ExperienceTimeline from '@/components/page/experienceTimeline';
+import Projects from '@/components/page/projects';
 import Testimonials from '@/components/page/testimonials';
 import Typewriter from '@/components/shared/typewriter';
 import Image from 'next/image';
@@ -27,10 +29,16 @@ export default function Resume() {
           />
         </div>
       </section>
-      <SectionWrapper id="resume" className="flex flex-col items-center">
-        <ExperienceTimeline />
+      <ExperienceTimeline />
+      {/* <SectionWrapper id="resume" className="">
+      </SectionWrapper> */}
+      <SectionWrapper id="projects" className="flex-col gap-20">
+        <Projects />
       </SectionWrapper>
-      <SectionWrapper id="testimonials" className="flex flex-col items-center">
+      <SectionWrapper id="about" className="flex-col items-center gap-20">
+        <About />
+      </SectionWrapper>
+      <SectionWrapper id="testimonials" className="flex-col items-center">
         <Testimonials />
       </SectionWrapper>
     </>

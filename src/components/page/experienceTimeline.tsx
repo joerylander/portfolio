@@ -11,7 +11,7 @@ export default function ExperienceTimeline() {
   );
 
   return (
-    <article className="relative min-h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat">
+    <article className="relative min-h-screen w-full overflow-hidden">
       <Image
         src="/images/snowy_mountains.avif"
         alt="background image of mountain ranges"
@@ -24,7 +24,7 @@ export default function ExperienceTimeline() {
       <div className="container mx-auto px-4 py-16 lg:py-24">
         {/* Header */}
         <header className="mb-16 text-center lg:mb-24">
-          <h2 className="h2-responsive mb-4 text-4xl tracking-[0.2em] text-white uppercase">
+          <h2 className="h2-responsive text-4xl tracking-[0.2em] text-white uppercase">
             EXPERIENCE
           </h2>
         </header>

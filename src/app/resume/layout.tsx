@@ -106,8 +106,9 @@ export default function ResumeLayout({
               </li>
               <li>
                 <a
-                  href="#portfolio"
+                  href="/files/Joakim_Rylander_CV.pdf"
                   className="flex gap-2 px-2 py-4 capitalize"
+                  download
                 >
                   <FileDown />
                   Download CV

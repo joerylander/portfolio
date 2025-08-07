@@ -8,9 +8,11 @@ export default function Services() {
   const { data, loading } = useFetch<Service[]>(ApiEndpoints.services);
   return (
     <>
-      <h2 className="h2-responsive text-center text-balance">
-        Your Website Should Do more Than Just Look Good - It Should Convert
-      </h2>
+      <header className="mb-16 text-center lg:mb-24">
+        <h2 className="h2-responsive text-center text-balance">
+          Your Website Should Do more Than Just Look Good - It Should Convert
+        </h2>
+      </header>
       <div className="flex flex-col gap-10 lg:flex-row">
         {loading
           ? Array.from({ length: 3 }).map((_, index) => (

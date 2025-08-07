@@ -16,9 +16,11 @@ export default function Projects() {
 
   return (
     <>
-      <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
-        Featured projects
-      </h2>
+      <header className="mb-16 text-center lg:mb-24">
+        <h2 className="h2-responsive font-bold text-balance capitalize">
+          Featured projects
+        </h2>
+      </header>
 
       <div className="grid w-full auto-rows-[400px] grid-cols-1 gap-x-14 gap-y-8 md:grid-cols-2">
         {loading

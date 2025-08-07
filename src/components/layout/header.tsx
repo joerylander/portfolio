@@ -25,7 +25,7 @@ export default function Header() {
   const [openNav, setOpenNav] = useState(false);
 
   return (
-    <header className="bg-background/95 border-border/40 sticky top-0 z-50 mx-8 flex h-16 max-w-full items-center justify-between border-b backdrop-blur-sm">
+    <header className="bg-background/95 border-border/40 sticky top-0 z-50 mx-8 flex h-20 max-w-full items-center justify-between border-b backdrop-blur-sm">
       <Logo />
 
       {/* Desktop Navigation */}

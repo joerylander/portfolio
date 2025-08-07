@@ -84,7 +84,9 @@ export default function Contact() {
 
   return (
     <>
-      <h2 className="h2-responsive text-center capitalize">Get in Touch</h2>
+      <header className="mb-16 text-center lg:mb-24">
+        <h2 className="h2-responsive capitalize">Get in Touch</h2>
+      </header>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}

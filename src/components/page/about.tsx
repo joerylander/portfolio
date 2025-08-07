@@ -14,9 +14,11 @@ export default function About() {
           sizes="100vw"
         />
       </div>
-      <h2 className="h2-responsive text-center font-bold text-balance capitalize">
-        My story
-      </h2>
+      <header className="text-center">
+        <h2 className="h2-responsive font-bold text-balance capitalize">
+          My story
+        </h2>
+      </header>
       <article className="flex max-w-2xl flex-col gap-4 text-justify text-pretty hyphens-auto">
         <p className="text-responsive">
           Hello there! I&apos;m Joe Rylander, a professional web developer with

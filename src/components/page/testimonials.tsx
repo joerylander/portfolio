@@ -17,9 +17,11 @@ export default function Testimonials() {
 
   return (
     <>
-      <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
-        What people say about us
-      </h2>
+      <header className="mb-16 text-center lg:mb-24">
+        <h2 className="h2-responsive font-bold text-balance capitalize">
+          What people say about us
+        </h2>
+      </header>
       {loading ? (
         <div className="mx-auto w-full">
           <div className="mx-auto flex h-[500px] max-w-fit">
