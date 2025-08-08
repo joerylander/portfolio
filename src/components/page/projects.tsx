@@ -11,7 +11,7 @@ import { Skeleton } from '../ui/skeleton';
 import { ApiEndpoints } from '@/lib/constants';
 
 export default function Projects() {
-  const { openInNewTab } = useNavigateTo();
+  const { navigateNewTabURL } = useNavigateTo();
   const { data, loading } = useFetch<Project[]>(ApiEndpoints.projects);
 
   return (
@@ -66,7 +66,9 @@ export default function Projects() {
                         <Button
                           size="lg"
                           className="bg-white text-black hover:bg-white/90"
-                          onClick={() => openInNewTab(project.external_link)}
+                          onClick={() =>
+                            navigateNewTabURL(project.external_link)
+                          }
                         >
                           Visit site
                           <ExternalLink />
