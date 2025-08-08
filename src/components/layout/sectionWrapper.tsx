@@ -8,6 +8,7 @@ export type Props = {
   children: React.ReactNode;
   className?: string;
   animate?: boolean;
+  fullWidth?: boolean; // Option to disable container for full-width sections
 };
 
 export default function SectionWrapper({
@@ -15,9 +16,9 @@ export default function SectionWrapper({
   children,
   className,
   animate,
+  fullWidth = false,
 }: Props) {
-  const baseClasses =
-    'flex min-h-screen w-full scroll-mt-16 px-4 py-16 lg:py-24';
+  const baseClasses = `flex min-h-screen w-full scroll-mt-16 px-4 py-16 lg:py-24 ${!fullWidth ? ' container mx-auto' : ''}`;
 
   if (animate) {
     return (

@@ -90,7 +90,7 @@ export default function Contact() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex h-[600px] w-full max-w-3xl flex-col gap-8"
+          className="flex w-full max-w-3xl min-w-fit flex-col gap-8"
         >
           <div className="flex flex-col gap-8 md:flex-row">
             <FormField

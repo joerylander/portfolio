@@ -8,6 +8,7 @@ import Projects from '@/components/page/projects';
 import Testimonials from '@/components/page/testimonials';
 import Contact from '@/components/page/contact';
 import About from '@/components/page/about';
+import TechSkills from '@/components/page/techSkills';
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Home() {
         id="hero"
         className="snap-center p-0 lg:p-0"
         animate={true}
+        fullWidth
       >
         <Hero />
       </SectionWrapper>
@@ -51,10 +53,15 @@ export default function Home() {
         <Testimonials />
       </SectionWrapper>
 
-      <SectionWrapper id="about" className="snap-start flex-col items-center">
+      <SectionWrapper
+        id="about"
+        className="snap-start flex-col items-center gap-8"
+      >
         <About />
       </SectionWrapper>
-
+      <SectionWrapper id="techskills" className="snap-start flex-col">
+        <TechSkills />
+      </SectionWrapper>
       <SectionWrapper
         id="contact"
         className="snap-center flex-col items-center"
