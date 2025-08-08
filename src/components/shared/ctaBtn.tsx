@@ -4,7 +4,7 @@ import { Button } from '../ui/button';
 type CtaProps = {
   text: string;
   className?: string;
-  navigate?: boolean;
+  navigateTo?: 'contact' | 'projects';
   onClick?: () => void;
 };
 
@@ -12,19 +12,19 @@ export default function CtaBtn({
   text,
   className,
   onClick,
-  navigate = true,
+  navigateTo = 'contact',
 }: CtaProps) {
-  const { goToContact } = useNavigateTo();
+  const { goToContact, goToProjects } = useNavigateTo();
 
   const handleClick = () => {
     if (onClick) onClick();
-
-    if (navigate) goToContact();
+    if (navigateTo === 'contact') goToContact();
+    if (navigateTo === 'projects') goToProjects();
   };
   return (
     <Button
-      variant={'default'}
-      size={'lg'}
+      variant={navigateTo === 'contact' ? 'default' : 'secondary'}
+      size="lg"
       onClick={handleClick}
       className={`${className} capitalize`}
     >

@@ -17,7 +17,7 @@ export default function SectionWrapper({
   animate,
 }: Props) {
   const baseClasses =
-    'flex min-h-screen w-full scroll-mt-16 px-4 py-16 lg:py-24 mx-auto container';
+    'flex min-h-screen w-full scroll-mt-16 px-4 py-16 lg:py-24';
 
   if (animate) {
     return (
