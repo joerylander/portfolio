@@ -41,9 +41,9 @@ export default function TechSkills() {
   return (
     <>
       <header className="mb-6 h-1/2 text-center">
-        <h2 className="h2-responsive mb-4">Skills & Tools</h2>
+        <h2 className="h2-responsive mb-4">Skills &amp; Tools</h2>
         <p className="mb-12 text-white/60">
-          For those who know what they're looking for...
+          For those who know what they&apos;re looking for...
         </p>
       </header>
       <ul className="flex flex-wrap items-center justify-center">
