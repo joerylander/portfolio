@@ -5,6 +5,35 @@ import { ApiEndpoints } from '@/lib/constants';
 import { ExperienceItem } from '@/types/types';
 import Image from 'next/image';
 
+const renderDescription = (description: string) => {
+  const bullets = description
+    .split(/[•|]/)
+    .map((item) => item.trim())
+    .filter((item) => item.length > 0);
+
+  if (bullets.length === 1) {
+    return (
+      <ul className="space-y-2 text-sm leading-relaxed text-gray-400">
+        <li className="flex items-start">
+          <span className="text-accent-foreground mt-1 mr-2 text-xs">•</span>
+          <span>{description}</span>
+        </li>
+      </ul>
+    );
+  }
+
+  return (
+    <ul className="space-y-2 text-sm leading-relaxed text-gray-400">
+      {bullets.map((bullet, index) => (
+        <li key={index} className="flex items-start">
+          <span className="text-accent-foreground mt-1 mr-2 text-sm">•</span>
+          <span>{bullet}</span>
+        </li>
+      ))}
+    </ul>
+  );
+};
+
 export default function ExperienceTimeline() {
   const { data, loading } = useFetch<ExperienceItem[]>(
     ApiEndpoints.experienceItems,
@@ -100,9 +129,7 @@ export default function ExperienceTimeline() {
                             <h4 className="mb-4 text-lg font-medium text-gray-300">
                               {item.position}
                             </h4>
-                            <p className="text-sm leading-relaxed text-gray-400">
-                              {item.description}
-                            </p>
+                            {renderDescription(item.description)}
                           </div>
                         </article>
                       </div>
@@ -167,9 +194,7 @@ export default function ExperienceTimeline() {
                         <h4 className="mb-3 text-base font-medium text-gray-300">
                           {item.position}
                         </h4>
-                        <p className="text-sm leading-relaxed text-gray-400">
-                          {item.description}
-                        </p>
+                        {renderDescription(item.description)}
                       </article>
                     </div>
                   ))}

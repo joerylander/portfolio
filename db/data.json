@@ -56,21 +56,21 @@
       "period": "2023 - present",
       "company": "Odevo",
       "position": "Frontend Developer",
-      "description": "Built and maintained an internal ERP SaaS platform for property and financial management. Developed a customer portal for handling errands, finances, and housing services, along with a website builder for housing associations. Worked closely with stakeholders to deliver clean, responsive, and user-focused features."
+      "description": "Built and maintained an internal ERP SaaS platform for property and financial management • Developed a customer portal for handling errands, finances, and housing services • Created a website builder for housing associations • Worked closely with stakeholders to deliver clean, responsive, and user-focused features"
     },
     {
       "id": 2,
       "period": "2022",
       "company": "TT News Agency",
       "position": "Fullstack Developer",
-      "description": "Developed a full-stack web application for presenting and managing Swedish election data. Built a modern user interface and a RESTful API with full CRUD functionality. Designed and maintained a scalable SQL database for reliable data storage."
+      "description": "Developed a full-stack web application for presenting and managing Swedish election data • Built a modern user interface with responsive design • Created a RESTful API with full CRUD functionality • Designed and maintained a scalable SQL database for reliable data storage"
     },
     {
       "id": 3,
       "period": "2021 - 2022",
       "company": "</salt>",
       "position": "Fullstack Developer",
-      "description": "Graduated from a 3-month intensive JavaScript full-stack bootcamp and was immediately hired as a consultant."
+      "description": "Graduated from a 3-month intensive JavaScript full-stack bootcamp • Immediately hired as a consultant upon completion • Specialized in modern web development technologies and methodologies"
     }
   ]
 }

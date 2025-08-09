@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import SocialLinks from '../shared/socialLinks';
 
 export default function Footer() {
@@ -13,7 +14,11 @@ export default function Footer() {
         containerSize="size-10 md:size-14"
       />
 
-      <a href="mailto:rylander.media@gmail.com">rylander.media@gmail.com</a>
+      <a href="mailto:rylander.media@gmail.com" className="link-responsive">
+        rylander.media@gmail.com
+      </a>
+
+      {/* <Link href="/resume"> View my resumé</Link> */}
     </footer>
   );
 }

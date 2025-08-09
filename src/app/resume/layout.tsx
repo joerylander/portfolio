@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next';
 import { azaret_mono, inter } from '@/lib/fonts';
 import Image from 'next/image';
 import {
+  ChevronLeft,
   FileDown,
   FileText,
   GalleryHorizontalEnd,
@@ -33,8 +34,12 @@ export default function ResumeLayout({
         className={`${inter.variable} ${azaret_mono.variable} flex h-screen w-full justify-self-center antialiased`}
       >
         <header className="flex w-60 flex-col items-center bg-black px-4 py-8">
-          <Link href="/">
-            <span>Back to portfolio</span>
+          <Link
+            href="/"
+            className="hover:text-accent-foreground my-6 flex items-center gap-2 text-sm transition-colors duration-300"
+          >
+            <ChevronLeft size={20} />
+            View my projects
           </Link>
           <div className="border-accent-foreground/40 relative mb-4 size-30 overflow-hidden rounded-full border-8">
             <Image
@@ -55,37 +60,46 @@ export default function ResumeLayout({
           />
           <nav className="w-full">
             <ul className={`${azaret_mono.className} flex flex-col gap-4`}>
-              <li className="hover:text-accent-foreground w-fit">
-                <a href="#home" className="flex gap-2 px-2 py-4 capitalize">
+              <li className="w-fit">
+                <a
+                  href="#home"
+                  className="hover:text-accent-foreground flex gap-2 px-2 py-4 capitalize transition-colors duration-300"
+                >
                   <House />
                   Home
                 </a>
               </li>
-              <li className="hover:text-accent-foreground w-fit">
-                <a href="#about" className="flex gap-2 px-2 py-4 capitalize">
+              <li className="w-fit">
+                <a
+                  href="#about"
+                  className="hover:text-accent-foreground flex gap-2 px-2 py-4 capitalize transition-colors duration-300"
+                >
                   <User />
                   About
                 </a>
               </li>
-              <li className="hover:text-accent-foreground w-fit">
-                <a href="#resume" className="flex gap-2 px-2 py-4 capitalize">
+              <li className="w-fit">
+                <a
+                  href="#resume"
+                  className="hover:text-accent-foreground flex gap-2 px-2 py-4 capitalize transition-colors duration-300"
+                >
                   <FileText />
                   Resumé
                 </a>
               </li>
-              <li className="hover:text-accent-foreground w-fit">
+              <li className="w-fit">
                 <a
                   href="#portfolio"
-                  className="flex gap-2 px-2 py-4 capitalize"
+                  className="hover:text-accent-foreground flex gap-2 px-2 py-4 capitalize transition-colors duration-300"
                 >
                   <GalleryHorizontalEnd />
                   Portfolio
                 </a>
               </li>
-              <li className="hover:text-accent-foreground w-fit">
+              <li className="w-fit">
                 <a
                   href="/files/Joakim_Rylander_CV.pdf"
-                  className="flex gap-2 px-2 py-4 capitalize"
+                  className="hover:text-accent-foreground flex gap-2 px-2 py-4 capitalize transition-colors duration-300"
                   download
                 >
                   <FileDown />

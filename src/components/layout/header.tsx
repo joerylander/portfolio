@@ -34,7 +34,7 @@ export default function Header() {
           <NavigationMenuItem>
             <Link
               href="#services"
-              className={`${azaret_mono.className} hover:text-primary capitalize transition-colors`}
+              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
             >
               Services
             </Link>
@@ -42,7 +42,7 @@ export default function Header() {
           <NavigationMenuItem>
             <Link
               href="#projects"
-              className={`${azaret_mono.className} hover:text-primary capitalize transition-colors`}
+              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
             >
               Projects
             </Link>
@@ -50,7 +50,7 @@ export default function Header() {
           <NavigationMenuItem>
             <Link
               href="#testimonials"
-              className={`${azaret_mono.className} hover:text-primary capitalize transition-colors`}
+              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
             >
               Testimonials
             </Link>
@@ -58,7 +58,7 @@ export default function Header() {
           <NavigationMenuItem>
             <Link
               href="#about"
-              className={`${azaret_mono.className} hover:text-primary capitalize transition-colors`}
+              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
             >
               About
             </Link>
@@ -87,28 +87,28 @@ export default function Header() {
             <nav className="mt-6 flex flex-col items-center gap-8">
               <Link
                 href="#services"
-                className={`${azaret_mono.className} hover:text-primary capitalize transition-colors hover:underline`}
+                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
                 onClick={() => setOpenNav(false)}
               >
                 Services
               </Link>
               <Link
                 href="#projects"
-                className={`${azaret_mono.className} hover:text-primary capitalize transition-colors hover:underline`}
+                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
                 onClick={() => setOpenNav(false)}
               >
                 Projects
               </Link>
               <Link
                 href="#testimonials"
-                className={`${azaret_mono.className} hover:text-primary capitalize transition-colors hover:underline`}
+                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
                 onClick={() => setOpenNav(false)}
               >
                 Testimonials
               </Link>
               <Link
                 href="#about"
-                className={`${azaret_mono.className} hover:text-primary capitalize transition-colors hover:underline`}
+                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
                 onClick={() => setOpenNav(false)}
               >
                 About

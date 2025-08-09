@@ -147,7 +147,7 @@ h5 {
   font-family: var(--font-inter);
 }
 a {
-  @apply cursor-pointer text-xs sm:text-sm lg:text-base;
+  @apply cursor-pointer;
   font-family: var(--font-azaret_mono);
 }
 p {
@@ -185,6 +185,10 @@ button {
 
 .placeholder-responsive {
   @apply placeholder:text-xs placeholder:italic placeholder:sm:text-sm placeholder:md:text-base;
+}
+
+.link-responsive {
+  @apply text-xs sm:text-sm lg:text-base;
 }
 
 /* Typewriter Effect Animations */

@@ -2,14 +2,13 @@ import SectionWrapper from '@/components/layout/sectionWrapper';
 import About from '@/components/page/about';
 import ExperienceTimeline from '@/components/page/experienceTimeline';
 import Projects from '@/components/page/projects';
-import Testimonials from '@/components/page/testimonials';
 import Typewriter from '@/components/shared/typewriter';
 import Image from 'next/image';
 
 export default function Resume() {
   return (
     <>
-      <section className="relative flex min-h-[100vh] flex-col justify-center">
+      <section className="relative flex min-h-screen flex-col justify-center">
         <Image
           src="/images/hero_banner.webp"
           alt="Hero profile image"
@@ -37,9 +36,6 @@ export default function Resume() {
       </SectionWrapper>
       <SectionWrapper id="about" className="flex-col items-center gap-20">
         <About />
-      </SectionWrapper>
-      <SectionWrapper id="testimonials" className="flex-col items-center">
-        <Testimonials />
       </SectionWrapper>
     </>
   );
