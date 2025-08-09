@@ -50,7 +50,7 @@ export default function TechSkills() {
         {socialIcons.map(({ name, icon: Icon, color }) => (
           <li
             key={name}
-            className="m-2 flex size-24 flex-col items-center justify-center rounded-lg bg-white/11 p-4 transition-colors duration-300 ease-in-out sm:size-30"
+            className="m-2 flex size-24 flex-col items-center justify-center rounded-lg bg-white/10 p-4 transition-colors duration-300 ease-in-out sm:size-30"
           >
             <Icon color={color || 'default'} size={40} />
             <span className="mt-3 mb-1 block font-bold">{name}</span>

@@ -1,5 +1,4 @@
 import '../globals.css';
-import '@/lib/fontawesome';
 import type { Metadata, Viewport } from 'next';
 import { azaret_mono, inter } from '@/lib/fonts';
 import Header from '@/components/layout/header';

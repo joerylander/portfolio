@@ -1,8 +1,6 @@
 import '../globals.css';
-import '@/lib/fontawesome';
 import type { Metadata, Viewport } from 'next';
 import { azaret_mono, inter } from '@/lib/fonts';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from 'next/image';
 import {
   FileDown,
@@ -11,6 +9,7 @@ import {
   House,
   User,
 } from 'lucide-react';
+import SocialLinks from '@/components/shared/socialLinks';
 
 export const metadata: Metadata = {
   title: 'Resume | Rylander Media',
@@ -27,13 +26,6 @@ export default function ResumeLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // @ts-expect-error currently only way to insert icon type inside FontAwesome
-  const githubIcon: IconProp = 'fa-brands fa-github';
-  // @ts-expect-error currently only way to insert icon type inside FontAwesome
-  const linkedinIcon: IconProp = 'fa-brands fa-linkedin';
-  // @ts-expect-error currently only way to insert icon type inside FontAwesome
-  const xTwitterIcon: IconProp = 'fa-brands fa-x-twitter';
-  const iconStyle = 'size-6  flex place-center';
   return (
     <html lang="en" className="dark">
       <body
@@ -52,7 +44,7 @@ export default function ResumeLayout({
             />
           </div>
           <h4 className="h4-responsive mb-6">Joe Rylander</h4>
-          <div className="mb-10 flex gap-12">
+          {/* <div className="mb-10 flex gap-12">
             <a
               className={iconStyle}
               href="https://github.com/joerylander"
@@ -74,7 +66,12 @@ export default function ResumeLayout({
             >
               <FontAwesomeIcon icon={xTwitterIcon} />
             </a>
-          </div>
+          </div> */}
+          <SocialLinks
+            className="mb-10 flex gap-8"
+            iconSize={24}
+            containerSize="size-6 md:size-12"
+          />
           <nav className="w-full">
             <ul className={`${azaret_mono.className} flex flex-col gap-4`}>
               <li>
