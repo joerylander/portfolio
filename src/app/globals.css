@@ -85,7 +85,7 @@
 
 .dark {
   --background: oklch(0.235 0 0);
-  --foreground: oklch(0.985 0 0);
+  --foreground: oklch(85% 0.008 240);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
@@ -159,7 +159,6 @@ button {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
-/* Responsive heading utility classes */
 .h1-responsive {
   @apply text-4xl font-extrabold tracking-tight transition-colors sm:text-5xl md:text-6xl;
 }
@@ -180,7 +179,6 @@ button {
   @apply text-base tracking-tight transition-colors sm:text-lg md:text-xl;
 }
 
-/* Responsive text utility class */
 .text-responsive {
   @apply text-xs transition-colors sm:text-sm md:text-base;
 }
