@@ -10,6 +10,7 @@ import {
   User,
 } from 'lucide-react';
 import SocialLinks from '@/components/shared/socialLinks';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Resume | Rylander Media',
@@ -32,9 +33,9 @@ export default function ResumeLayout({
         className={`${inter.variable} ${azaret_mono.variable} flex h-screen w-full justify-self-center antialiased`}
       >
         <header className="flex w-60 flex-col items-center bg-black px-4 py-8">
-          <a href="/">
+          <Link href="/">
             <span>Back to portfolio</span>
-          </a>
+          </Link>
           <div className="border-accent-foreground/40 relative mb-4 size-30 overflow-hidden rounded-full border-8">
             <Image
               src="/images/profile_transparent_bg.png"
