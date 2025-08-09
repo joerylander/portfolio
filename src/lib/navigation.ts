@@ -13,6 +13,7 @@ export const useNavigateTo = () => {
   const goToContact = () => router.push('#contact');
   const goToServices = () => router.push('#services');
   const goToProjects = () => router.push('#projects');
+  const goToResumePage = () => router.push('/resume');
 
   return {
     navigateTo,
@@ -21,6 +22,7 @@ export const useNavigateTo = () => {
     goToContact,
     goToServices,
     goToProjects,
+    goToResumePage,
     goHome,
   };
 };

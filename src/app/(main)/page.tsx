@@ -55,7 +55,7 @@ export default function Home() {
 
       <SectionWrapper
         id="about"
-        className="snap-start flex-col items-center gap-8"
+        className="snap-center flex-col items-center gap-8"
       >
         <About />
       </SectionWrapper>

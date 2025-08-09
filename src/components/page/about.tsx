@@ -1,4 +1,6 @@
+'use client';
 import Image from 'next/image';
+import CtaBtn from '../shared/ctaBtn';
 
 export default function About() {
   return (
@@ -35,7 +37,15 @@ export default function About() {
           calisthenics (
           <span className="italic">bodyweight training &amp; skills</span>).
         </p>
-        <p className="text-responsive">Let&apos;s build together!</p>
+        <p className="text-responsive">
+          Want to see my full professional history?
+        </p>
+        <CtaBtn
+          text="View my resumé"
+          className="mx-auto mt-4 w-1/3"
+          variant="secondary"
+          navigateTo="resumePage"
+        />
       </article>
     </>
   );

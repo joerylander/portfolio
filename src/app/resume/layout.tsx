@@ -32,6 +32,9 @@ export default function ResumeLayout({
         className={`${inter.variable} ${azaret_mono.variable} flex h-screen w-full justify-self-center antialiased`}
       >
         <header className="flex w-60 flex-col items-center bg-black px-4 py-8">
+          <a href="/">
+            <span>Back to portfolio</span>
+          </a>
           <div className="border-accent-foreground/40 relative mb-4 size-30 overflow-hidden rounded-full border-8">
             <Image
               src="/images/profile_transparent_bg.png"
@@ -44,29 +47,6 @@ export default function ResumeLayout({
             />
           </div>
           <h4 className="h4-responsive mb-6">Joe Rylander</h4>
-          {/* <div className="mb-10 flex gap-12">
-            <a
-              className={iconStyle}
-              href="https://github.com/joerylander"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={githubIcon} />
-            </a>
-            <a
-              className={iconStyle}
-              href="https://www.linkedin.com/in/joerylander/"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={linkedinIcon} />
-            </a>
-            <a
-              className={iconStyle}
-              href="https://x.com/Overload_JR"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={xTwitterIcon} />
-            </a>
-          </div> */}
           <SocialLinks
             className="mb-10 flex gap-8"
             iconSize={24}
@@ -74,25 +54,25 @@ export default function ResumeLayout({
           />
           <nav className="w-full">
             <ul className={`${azaret_mono.className} flex flex-col gap-4`}>
-              <li>
+              <li className="hover:text-accent-foreground w-fit">
                 <a href="#home" className="flex gap-2 px-2 py-4 capitalize">
                   <House />
                   Home
                 </a>
               </li>
-              <li>
+              <li className="hover:text-accent-foreground w-fit">
                 <a href="#about" className="flex gap-2 px-2 py-4 capitalize">
                   <User />
                   About
                 </a>
               </li>
-              <li>
+              <li className="hover:text-accent-foreground w-fit">
                 <a href="#resume" className="flex gap-2 px-2 py-4 capitalize">
                   <FileText />
                   Resumé
                 </a>
               </li>
-              <li>
+              <li className="hover:text-accent-foreground w-fit">
                 <a
                   href="#portfolio"
                   className="flex gap-2 px-2 py-4 capitalize"
@@ -101,7 +81,7 @@ export default function ResumeLayout({
                   Portfolio
                 </a>
               </li>
-              <li>
+              <li className="hover:text-accent-foreground w-fit">
                 <a
                   href="/files/Joakim_Rylander_CV.pdf"
                   className="flex gap-2 px-2 py-4 capitalize"

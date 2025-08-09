@@ -147,7 +147,7 @@ h5 {
   font-family: var(--font-inter);
 }
 a {
-  @apply cursor-pointer text-xs sm:text-sm md:text-base;
+  @apply cursor-pointer text-xs sm:text-sm lg:text-base;
   font-family: var(--font-azaret_mono);
 }
 p {
