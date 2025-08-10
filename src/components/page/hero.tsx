@@ -26,7 +26,7 @@ export default function Hero() {
           I craft fast, beautiful websites that help grow your brand.
         </h4>
         <div className="mt-8 flex w-full flex-wrap items-center justify-center gap-6 sm:justify-start sm:gap-8">
-          <CtaBtn text="Let's work together" className="md:w-1/2" />
+          <CtaBtn text="Let's talk" className="md:w-1/2" />
           <CtaBtn
             text="View my work"
             navigateTo="projects"

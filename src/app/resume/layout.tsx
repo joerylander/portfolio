@@ -36,7 +36,7 @@ export default function ResumeLayout({
         <header className="flex w-60 flex-col items-center bg-black px-4 py-8">
           <Link
             href="/"
-            className="hover:text-accent-foreground my-6 flex items-center gap-2 text-sm transition-colors duration-300"
+            className="hover:text-accent-foreground mb-8 flex items-center gap-2 self-start text-sm transition-colors duration-300"
           >
             <ChevronLeft size={20} />
             View my projects

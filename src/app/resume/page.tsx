@@ -1,5 +1,6 @@
 import SectionWrapper from '@/components/layout/sectionWrapper';
 import About from '@/components/page/about';
+import Capabilities from '@/components/page/capabilities';
 import ExperienceTimeline from '@/components/page/experienceTimeline';
 import Projects from '@/components/page/projects';
 import Typewriter from '@/components/shared/typewriter';
@@ -31,6 +32,9 @@ export default function Resume() {
       <ExperienceTimeline />
       {/* <SectionWrapper id="resume" className="">
       </SectionWrapper> */}
+      <SectionWrapper id="capabilities">
+        <Capabilities />
+      </SectionWrapper>
       <SectionWrapper id="projects" className="flex-col gap-20">
         <Projects />
       </SectionWrapper>
