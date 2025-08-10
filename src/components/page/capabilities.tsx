@@ -5,7 +5,7 @@ export default function Capabilities() {
     'Front-end Development': [
       'React',
       'Next.js',
-      'Vue.js',
+      'Angular',
       'Tailwind CSS',
       'HTML',
       'CSS',
@@ -21,7 +21,15 @@ export default function Capabilities() {
       'SQLite',
       'MySQL',
     ],
-    'Tools & Platforms': ['Git', 'Docker', 'Vite', 'Webpack', 'Postman'],
+    'Tools & Platforms': [
+      'Git',
+      'Github',
+      'Bitbucket',
+      'Docker',
+      'Vite',
+      'Webpack',
+      'Postman',
+    ],
   };
 
   return (
