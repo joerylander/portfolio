@@ -32,7 +32,7 @@ export default function Resume() {
       <ExperienceTimeline />
       {/* <SectionWrapper id="resume" className="">
       </SectionWrapper> */}
-      <SectionWrapper id="capabilities">
+      <SectionWrapper id="capabilities" className="flex-col">
         <Capabilities />
       </SectionWrapper>
       <SectionWrapper id="projects" className="flex-col gap-20">
