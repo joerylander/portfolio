@@ -23,7 +23,8 @@ export interface Testimonial {
 
 export interface ExperienceItem {
   id: number;
-  period: string;
+  startDate: string;
+  endDate: string;
   company: string;
   position: string;
   description: string;

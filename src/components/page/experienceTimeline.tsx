@@ -121,7 +121,8 @@ export default function ExperienceTimeline() {
                         >
                           <div className="bg-opacity-30 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
                             <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
-                              {item.period}
+                              {item.startDate} &#8209;{' '}
+                              {item.endDate || 'present'}
                             </h5>
                             <h3 className="mb-2 text-2xl font-bold tracking-wide text-white lg:text-3xl">
                               {item.company}
@@ -178,26 +179,28 @@ export default function ExperienceTimeline() {
                     </div>
                   ))
                 : data &&
-                  data.map((item) => (
-                    <div key={item.id} className="relative">
-                      {/* Timeline Dot */}
-                      <div className="border-accent-foreground bg-accent-foreground absolute -left-2 h-4 w-4 rounded-full border-4 shadow-lg"></div>
+                  data
+                    .sort((a, b) => +b.startDate - +a.startDate)
+                    .map((item) => (
+                      <div key={item.id} className="relative">
+                        {/* Timeline Dot */}
+                        <div className="border-accent-foreground bg-accent-foreground absolute -left-2 h-4 w-4 rounded-full border-4 shadow-lg"></div>
 
-                      {/* Content */}
-                      <article className="bg-opacity-30 ml-8 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
-                        <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
-                          {item.period}
-                        </h5>
-                        <h3 className="mb-2 text-xl font-bold tracking-wide text-white">
-                          {item.company}
-                        </h3>
-                        <h4 className="mb-3 text-base font-medium text-gray-300">
-                          {item.position}
-                        </h4>
-                        {renderDescription(item.description)}
-                      </article>
-                    </div>
-                  ))}
+                        {/* Content */}
+                        <article className="bg-opacity-30 ml-8 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
+                          <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
+                            {/* {item.period} */}
+                          </h5>
+                          <h3 className="mb-2 text-xl font-bold tracking-wide text-white">
+                            {item.company}
+                          </h3>
+                          <h4 className="mb-3 text-base font-medium text-gray-300">
+                            {item.position}
+                          </h4>
+                          {renderDescription(item.description)}
+                        </article>
+                      </div>
+                    ))}
             </div>
           </div>
         </section>
