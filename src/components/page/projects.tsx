@@ -9,6 +9,8 @@ import { useFetch } from '@/lib/fetch';
 import { Project } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
 import { ApiEndpoints } from '@/lib/constants';
+import { Badge } from '../ui/badge';
+import { capitalizeEachWord } from '@/lib/utils';
 
 export default function Projects() {
   const { navigateNewTabURL } = useNavigateTo();
@@ -56,6 +58,13 @@ export default function Projects() {
                       <h3 className="mb-2 text-2xl font-bold text-white">
                         {project.title}
                       </h3>
+                      <div className="mb-2 space-x-2">
+                        {project.techs.map((tech, i) => (
+                          <Badge key={i} variant="default">
+                            {capitalizeEachWord(tech)}
+                          </Badge>
+                        ))}
+                      </div>
                       <p
                         className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90 first-letter:uppercase`}
                       >

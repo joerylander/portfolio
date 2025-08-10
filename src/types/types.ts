@@ -11,6 +11,7 @@ export interface Project {
   img_src: string;
   img_alt: string;
   external_link: string;
+  techs: string[];
 }
 
 export interface Testimonial {
