@@ -8,17 +8,20 @@ import { azaret_mono } from '@/lib/fonts';
 import { useFetch } from '@/lib/fetch';
 import { Testimonial } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
+import { ApiEndpoints } from '@/lib/constants';
 
 export default function Testimonials() {
-  const { data, loading } = useFetch<Testimonial[]>('/api/testimonials');
+  const { data, loading } = useFetch<Testimonial[]>(ApiEndpoints.testimonials);
 
   const autoplay = useRef(Autoplay({ delay: 3000 }));
 
   return (
     <>
-      <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
-        What people say about us
-      </h2>
+      <header className="mb-16 text-center lg:mb-24">
+        <h2 className="h2-responsive font-bold text-balance capitalize">
+          What people say about us
+        </h2>
+      </header>
       {loading ? (
         <div className="mx-auto w-full">
           <div className="mx-auto flex h-[500px] max-w-fit">
@@ -51,8 +54,8 @@ export default function Testimonials() {
           <CarouselContent>
             {data &&
               data.map((t) => {
-                const nameParts = t.name.split(' ');
-                const initials = nameParts[0][0] + nameParts[1][0];
+                const initials = `${t.firstName.charAt(0)} ${t.lastName.charAt(0)}`;
+                const fullName = `${t.firstName} ${t.lastName.charAt(0)}`;
                 return (
                   <CarouselItem key={t.id}>
                     <article className="flex h-[500px] max-w-fit">
@@ -60,20 +63,20 @@ export default function Testimonials() {
                         <Avatar className="size-24 sm:size-32 md:size-40">
                           <AvatarImage
                             src={`/images/testimonials/${t.img_src}`}
-                            alt={`avatar of ${t.name.toLowerCase()}`}
+                            alt={`avatar of ${fullName.toLowerCase()}`}
                             className="object-cover"
                           />
                           <AvatarFallback>{initials}</AvatarFallback>
                         </Avatar>
 
-                        <p className="text-center text-pretty">
+                        <p className="text-responsive text-center text-pretty">
                           {t.testimonial}
                         </p>
-                        <h3 className="text-2xl font-bold text-balance capitalize sm:text-3xl md:text-4xl">
-                          {t.name}
+                        <h3 className="h3-responsive font-bold text-balance capitalize">
+                          {fullName}.
                         </h3>
                         <h4
-                          className={`${azaret_mono.className} text-base font-semibold text-balance uppercase opacity-80 sm:text-xl md:text-2xl`}
+                          className={`${azaret_mono.className} h4-responsive font-semibold text-balance uppercase opacity-80`}
                         >
                           {t.title}
                         </h4>

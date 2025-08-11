@@ -4,27 +4,46 @@ import { Button } from '../ui/button';
 type CtaProps = {
   text: string;
   className?: string;
+  navigateTo?: 'contact' | 'projects' | 'resumePage';
   onClick?: () => void;
-  navigate?: boolean;
+  variant?:
+    | 'default'
+    | 'secondary'
+    | 'ghost'
+    | 'outline'
+    | 'destructive'
+    | 'link';
 };
 
 export default function CtaBtn({
   text,
   className,
   onClick,
-  navigate = true,
+  navigateTo = 'contact',
+  variant = 'default',
 }: CtaProps) {
-  const { goToContact } = useNavigateTo();
+  const { goToContact, goToProjects, goToResumePage } = useNavigateTo();
 
   const handleClick = () => {
     if (onClick) onClick();
-
-    if (navigate) goToContact();
+    switch (navigateTo) {
+      case 'contact':
+        goToContact();
+        break;
+      case 'projects':
+        goToProjects();
+        break;
+      case 'resumePage':
+        goToResumePage();
+        break;
+      default:
+        goToContact();
+    }
   };
   return (
     <Button
-      variant={'default'}
-      size={'lg'}
+      variant={variant}
+      size="lg"
       onClick={handleClick}
       className={`${className} capitalize`}
     >

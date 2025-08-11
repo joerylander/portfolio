@@ -8,16 +8,21 @@ import { ExternalLink } from 'lucide-react';
 import { useFetch } from '@/lib/fetch';
 import { Project } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
+import { ApiEndpoints } from '@/lib/constants';
+import { Badge } from '../ui/badge';
+import { capitalizeEachWord } from '@/lib/utils';
 
 export default function Projects() {
-  const { openInNewTab } = useNavigateTo();
-  const { data, loading } = useFetch<Project[]>('/api/projects');
+  const { navigateNewTabURL } = useNavigateTo();
+  const { data, loading } = useFetch<Project[]>(ApiEndpoints.projects);
 
   return (
     <>
-      <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
-        Featured projects
-      </h2>
+      <header className="mb-16 text-center lg:mb-24">
+        <h2 className="h2-responsive font-bold text-balance capitalize">
+          Featured projects
+        </h2>
+      </header>
 
       <div className="grid w-full auto-rows-[400px] grid-cols-1 gap-x-14 gap-y-8 md:grid-cols-2">
         {loading
@@ -53,6 +58,13 @@ export default function Projects() {
                       <h3 className="mb-2 text-2xl font-bold text-white">
                         {project.title}
                       </h3>
+                      <div className="mb-2 space-x-2">
+                        {project.techs.map((tech, i) => (
+                          <Badge key={i} variant="default">
+                            {capitalizeEachWord(tech)}
+                          </Badge>
+                        ))}
+                      </div>
                       <p
                         className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90 first-letter:uppercase`}
                       >
@@ -63,7 +75,9 @@ export default function Projects() {
                         <Button
                           size="lg"
                           className="bg-white text-black hover:bg-white/90"
-                          onClick={() => openInNewTab(project.external_link)}
+                          onClick={() =>
+                            navigateNewTabURL(project.external_link)
+                          }
                         >
                           Visit site
                           <ExternalLink />

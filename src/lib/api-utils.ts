@@ -1,13 +1,18 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import { Project, Service, Testimonial } from '@/types/types';
-
-type ContentType = 'services' | 'projects' | 'testimonials';
+import {
+  ContentType,
+  ExperienceItem,
+  Project,
+  Service,
+  Testimonial,
+} from '@/types/types';
 
 interface DataStructure {
   services: Service[];
   projects: Project[];
   testimonials: Testimonial[];
+  experienceItems: ExperienceItem[];
 }
 
 export async function getDataByType<T extends ContentType>(

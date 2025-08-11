@@ -5,20 +5,24 @@ export const useNavigateTo = () => {
 
   const navigateTo = (path: string) => router.push(path);
 
-  const openInNewTab = (url: string) =>
+  const navigateNewTabURL = (url: string) =>
     window.open(url, '_blank', 'noopener,noreferrer');
+  const navigateToURL = (url: string) => window.open(url, '_self');
 
   const goHome = () => router.push('/');
   const goToContact = () => router.push('#contact');
   const goToServices = () => router.push('#services');
   const goToProjects = () => router.push('#projects');
+  const goToResumePage = () => router.push('/resume');
 
   return {
     navigateTo,
-    openInNewTab,
+    navigateToURL,
+    navigateNewTabURL,
     goToContact,
     goToServices,
     goToProjects,
+    goToResumePage,
     goHome,
   };
 };

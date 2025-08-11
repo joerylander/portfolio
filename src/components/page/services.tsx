@@ -2,14 +2,17 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { useFetch } from '@/lib/fetch';
 import { Service } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
+import { ApiEndpoints } from '@/lib/constants';
 
 export default function Services() {
-  const { data, loading } = useFetch<Service[]>('/api/services');
+  const { data, loading } = useFetch<Service[]>(ApiEndpoints.services);
   return (
     <>
-      <h2 className="text-center text-2xl font-bold text-balance md:text-3xl lg:text-4xl">
-        Your Website Should Do more Than Just Look Good - It Should Convert
-      </h2>
+      <header className="mb-16 text-center lg:mb-24">
+        <h2 className="h2-responsive text-center text-balance">
+          Your Website Should Do more Than Just Look Good - It Should Convert
+        </h2>
+      </header>
       <div className="flex flex-col gap-10 lg:flex-row">
         {loading
           ? Array.from({ length: 3 }).map((_, index) => (
@@ -39,13 +42,11 @@ export default function Services() {
               >
                 <CardHeader>
                   <CardTitle>
-                    <h3 className="text-base font-bold sm:text-lg md:text-xl">
-                      {service.title}
-                    </h3>
+                    <h5 className="h5-responsive">{service.title}</h5>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-light text-pretty">
+                  <p className="text-responsive font-light text-pretty">
                     {service.description}
                   </p>
                 </CardContent>

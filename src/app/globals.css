@@ -41,6 +41,11 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Typewriter Animation */
+  --animation-typewriter: typewriter var(--typewriter-duration, 3s)
+    steps(var(--typewriter-steps, 40), end) forwards;
+  --animation-blink-caret: blink-caret 1s step-end infinite;
 }
 
 :root {
@@ -80,7 +85,7 @@
 
 .dark {
   --background: oklch(0.235 0 0);
-  --foreground: oklch(0.985 0 0);
+  --foreground: oklch(85% 0.008 240);
   --card: oklch(0.21 0.006 285.885);
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
@@ -137,12 +142,16 @@ h4 {
   @apply tracking-tight transition-colors;
   font-family: var(--font-inter);
 }
+h5 {
+  @apply tracking-tight transition-colors;
+  font-family: var(--font-inter);
+}
 a {
-  @apply hover:text-accent-foreground cursor-pointer text-xs sm:text-sm md:text-base;
+  @apply cursor-pointer;
   font-family: var(--font-azaret_mono);
 }
 p {
-  @apply text-xs transition-colors sm:text-sm md:text-base;
+  @apply transition-colors;
   font-family: var(--font-azaret_mono);
 }
 
@@ -150,10 +159,91 @@ button {
   font-family: var(--font-inter), system-ui, sans-serif;
 }
 
+.h1-responsive {
+  @apply text-4xl font-extrabold tracking-tight transition-colors sm:text-5xl md:text-6xl;
+}
+
+.h2-responsive {
+  @apply text-2xl font-bold tracking-tight transition-colors md:text-3xl lg:text-4xl;
+}
+
+.h3-responsive {
+  @apply text-xl font-medium tracking-tight transition-colors sm:text-2xl md:text-3xl;
+}
+
+.h4-responsive {
+  @apply text-lg tracking-tight transition-colors sm:text-xl md:text-2xl;
+}
+
+.h5-responsive {
+  @apply text-base tracking-tight transition-colors sm:text-lg md:text-xl;
+}
+
+.text-responsive {
+  @apply text-xs transition-colors sm:text-sm md:text-base;
+}
+
+.placeholder-responsive {
+  @apply placeholder:text-xs placeholder:italic placeholder:sm:text-sm placeholder:md:text-base;
+}
+
+.link-responsive {
+  @apply text-xs sm:text-sm lg:text-base;
+}
+
+/* Typewriter Effect Animations */
+@keyframes typewriter {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Typewriter utility classes */
+.typewriter {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 0;
+  animation: var(--animation-typewriter), var(--animation-blink-caret);
+}
+
+.typewriter-no-caret {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
+  max-width: 0;
+  animation: var(--animation-typewriter);
+}
+
+/* Blinking caret for JavaScript typewriter */
+.blinking-caret::after {
+  content: '|';
+  color: currentColor;
+  animation: blink-caret 1s step-end infinite;
+}
+
 .scrollbar-hide {
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
 }
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }

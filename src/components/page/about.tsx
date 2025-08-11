@@ -1,9 +1,11 @@
+'use client';
 import Image from 'next/image';
+import CtaBtn from '../shared/ctaBtn';
 
 export default function About() {
   return (
     <>
-      <div className="border-accent-foreground relative size-48 overflow-hidden rounded-full border-2 md:size-60">
+      <div className="border-accent-foreground relative size-32 overflow-hidden rounded-full border-8 sm:size-40 md:size-48">
         <Image
           src="/images/profile_transparent_bg.png"
           alt="profile image"
@@ -14,26 +16,36 @@ export default function About() {
           sizes="100vw"
         />
       </div>
-      <h2 className="text-center text-2xl font-bold text-balance capitalize md:text-3xl lg:text-4xl">
-        My story
-      </h2>
+      <header className="text-center">
+        <h2 className="h2-responsive font-bold text-balance capitalize">
+          My story
+        </h2>
+      </header>
       <article className="flex max-w-2xl flex-col gap-4 text-justify text-pretty hyphens-auto">
-        <p>
+        <p className="text-responsive">
           Hello there! I&apos;m Joe Rylander, a professional web developer with
           focus on helping fitness professionals and small businesses build
           clean, high-performing &amp; conversion-focused websites.
         </p>
-        <p>
+        <p className="text-responsive">
           I use modern tools like React, WordPress, and Laravel to build
           websites that are fast, SEO-friendly, and easy to manage — whether
           you&apos;re starting fresh or updating an existing one.
         </p>
-        <p>
+        <p className="text-responsive">
           When I&apos;m not working, you&apos;ll often find me training
           calisthenics (
           <span className="italic">bodyweight training &amp; skills</span>).
         </p>
-        <p>Let&apos;s build together!</p>
+        <p className="text-responsive">
+          Want to see my full professional history?
+        </p>
+        <CtaBtn
+          text="View my resumé"
+          className="mx-auto mt-4 w-1/3"
+          variant="secondary"
+          navigateTo="resumePage"
+        />
       </article>
     </>
   );
