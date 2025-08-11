@@ -32,6 +32,13 @@ export interface ExperienceItem {
   description: string;
 }
 
+export interface MenuItem {
+  link: string;
+  text: string;
+  icon?: React.ComponentType<any>;
+  download?: boolean;
+}
+
 export type ContentType =
   | 'services'
   | 'projects'

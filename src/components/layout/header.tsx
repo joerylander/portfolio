@@ -21,6 +21,25 @@ import {
 } from '@/components/ui/sheet';
 import CalendlyBtn from '../shared/calendlyBtn';
 
+const menuItems = [
+  {
+    link: 'services',
+    text: 'services',
+  },
+  {
+    link: 'projects',
+    text: 'projects',
+  },
+  {
+    link: 'testimonials',
+    text: 'testimonials',
+  },
+  {
+    link: 'about',
+    text: 'about',
+  },
+] as const;
+
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);
 
@@ -31,38 +50,16 @@ export default function Header() {
       {/* Desktop Navigation */}
       <NavigationMenu className="hidden md:flex">
         <NavigationMenuList className="gap-10">
-          <NavigationMenuItem>
-            <Link
-              href="#services"
-              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
-            >
-              Services
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
-              href="#projects"
-              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
-            >
-              Projects
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
-              href="#testimonials"
-              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
-            >
-              Testimonials
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link
-              href="#about"
-              className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
-            >
-              About
-            </Link>
-          </NavigationMenuItem>
+          {menuItems.map((item, i) => (
+            <NavigationMenuItem key={i}>
+              <Link
+                href={`#${item.link}`}
+                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
+              >
+                {item.text}
+              </Link>
+            </NavigationMenuItem>
+          ))}
         </NavigationMenuList>
       </NavigationMenu>
 
@@ -85,34 +82,16 @@ export default function Header() {
             </SheetHeader>
 
             <nav className="mt-6 flex flex-col items-center gap-8">
-              <Link
-                href="#services"
-                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
-                onClick={() => setOpenNav(false)}
-              >
-                Services
-              </Link>
-              <Link
-                href="#projects"
-                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
-                onClick={() => setOpenNav(false)}
-              >
-                Projects
-              </Link>
-              <Link
-                href="#testimonials"
-                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
-                onClick={() => setOpenNav(false)}
-              >
-                Testimonials
-              </Link>
-              <Link
-                href="#about"
-                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
-                onClick={() => setOpenNav(false)}
-              >
-                About
-              </Link>
+              {menuItems.map((item, i) => (
+                <Link
+                  key={i}
+                  href={`#${item.link}`}
+                  className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
+                  onClick={() => setOpenNav(false)}
+                >
+                  {item.text}
+                </Link>
+              ))}
             </nav>
 
             <CalendlyBtn<void>

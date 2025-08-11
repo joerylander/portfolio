@@ -34,8 +34,10 @@ export default function ResumeProjects() {
 
   return (
     <>
-      <header className="mb-8 text-center">
-        <h2 className="h2-responsive font-bold">Key Projects</h2>
+      <header className="mb-16 text-center">
+        <h2 className="h2-responsive font-bold capitalize">
+          Portfolio Projects
+        </h2>
       </header>
 
       <div className="grid gap-6 sm:grid-cols-2">
@@ -46,11 +48,11 @@ export default function ResumeProjects() {
           >
             <CardHeader>
               <CardTitle className="capitalize">{project.title}</CardTitle>
-              <p className="text-sm text-gray-300">{project.role}</p>
+              <p className="text-xs text-gray-300 sm:text-sm">{project.role}</p>
             </CardHeader>
             <CardContent>
-              <p className="mb-2">{project.summary}</p>
-              <p className="text-sm text-gray-300">
+              <p className="text-responsive mb-2">{project.summary}</p>
+              <p className="text-xs text-gray-300 sm:text-sm">
                 <strong>Tech Stack:</strong> {project.tech.join(', ')}
               </p>
             </CardContent>
