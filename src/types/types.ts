@@ -16,7 +16,8 @@ export interface Project {
 
 export interface Testimonial {
   id: number;
-  name: string;
+  firstName: string;
+  lastName: string;
   title: string;
   testimonial: string;
   img_src: string;

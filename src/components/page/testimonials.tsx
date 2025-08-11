@@ -54,8 +54,8 @@ export default function Testimonials() {
           <CarouselContent>
             {data &&
               data.map((t) => {
-                const nameParts = t.name.split(' ');
-                const initials = nameParts[0][0] + nameParts[1][0];
+                const initials = `${t.firstName.charAt(0)} ${t.lastName.charAt(0)}`;
+                const fullName = `${t.firstName} ${t.lastName.charAt(0)}`;
                 return (
                   <CarouselItem key={t.id}>
                     <article className="flex h-[500px] max-w-fit">
@@ -63,7 +63,7 @@ export default function Testimonials() {
                         <Avatar className="size-24 sm:size-32 md:size-40">
                           <AvatarImage
                             src={`/images/testimonials/${t.img_src}`}
-                            alt={`avatar of ${t.name.toLowerCase()}`}
+                            alt={`avatar of ${fullName.toLowerCase()}`}
                             className="object-cover"
                           />
                           <AvatarFallback>{initials}</AvatarFallback>
@@ -73,7 +73,7 @@ export default function Testimonials() {
                           {t.testimonial}
                         </p>
                         <h3 className="h3-responsive font-bold text-balance capitalize">
-                          {t.name}
+                          {fullName}.
                         </h3>
                         <h4
                           className={`${azaret_mono.className} h4-responsive font-semibold text-balance uppercase opacity-80`}

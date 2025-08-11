@@ -33,20 +33,22 @@
       "img_alt": "Homepage of personal trainer Jon Raynor, featuring bold fitness imagery, a motivational headline and links to training services.",
       "img_src": "pt_jonraynor.png",
       "external_link": "https://rylandermedia.wixstudio.com/personal-trainer",
-      "techs": ["wix studio", "next.js"]
+      "techs": ["wix studio"]
     }
   ],
   "testimonials": [
     {
       "id": 1,
-      "name": "Daniel Yeoh",
+      "firstName": "Daniel",
+      "lastName": "Yeoh",
       "title": "Dr. of Naprapathy",
       "testimonial": "I hired Joe to build my website and was very satisfied with the collaboration. He worked professionally, paid attention to detail, and contributed valuable ideas throughout the process. I can highly recommend him.",
       "img_src": "daniel_yeoh.png"
     },
     {
       "id": 2,
-      "name": "Edwina Sun",
+      "firstName": "Edwina",
+      "lastName": "Sun",
       "title": "Project Manager",
       "testimonial": "I had a great experience working with Joe. The project was delivered on time, and the communication throughout was clear and efficient. He made sure to include all the features I wanted without any hassle. I'm very happy with the final result and would definitely recommend his services.",
       "img_src": "edwina_sun.jpg"

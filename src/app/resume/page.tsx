@@ -2,7 +2,7 @@ import SectionWrapper from '@/components/layout/sectionWrapper';
 import About from '@/components/page/about';
 import Capabilities from '@/components/page/capabilities';
 import ExperienceTimeline from '@/components/page/experienceTimeline';
-import Projects from '@/components/page/projects';
+import ResumeProjects from '@/components/page/resumeProjects';
 import Typewriter from '@/components/shared/typewriter';
 import Image from 'next/image';
 
@@ -36,7 +36,7 @@ export default function Resume() {
         <Capabilities />
       </SectionWrapper>
       <SectionWrapper id="projects" className="flex-col gap-20">
-        <Projects />
+        <ResumeProjects />
       </SectionWrapper>
       <SectionWrapper id="about" className="flex-col items-center gap-20">
         <About />
