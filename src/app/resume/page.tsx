@@ -39,7 +39,7 @@ export default function Resume() {
         <ResumeProjects />
       </SectionWrapper>
       <SectionWrapper id="about" className="flex-col items-center gap-20">
-        <About />
+        <About variant="resumePage" />
       </SectionWrapper>
     </>
   );

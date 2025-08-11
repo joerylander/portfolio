@@ -35,17 +35,19 @@ export default function Capabilities() {
   return (
     <>
       <header className="mx-auto mb-16">
-        <h2 className="h2-responsive">Skills & Tools</h2>
+        <h2 className="h2-responsive">Key Technical Proficiencies</h2>
       </header>
 
-      <div className="grid gap-6 sm:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-3">
         {Object.entries(skills).map(([category, items]) => (
           <Card key={category} className="w-full bg-[#262626] text-white">
             <CardHeader>
-              <CardTitle className="capitalize">{category}</CardTitle>
+              <CardTitle className="mx-auto font-bold capitalize">
+                {category}
+              </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="list-inside list-disc space-y-1 text-left">
+              <ul className="flex h-full list-inside list-disc flex-col flex-wrap gap-2 text-left">
                 {items.map((item) => (
                   <li key={item}>{item}</li>
                 ))}

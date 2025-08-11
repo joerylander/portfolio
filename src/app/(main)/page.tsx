@@ -57,7 +57,7 @@ export default function Home() {
         id="about"
         className="snap-center flex-col items-center gap-8"
       >
-        <About />
+        <About variant="homePage" />
       </SectionWrapper>
       <SectionWrapper id="techskills" className="snap-start flex-col">
         <TechSkills />
