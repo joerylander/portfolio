@@ -19,7 +19,7 @@ export default function SideNavBar({ menuItems }: SideNavBarProps) {
         <ChevronLeft size={20} />
         View my portfolio
       </Link>
-      <div className="border-accent-foreground/40 relative mb-4 size-30 overflow-hidden rounded-full border-8">
+      <div className="border-accent-foreground/40 relative mb-4 aspect-square w-30 flex-shrink-0 overflow-hidden rounded-full border-8">
         <Image
           src="/images/profile_transparent_bg.png"
           alt="profile image"
