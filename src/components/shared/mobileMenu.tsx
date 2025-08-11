@@ -9,7 +9,6 @@ import {
   SheetTitle,
   SheetTrigger,
 } from '../ui/sheet';
-import Link from 'next/link';
 import { Dispatch, SetStateAction } from 'react';
 import { MenuItem } from '@/types/types';
 
@@ -26,6 +25,18 @@ export default function MobileMenu({
   menuItems,
   className,
 }: MobileMenuProps) {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
+      });
+    }
+    setOpenNav(false);
+  };
+
   return (
     <section className={className}>
       <Sheet open={openNav} onOpenChange={setOpenNav}>
@@ -68,13 +79,13 @@ export default function MobileMenu({
               }
 
               return (
-                <Link
+                <button
                   key={i}
-                  href={item.link}
-                  onClick={() => setOpenNav(false)}
+                  onClick={() => scrollToSection(item.link.replace('#', ''))}
+                  className="cursor-pointer"
                 >
                   {linkContent}
-                </Link>
+                </button>
               );
             })}
           </nav>
