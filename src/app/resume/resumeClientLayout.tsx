@@ -15,7 +15,7 @@ import {
 const menuItems: MenuItem[] = [
   { link: '#home', text: 'Home', icon: House },
   { link: '#about', text: 'About', icon: User },
-  { link: '#resume', text: 'Resume', icon: FileText },
+  { link: '#resume', text: 'Resumé', icon: FileText },
   { link: '#projects', text: 'Portfolio', icon: GalleryHorizontalEnd },
   {
     link: '/files/Joakim_Rylander_CV.pdf',

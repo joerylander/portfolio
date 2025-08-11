@@ -4,23 +4,13 @@ import { ChevronLeft } from 'lucide-react';
 import { azaret_mono } from '@/lib/fonts';
 import SocialLinks from '../shared/socialLinks';
 import { MenuItem } from '@/types/types';
+import { scrollToSection } from '@/lib/utils';
 
 type SideNavBarProps = {
   menuItems: MenuItem[];
 };
 
 export default function SideNavBar({ menuItems }: SideNavBarProps) {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
-    }
-  };
-
   return (
     <header className="hidden w-60 flex-col items-center bg-black px-4 py-8 md:flex">
       <Link
