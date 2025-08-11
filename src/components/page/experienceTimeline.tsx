@@ -40,17 +40,17 @@ export default function ExperienceTimeline() {
   );
 
   return (
-    <article className="relative min-h-screen w-full overflow-hidden">
+    <article className="relative min-h-screen w-full">
       <Image
         src="/images/snowy_mountains.avif"
         alt="background image of mountain ranges"
         fill
         priority
         quality={90}
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, calc(100vw - 240px)"
         className="-z-10 scale-100 object-cover"
       />
-      <div className="container mx-auto px-4 py-16 lg:py-24">
+      <div className="w-full px-4 py-16 lg:px-8 lg:py-24">
         {/* Header */}
         <header className="mb-16 text-center lg:mb-24">
           <h2 className="h2-responsive text-4xl tracking-[0.2em] text-white uppercase">

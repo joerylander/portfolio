@@ -27,7 +27,6 @@ export const useFetch = <T>(
 
     try {
       const response = await fetch(url);
-
       if (!response.ok) {
         throw new Error(`Failed to fetch: ${response.status}`);
       }

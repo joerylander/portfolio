@@ -6,7 +6,7 @@ import { inter } from '@/lib/fonts';
 import { Button } from '../ui/button';
 import { ExternalLink } from 'lucide-react';
 import { useFetch } from '@/lib/fetch';
-import { Project } from '@/types/types';
+import { ProjectItem } from '@/types/types';
 import { Skeleton } from '../ui/skeleton';
 import { ApiEndpoints } from '@/lib/constants';
 import { Badge } from '../ui/badge';
@@ -14,7 +14,7 @@ import { capitalizeEachWord } from '@/lib/utils';
 
 export default function Projects() {
   const { navigateNewTabURL } = useNavigateTo();
-  const { data, loading } = useFetch<Project[]>(ApiEndpoints.projects);
+  const { data, loading } = useFetch<ProjectItem[]>(ApiEndpoints.projectItems);
 
   return (
     <>
@@ -37,57 +37,59 @@ export default function Projects() {
               </article>
             ))
           : data &&
-            data.map((project) => (
-              <article
-                key={project.id}
-                className="group h-full w-full justify-self-center p-0"
-              >
-                <div className="relative h-full w-full transition-transform duration-300 group-hover:scale-105">
-                  <Image
-                    src={`/images/portfolio/${project.img_src}`}
-                    alt={project.img_alt}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    placeholder="blur"
-                    blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                  />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
-                    <div className="translate-y-0 transform transition-transform duration-300 md:translate-y-4 md:group-hover:translate-y-0">
-                      <h3 className="mb-2 text-2xl font-bold text-white">
-                        {project.title}
-                      </h3>
-                      <div className="mb-2 space-x-2">
-                        {project.techs.map((tech, i) => (
-                          <Badge key={i} variant="default">
-                            {capitalizeEachWord(tech)}
-                          </Badge>
-                        ))}
-                      </div>
-                      <p
-                        className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90 first-letter:uppercase`}
-                      >
-                        {project.description}
-                      </p>
-
-                      <div className="flex gap-2">
-                        <Button
-                          size="lg"
-                          className="bg-white text-black hover:bg-white/90"
-                          onClick={() =>
-                            navigateNewTabURL(project.external_link)
-                          }
+            data
+              .filter((project) => project.featured)
+              .map((project) => (
+                <article
+                  key={project.id}
+                  className="group h-full w-full justify-self-center p-0"
+                >
+                  <div className="relative h-full w-full transition-transform duration-300 group-hover:scale-105">
+                    <Image
+                      src={`/images/portfolio/${project.imgSrc}`}
+                      alt={project.imgAlt}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 flex flex-col justify-end bg-black/60 p-6 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100">
+                      <div className="translate-y-0 transform transition-transform duration-300 md:translate-y-4 md:group-hover:translate-y-0">
+                        <h3 className="mb-2 text-2xl font-bold text-white">
+                          {project.title}
+                        </h3>
+                        <div className="mb-2 space-x-2">
+                          {project.techStack.map((tech, i) => (
+                            <Badge key={i} variant="default">
+                              {capitalizeEachWord(tech)}
+                            </Badge>
+                          ))}
+                        </div>
+                        <p
+                          className={`${inter.className} mb-4 line-clamp-3 text-base text-white/90 first-letter:uppercase`}
                         >
-                          Visit site
-                          <ExternalLink />
-                        </Button>
+                          {project.description}
+                        </p>
+
+                        <div className="flex gap-2">
+                          <Button
+                            size="lg"
+                            className="bg-white text-black hover:bg-white/90"
+                            onClick={() =>
+                              navigateNewTabURL(project.externalLink)
+                            }
+                          >
+                            Visit site
+                            <ExternalLink />
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
       </div>
     </>
   );
