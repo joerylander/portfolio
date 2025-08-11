@@ -33,7 +33,7 @@ export default function About({ variant }: AboutProps) {
           fill
           priority
           quality={90}
-          sizes="100vw"
+          sizes="(max-width: 640px) 128px, (max-width: 768px) 160px, 192px"
         />
       </div>
       <header className="text-center">

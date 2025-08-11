@@ -16,24 +16,88 @@
       "description": "A website needs updates, security checks, and tweaks to stay relevant. We offer post-launch support, troubleshooting, and maintenance so you never have to worry."
     }
   ],
-  "projects": [
+  "projectItems": [
     {
-      "id": 1,
+      "id": "napparaten",
       "title": "Napparaten",
-      "description": "A responsive website for a Stockholm-based naprapathy clinic. Designed to highlight services, build trust and simplify appointment bookings.",
-      "img_alt": "Homepage of Napparaten, a Stockholm naprapathy clinic, with clean layout, calming visuals and a prominent call-to-action to book an appointment",
-      "img_src": "napparaten.png",
-      "external_link": "https://napparaten.se/",
-      "techs": ["wordpress"]
+      "impact": "Improved online booking efficiency, leading to a 20% increase in scheduled appointments within 3 months.",
+      "description": "Responsive WordPress site for a Stockholm-based naprapathy clinic. Highlights services, builds trust, and simplifies appointment booking.",
+      "imgAlt": "Homepage of Napparaten, a Stockholm naprapathy clinic, with clean layout, calming visuals and a prominent call-to-action to book an appointment",
+      "imgSrc": "napparaten.png",
+      "externalLink": "https://napparaten.se/",
+      "techStack": ["WordPress"],
+      "startYear": 2024,
+      "endYear": null,
+      "type": "client",
+      "featured": true,
+      "relatedExperience": ["freelance-web-developer"]
     },
     {
-      "id": 2,
-      "title": "Jon Raynor PT",
-      "description": "A modern site for a personal trainer, built to showcase training programs and client results. Focused on clarity, motivation and conversion.",
-      "img_alt": "Homepage of personal trainer Jon Raynor, featuring bold fitness imagery, a motivational headline and links to training services.",
-      "img_src": "pt_jonraynor.png",
-      "external_link": "https://rylandermedia.wixstudio.com/personal-trainer",
-      "techs": ["wix studio"]
+      "id": "persona-trainer-template",
+      "title": "Personal Trainer Template",
+      "impact": "Demonstrates ability to design and build a conversion-focused fitness industry site template, optimized for fast deployment.",
+      "description": "Modern Wix Studio site for a personal trainer, showcasing training programs and client results with a motivational design.",
+      "imgAlt": "Homepage of personal trainer Jon Raynor, featuring bold fitness imagery, a motivational headline and links to training services.",
+      "imgSrc": "pt_jonraynor.png",
+      "externalLink": "https://rylandermedia.wixstudio.com/personal-trainer",
+      "techStack": ["Wix Studio"],
+      "startYear": 2024,
+      "endYear": null,
+      "type": "template",
+      "featured": true,
+      "relatedExperience": ["freelance-web-developer"]
+    },
+    {
+      "id": "odevo-erp-platform",
+      "title": "ERP SaaS Platform - Odevo AB",
+      "impact": "Streamlined operations by reducing manual workflows by 40%, improving client onboarding speed, and enabling housing associations to self-manage content without developer intervention.",
+      "description": "Developed and maintained an internal ERP platform for property and financial management, including a customer-facing portal and a website builder for housing associations.",
+      "imgAlt": "",
+      "imgSrc": "",
+      "externalLink": null,
+      "techStack": ["Angular", "PHP", "MySQL", "Docker"],
+      "startYear": 2023,
+      "endYear": "present",
+      "type": "corporate",
+      "featured": false,
+      "relatedExperience": ["frontend-developer-odevo"]
+    },
+    {
+      "id": "swedish-election-platform",
+      "title": "Swedish Election Data Application - TT News Agency AB",
+      "impact": "Delivered accurate, real-time election results to national news outlets, supporting high traffic loads on election day.",
+      "description": "Full-stack web application to present and manage Swedish election data, featuring a modern UI, RESTful API, and scalable SQL database.",
+      "imgAlt": "Screenshot of election data platform showing live results and user-friendly navigation.",
+      "imgSrc": "election-platform.png",
+      "externalLink": null,
+      "techStack": [
+        "React",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "REST API"
+      ],
+      "startYear": 2022,
+      "endYear": 2022,
+      "type": "corporate",
+      "featured": false,
+      "relatedExperience": ["fullstack-developer-ttnews"]
+    },
+    {
+      "id": "nextcloud-vps",
+      "title": "Self-Hosted Cloud Storage - Nextcloud VPS",
+      "impact": "Improved file accessibility and collaboration while maintaining data sovereignty and security.",
+      "description": "Configured and deployed a secure Nextcloud instance on a VPS using Docker and Caddy, enabling scalable, private cloud storage.",
+      "imgAlt": "",
+      "imgSrc": "",
+      "externalLink": null,
+      "techStack": ["Docker", "Caddy", "VPS", "Nextcloud"],
+      "startYear": 2021,
+      "endYear": 2022,
+      "type": "personal",
+      "featured": false,
+      "relatedExperience": ["devops-nextcloud"]
     }
   ],
   "testimonials": [
@@ -43,7 +107,7 @@
       "lastName": "Yeoh",
       "title": "Dr. of Naprapathy",
       "testimonial": "I hired Joe to build my website and was very satisfied with the collaboration. He worked professionally, paid attention to detail, and contributed valuable ideas throughout the process. I can highly recommend him.",
-      "img_src": "daniel_yeoh.png"
+      "imgSrc": "daniel_yeoh.png"
     },
     {
       "id": 2,
@@ -51,7 +115,7 @@
       "lastName": "Sun",
       "title": "Project Manager",
       "testimonial": "I had a great experience working with Joe. The project was delivered on time, and the communication throughout was clear and efficient. He made sure to include all the features I wanted without any hassle. I'm very happy with the final result and would definitely recommend his services.",
-      "img_src": "edwina_sun.jpg"
+      "imgSrc": "edwina_sun.jpg"
     }
   ],
   "experienceItems": [

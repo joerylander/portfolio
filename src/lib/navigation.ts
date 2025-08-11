@@ -5,8 +5,10 @@ export const useNavigateTo = () => {
 
   const navigateTo = (path: string) => router.push(path);
 
-  const navigateNewTabURL = (url: string) =>
+  const navigateNewTabURL = (url?: string | null) => {
+    if (!url) return;
     window.open(url, '_blank', 'noopener,noreferrer');
+  };
   const navigateToURL = (url: string) => window.open(url, '_self');
 
   const goHome = () => router.push('/');

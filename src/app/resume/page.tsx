@@ -24,7 +24,7 @@ export default function Resume() {
       <SectionWrapper id="capabilities" className="min-h-fit flex-col">
         <Capabilities />
       </SectionWrapper>
-      <SectionWrapper id="portfolio" className="flex-col">
+      <SectionWrapper id="projects" className="flex-col">
         <ResumeProjects />
       </SectionWrapper>
     </>

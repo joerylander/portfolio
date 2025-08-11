@@ -17,7 +17,7 @@ export default function SideNavBar({ menuItems }: SideNavBarProps) {
         className="hover:text-accent-foreground mb-8 flex items-center gap-2 self-start text-sm transition-colors duration-300"
       >
         <ChevronLeft size={20} />
-        View my projects
+        View my portfolio
       </Link>
       <div className="border-accent-foreground/40 relative mb-4 size-30 overflow-hidden rounded-full border-8">
         <Image
@@ -27,7 +27,7 @@ export default function SideNavBar({ menuItems }: SideNavBarProps) {
           fill
           priority
           quality={90}
-          sizes="100vw"
+          sizes="120px"
         />
       </div>
       <h4 className="h4-responsive mb-6">Joe Rylander</h4>

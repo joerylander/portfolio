@@ -62,7 +62,7 @@ export default function Testimonials() {
                       <div className="flex flex-col items-center gap-6 sm:justify-evenly sm:gap-0">
                         <Avatar className="size-24 sm:size-32 md:size-40">
                           <AvatarImage
-                            src={`/images/testimonials/${t.img_src}`}
+                            src={`/images/testimonials/${t.imgSrc}`}
                             alt={`avatar of ${fullName.toLowerCase()}`}
                             className="object-cover"
                           />

@@ -1,37 +1,16 @@
+'use client';
+
+import { useNavigateTo } from '@/lib/navigation';
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { useFetch } from '@/lib/fetch';
+import { ProjectItem } from '@/types/types';
+import { ApiEndpoints } from '@/lib/constants';
+import { ExternalLink } from 'lucide-react';
+import { Button } from '../ui/button';
 
 export default function ResumeProjects() {
-  const projects = [
-    {
-      title: 'Napparaten',
-      role: 'Full-Stack Developer',
-      summary:
-        'Built a high-performance site for fitness professionals with API-driven backend and responsive, conversion-focused frontend.',
-      tech: ['Next.js', 'Laravel API', 'Tailwind CSS'],
-    },
-    {
-      title: 'ERP SaaS Platform',
-      role: ' Developer',
-      summary:
-        'Implemented client management, invoicing, and reporting features for a private ERP system over 2+ years.',
-      tech: ['Laravel', 'Vue.js', 'MySQL'],
-    },
-    {
-      title: 'Local Business Websites',
-      role: 'Web Developer',
-      summary:
-        'Delivered optimized, mobile-friendly websites with SEO improvements for multiple small businesses.',
-      tech: ['Wix Studio'],
-    },
-    {
-      title: 'Portfolio Website',
-      role: 'Frontend Developer',
-      summary:
-        'Created a custom portfolio with emphasis on performance, accessibility, and clean UI/UX.',
-      tech: ['Next.js', 'Tailwind CSS'],
-    },
-  ];
-
+  const { navigateNewTabURL } = useNavigateTo();
+  const { data, loading } = useFetch<ProjectItem[]>(ApiEndpoints.projectItems);
   return (
     <>
       <header className="mb-16 text-center">
@@ -40,24 +19,61 @@ export default function ResumeProjects() {
         </h2>
       </header>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        {projects.map((project) => (
-          <Card
-            key={project.title}
-            className="border border-gray-700 bg-[#262626] text-white"
-          >
-            <CardHeader>
-              <CardTitle className="capitalize">{project.title}</CardTitle>
-              <p className="text-xs text-gray-300 sm:text-sm">{project.role}</p>
-            </CardHeader>
-            <CardContent>
-              <p className="text-responsive mb-2">{project.summary}</p>
-              <p className="text-xs text-gray-300 sm:text-sm">
-                <strong>Tech Stack:</strong> {project.tech.join(', ')}
-              </p>
-            </CardContent>
-          </Card>
-        ))}
+      <div className="grid gap-6 md:grid-cols-2">
+        {!loading &&
+          data &&
+          data.map((project) => (
+            <Card
+              key={project.id}
+              className="hover:border-accent flex h-full flex-col border border-gray-700 bg-[#262626] text-white transition"
+            >
+              <CardHeader>
+                <CardTitle className="flex flex-col capitalize">
+                  {project.title}
+                  {/* <span className="mt-1 text-xs font-normal text-gray-300">
+                    {project.relatedExperience?.join(', ')}
+                  </span> */}
+                </CardTitle>
+              </CardHeader>
+
+              <CardContent className="flex flex-1 flex-col">
+                <p className="mb-3 text-sm">
+                  {project.description}
+                  {project.impact && (
+                    <>
+                      <br />
+                      <span className="font-semibold text-white/70">
+                        {project.impact}
+                      </span>
+                    </>
+                  )}
+                </p>
+
+                {/* Tech Stack */}
+                <p className="mb-2 text-xs text-gray-300 sm:text-sm">
+                  <strong>Tech Stack:</strong> {project.techStack.join(', ')}
+                </p>
+
+                <p className="mb-4 text-xs text-gray-400 sm:text-sm">
+                  <strong>Year:</strong> {project.startYear}{' '}
+                  {project.endYear ? `- ${project.endYear}` : null}{' '}
+                  &nbsp;|&nbsp;
+                  <strong>Type:</strong> {project.type}
+                </p>
+
+                {project.externalLink && (
+                  <Button
+                    size="default"
+                    className="mt-auto self-start bg-white/10 hover:bg-white/20"
+                    onClick={() => navigateNewTabURL(project.externalLink)}
+                  >
+                    Visit site
+                    <ExternalLink />
+                  </Button>
+                )}
+              </CardContent>
+            </Card>
+          ))}
       </div>
     </>
   );
