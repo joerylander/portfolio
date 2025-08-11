@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 export default function ResumeProjects() {
   const projects = [
     {
-      title: 'FitnessPro Website',
+      title: 'Napparaten',
       role: 'Full-Stack Developer',
       summary:
         'Built a high-performance site for fitness professionals with API-driven backend and responsive, conversion-focused frontend.',
@@ -11,7 +11,7 @@ export default function ResumeProjects() {
     },
     {
       title: 'ERP SaaS Platform',
-      role: 'Backend & Frontend Developer',
+      role: ' Developer',
       summary:
         'Implemented client management, invoicing, and reporting features for a private ERP system over 2+ years.',
       tech: ['Laravel', 'Vue.js', 'MySQL'],
@@ -21,7 +21,7 @@ export default function ResumeProjects() {
       role: 'Web Developer',
       summary:
         'Delivered optimized, mobile-friendly websites with SEO improvements for multiple small businesses.',
-      tech: ['WordPress', 'Wix Studio', 'Custom CSS'],
+      tech: ['Wix Studio'],
     },
     {
       title: 'Portfolio Website',

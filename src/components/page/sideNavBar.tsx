@@ -1,13 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  ChevronLeft,
-  House,
-  User,
-  FileText,
-  GalleryHorizontalEnd,
-  FileDown,
-} from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
 import { azaret_mono } from '@/lib/fonts';
 import SocialLinks from '../shared/socialLinks';
 import { MenuItem } from '@/types/types';

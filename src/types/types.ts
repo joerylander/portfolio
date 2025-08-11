@@ -1,3 +1,5 @@
+import { LucideIcon } from 'lucide-react';
+
 export interface Service {
   id: number;
   title: string;
@@ -35,7 +37,7 @@ export interface ExperienceItem {
 export interface MenuItem {
   link: string;
   text: string;
-  icon?: React.ComponentType<any>;
+  icon?: LucideIcon;
   download?: boolean;
 }
 
