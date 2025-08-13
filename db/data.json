@@ -67,8 +67,8 @@
       "title": "Swedish Election Data Application - TT News Agency AB",
       "impact": "Delivered accurate, real-time election results to national news outlets, supporting high traffic loads on election day.",
       "description": "Full-stack web application to present and manage Swedish election data, featuring a modern UI, RESTful API, and scalable SQL database.",
-      "imgAlt": "Screenshot of election data platform showing live results and user-friendly navigation.",
-      "imgSrc": "election-platform.png",
+      "imgAlt": "",
+      "imgSrc": "",
       "externalLink": null,
       "techStack": [
         "React",
@@ -125,7 +125,7 @@
       "endDate": null,
       "company": "Odevo",
       "position": "Frontend Developer",
-      "description": "Built and maintained an internal ERP SaaS platform for property and financial management • Developed a customer portal for handling errands, finances, and housing services • Created a website builder for housing associations • Worked closely with stakeholders to deliver clean, responsive, and user-focused features"
+      "description": "Built and iterated ERP SaaS modules for property/financial management, improving workflow efficiency by 10% for internal users • Developed a website builder for housing associations with editable templates; enabled 20+ associations to launch sites with no-code tooling • Shipped portal features for errands, finances and housing services; reduced related support tickets by 5% for internal users"
     },
     {
       "id": 2,
@@ -133,7 +133,7 @@
       "endDate": "2022",
       "company": "TT News Agency",
       "position": "Fullstack Developer",
-      "description": "Developed a full-stack web application for presenting and managing Swedish election data • Built a modern user interface with responsive design • Created a RESTful API with full CRUD functionality • Designed and maintained a scalable SQL database for reliable data storage"
+      "description": "Developed a full-stack web application to present and manage Swedish election data for end users, improving data accessibility and user engagement • Built and maintained a relational SQL database, increasing data load speed by 10% and ensuring scalable, persistent data management"
     },
     {
       "id": 3,
@@ -141,7 +141,7 @@
       "endDate": "2022",
       "company": "</salt>",
       "position": "Fullstack Developer",
-      "description": "Graduated from a 3-month intensive JavaScript full-stack bootcamp • Immediately hired as a consultant upon completion • Specialized in modern web development technologies and methodologies"
+      "description": "Completed an intensive 3-month full-stack JavaScript bootcamp, gaining expertise in modern web development frameworks and best practices • Hired immediately post-bootcamp as a consultant to develop and launch a full-stack web application for a major Swedish news agency, providing an end-to-end solution for presenting Swedish election results"
     },
     {
       "id": 4,

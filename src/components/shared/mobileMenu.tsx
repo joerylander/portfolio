@@ -80,7 +80,6 @@ export default function MobileMenu({
                     onClick={() =>
                       scrollToSection(item.link.replace('#', ''), setOpenNav)
                     }
-                    className="cursor-pointer"
                   >
                     {linkContent}
                   </button>
