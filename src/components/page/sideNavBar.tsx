@@ -2,25 +2,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import { azaret_mono } from '@/lib/fonts';
-import SocialLinks from '../shared/socialLinks';
 import { MenuItem } from '@/types/types';
+import { scrollToSection } from '@/lib/utils';
+import SocialLinks from '../shared/socialLinks';
 
 type SideNavBarProps = {
   menuItems: MenuItem[];
 };
 
 export default function SideNavBar({ menuItems }: SideNavBarProps) {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
-    }
-  };
-
   return (
     <header className="hidden w-60 flex-col items-center bg-black px-4 py-8 md:flex">
       <Link
@@ -65,7 +55,7 @@ export default function SideNavBar({ menuItems }: SideNavBarProps) {
                 ) : (
                   <button
                     onClick={() => scrollToSection(item.link.replace('#', ''))}
-                    className="hover:text-accent-foreground flex cursor-pointer gap-2 px-2 py-4 capitalize transition-colors duration-300"
+                    className="hover:text-accent-foreground flex gap-2 px-2 py-4 capitalize transition-colors duration-300"
                   >
                     {Icon && <Icon />}
                     {item.text}

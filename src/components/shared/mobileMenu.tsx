@@ -1,5 +1,6 @@
+'use client';
 import { azaret_mono } from '@/lib/fonts';
-import { Menu } from 'lucide-react';
+import { ChevronLeft, Menu } from 'lucide-react';
 import { Button } from '../ui/button';
 import {
   Sheet,
@@ -11,6 +12,10 @@ import {
 } from '../ui/sheet';
 import { Dispatch, SetStateAction } from 'react';
 import { MenuItem } from '@/types/types';
+import { scrollToSection } from '@/lib/utils';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import CalendlyBtn from './calendlyBtn';
 
 type MobileMenuProps = {
   openNav: boolean;
@@ -25,18 +30,8 @@ export default function MobileMenu({
   menuItems,
   className,
 }: MobileMenuProps) {
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
-    }
-    setOpenNav(false);
-  };
-
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
   return (
     <section className={className}>
       <Sheet open={openNav} onOpenChange={setOpenNav}>
@@ -55,40 +50,69 @@ export default function MobileMenu({
 
           <nav className="mt-6 flex flex-col items-center gap-8">
             {menuItems.map((item, i) => {
-              const Icon = item.icon;
-              const linkContent = (
-                <span
-                  className={`${azaret_mono.className} hover:text-primary flex items-center gap-2 text-sm capitalize transition-colors hover:underline`}
-                >
-                  {Icon && <Icon size={16} />}
-                  {item.text}
-                </span>
-              );
-
-              if (item.download) {
+              if (isHomePage) {
                 return (
-                  <a
+                  <Link
                     key={i}
-                    href={item.link}
-                    download={item.download}
+                    href={`#${item.link}`}
+                    className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
                     onClick={() => setOpenNav(false)}
                   >
+                    {item.text}
+                  </Link>
+                );
+              } else {
+                const Icon = item.icon;
+                const linkContent = (
+                  <span
+                    className={`${azaret_mono.className} hover:text-primary flex items-center gap-2 text-sm capitalize transition-colors hover:underline`}
+                  >
+                    {Icon && <Icon size={16} />}
+                    {item.text}
+                  </span>
+                );
+
+                if (item.download) {
+                  return (
+                    <a
+                      key={i}
+                      href={item.link}
+                      download={item.download}
+                      onClick={() => setOpenNav(false)}
+                    >
+                      {linkContent}
+                    </a>
+                  );
+                }
+
+                return (
+                  <button
+                    key={i}
+                    onClick={() =>
+                      scrollToSection(item.link.replace('#', ''), setOpenNav)
+                    }
+                  >
                     {linkContent}
-                  </a>
+                  </button>
                 );
               }
-
-              return (
-                <button
-                  key={i}
-                  onClick={() => scrollToSection(item.link.replace('#', ''))}
-                  className="cursor-pointer"
-                >
-                  {linkContent}
-                </button>
-              );
             })}
           </nav>
+          <Link
+            href={isHomePage ? '/resume' : '/'}
+            className="hover:text-accent-foreground mx-auto my-4 flex items-center gap-2 self-start text-sm transition-colors duration-300"
+          >
+            <ChevronLeft size={20} />
+            {isHomePage ? 'View my resumé' : 'View my portfolio'}
+          </Link>
+
+          {isHomePage && (
+            <CalendlyBtn<void>
+              text="Book now"
+              className="mx-auto mt-4 w-1/2"
+              callback={() => setOpenNav(false)}
+            />
+          )}
         </SheetContent>
       </Sheet>
     </section>

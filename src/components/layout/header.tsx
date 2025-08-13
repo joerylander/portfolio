@@ -2,24 +2,15 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu } from 'lucide-react';
 import { azaret_mono } from '@/lib/fonts';
-import { Button } from '@/components/ui/button';
 import Logo from '@/components/shared/logo';
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
 import CalendlyBtn from '../shared/calendlyBtn';
+import MobileMenu from '../shared/mobileMenu';
 
 const menuItems = [
   {
@@ -38,7 +29,7 @@ const menuItems = [
     link: 'about',
     text: 'about',
   },
-] as const;
+];
 
 export default function Header() {
   const [openNav, setOpenNav] = useState(false);
@@ -65,43 +56,12 @@ export default function Header() {
 
       <CalendlyBtn text="Book us" className="hidden md:block" />
 
-      {/* Mobile Menu */}
-      <div className="md:hidden">
-        <Sheet open={openNav} onOpenChange={setOpenNav}>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon">
-              <Menu className="size-6" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-64">
-            <SheetHeader>
-              <SheetTitle>Menu</SheetTitle>
-              <SheetDescription>
-                Use the links below to navigate through the site.
-              </SheetDescription>
-            </SheetHeader>
-
-            <nav className="mt-6 flex flex-col items-center gap-8">
-              {menuItems.map((item, i) => (
-                <Link
-                  key={i}
-                  href={`#${item.link}`}
-                  className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
-                  onClick={() => setOpenNav(false)}
-                >
-                  {item.text}
-                </Link>
-              ))}
-            </nav>
-
-            <CalendlyBtn<void>
-              text="Book now"
-              className="mx-auto mt-8 w-1/2"
-              callback={() => setOpenNav(false)}
-            />
-          </SheetContent>
-        </Sheet>
-      </div>
+      <MobileMenu
+        menuItems={menuItems}
+        openNav={openNav}
+        setOpenNav={setOpenNav}
+        className="md:hidden"
+      />
     </header>
   );
 }

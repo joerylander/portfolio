@@ -1,4 +1,5 @@
 import { clsx, type ClassValue } from 'clsx';
+import { Dispatch, SetStateAction } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
@@ -15,3 +16,20 @@ export function capitalizeEachWord(str: string) {
     })
     .join(' ');
 }
+
+export const scrollToSection = (
+  sectionId: string,
+  setOpenNav?: Dispatch<SetStateAction<boolean>>,
+) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  }
+  if (setOpenNav) {
+    setOpenNav(false);
+  }
+};

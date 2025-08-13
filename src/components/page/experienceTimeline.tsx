@@ -106,36 +106,38 @@ export default function ExperienceTimeline() {
                     </div>
                   ))
                 : data &&
-                  data.map((item, index) => (
-                    <div key={item.id} className="relative">
-                      {/* Timeline Dot */}
-                      <div className="bg-accent-foreground border-accent-foreground absolute left-1/2 z-10 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 shadow-lg"></div>
+                  data
+                    .sort((a, b) => +b.startDate - +a.startDate)
+                    .map((item, index) => (
+                      <div key={item.id} className="relative">
+                        {/* Timeline Dot */}
+                        <div className="bg-accent-foreground border-accent-foreground absolute left-1/2 z-10 h-4 w-4 -translate-x-1/2 transform rounded-full border-4 shadow-lg"></div>
 
-                      {/* Content */}
-                      <div
-                        className={`flex items-start ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
-                      >
-                        {/* Left/Right Content */}
-                        <article
-                          className={`w-1/2 text-left ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}
+                        {/* Content */}
+                        <div
+                          className={`flex items-start ${index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'}`}
                         >
-                          <div className="bg-opacity-30 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
-                            <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
-                              {item.startDate} &#8209;{' '}
-                              {item.endDate || 'present'}
-                            </h5>
-                            <h3 className="mb-2 text-2xl font-bold tracking-wide text-white lg:text-3xl">
-                              {item.company}
-                            </h3>
-                            <h4 className="mb-4 text-lg font-medium text-gray-300">
-                              {item.position}
-                            </h4>
-                            {renderDescription(item.description)}
-                          </div>
-                        </article>
+                          {/* Left/Right Content */}
+                          <article
+                            className={`w-1/2 text-left ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}
+                          >
+                            <div className="bg-opacity-30 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
+                              <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
+                                {item.startDate} &#8209;{' '}
+                                {item.endDate || 'present'}
+                              </h5>
+                              <h3 className="mb-2 text-2xl font-bold tracking-wide text-white lg:text-3xl">
+                                {item.company}
+                              </h3>
+                              <h4 className="mb-4 text-lg font-medium text-gray-300">
+                                {item.position}
+                              </h4>
+                              {renderDescription(item.description)}
+                            </div>
+                          </article>
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
             </div>
           </div>
         </section>
@@ -189,7 +191,7 @@ export default function ExperienceTimeline() {
                         {/* Content */}
                         <article className="bg-opacity-30 ml-8 rounded-lg border border-gray-700 bg-black p-6 shadow-xl backdrop-blur-sm">
                           <h5 className="text-accent-foreground mb-2 text-sm font-bold tracking-wider">
-                            {/* {item.period} */}
+                            {item.startDate} &#8209; {item.endDate || 'present'}
                           </h5>
                           <h3 className="mb-2 text-xl font-bold tracking-wide text-white">
                             {item.company}

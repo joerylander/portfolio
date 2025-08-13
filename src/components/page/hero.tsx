@@ -25,12 +25,12 @@ export default function Hero() {
         <h4 className="h4-responsive text-center text-pretty sm:text-left">
           I craft fast, beautiful websites that help grow your brand.
         </h4>
-        <div className="mt-8 flex w-full flex-wrap items-center justify-center gap-6 sm:justify-start sm:gap-8">
-          <CtaBtn text="Let's talk" className="md:w-1/2" />
+        <div className="mt-8 flex w-full flex-col items-center justify-center gap-6 sm:flex-row sm:justify-start sm:gap-8">
+          <CtaBtn text="Let's talk" className="w-1/2 min-w-48" />
           <CtaBtn
             text="View my work"
             navigateTo="projects"
-            className="md:w-1/3"
+            className="w-1/3 min-w-40"
             variant="secondary"
           />
         </div>

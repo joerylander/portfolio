@@ -11,20 +11,20 @@ export interface ProjectItem {
   title: string;
   description: string;
   imgAlt: string;
-  imgSrc: string; // relative path or CDN URL
+  imgSrc: string;
   externalLink?: string | null;
   repoLink?: string | null;
   techStack: string[];
   startYear: number;
   endYear?: number | string | null;
-  type?: 'client' | 'template' | 'corporate' | 'personal' | string;
+  type?: 'client' | 'template' | 'corporate' | 'personal';
   featured?: boolean;
-  relatedExperience?: string[]; // ids matching your Experience timeline entries
+  relatedExperience?: string[];
   tags?: string[];
   impact?: string | null;
-  public?: boolean; // default true
-  slug?: string; // optional: '/projects/napparaten'
-  updatedAt?: string; // ISO date
+  public?: boolean;
+  slug?: string;
+  updatedAt?: string;
 }
 
 export interface Testimonial {

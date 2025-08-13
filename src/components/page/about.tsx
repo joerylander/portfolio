@@ -51,7 +51,7 @@ export default function About({ variant }: AboutProps) {
         {variant === 'homePage' && (
           <CtaBtn
             text="View my resumé"
-            className="mx-auto mt-4 w-1/3"
+            className="mx-auto mt-4 w-1/3 min-w-40"
             variant="secondary"
             navigateTo="resumePage"
           />
