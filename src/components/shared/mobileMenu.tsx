@@ -50,7 +50,18 @@ export default function MobileMenu({
 
           <nav className="mt-6 flex flex-col items-center gap-8">
             {menuItems.map((item, i) => {
-              if (!isHomePage) {
+              if (isHomePage) {
+                return (
+                  <Link
+                    key={i}
+                    href={`#${item.link}`}
+                    className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
+                    onClick={() => setOpenNav(false)}
+                  >
+                    {item.text}
+                  </Link>
+                );
+              } else {
                 const Icon = item.icon;
                 const linkContent = (
                   <span
@@ -83,17 +94,6 @@ export default function MobileMenu({
                   >
                     {linkContent}
                   </button>
-                );
-              } else {
-                return (
-                  <Link
-                    key={i}
-                    href={`#${item.link}`}
-                    className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
-                    onClick={() => setOpenNav(false)}
-                  >
-                    {item.text}
-                  </Link>
                 );
               }
             })}
