@@ -32,7 +32,7 @@ export default function SideNavBar({ menuItems }: SideNavBarProps) {
         />
       </div>
       <h4 className="h4-responsive mb-6">Joe Rylander</h4>
-      <SocialLinks className="mb-10 flex gap-8 px-4" iconSize={24} />
+      <SocialLinks className="mb-10 flex gap-8 px-4" iconSize={20} />
       <nav className="w-full">
         <ul className={`${azaret_mono.className} flex flex-col gap-4`}>
           {menuItems.map((item, index) => {

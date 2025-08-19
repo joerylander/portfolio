@@ -4,7 +4,10 @@ import SocialLinks from '../shared/socialLinks';
 export default function Footer() {
   return (
     <footer className="mx-0 grid w-full grid-cols-1 gap-4 px-4 pt-14 pb-8 sm:grid-cols-3 sm:px-8">
-      <SocialLinks className="flex justify-center gap-6" iconSize={20} />
+      <SocialLinks
+        className="flex justify-center gap-6 sm:gap-8"
+        iconSize={20}
+      />
 
       <div className="mt-4 flex flex-col items-center gap-2 sm:mt-0">
         <h4 className="text-xs font-bold sm:text-sm">Navigation</h4>
