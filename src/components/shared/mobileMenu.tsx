@@ -55,7 +55,7 @@ export default function MobileMenu({
                   <Link
                     key={i}
                     href={`#${item.link}`}
-                    className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors hover:underline`}
+                    className={`${azaret_mono.className} hover:text-primary text-sm font-medium capitalize transition-colors hover:underline`}
                     onClick={() => setOpenNav(false)}
                   >
                     {item.text}

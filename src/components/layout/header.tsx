@@ -45,7 +45,7 @@ export default function Header() {
             <NavigationMenuItem key={i}>
               <Link
                 href={`#${item.link}`}
-                className={`${azaret_mono.className} hover:text-primary text-sm capitalize transition-colors lg:text-base`}
+                className={`${azaret_mono.className} hover:text-primary text-sm font-medium capitalize transition-colors lg:text-base`}
               >
                 {item.text}
               </Link>
