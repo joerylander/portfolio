@@ -90,7 +90,7 @@ export default function Contact() {
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex w-full max-w-3xl min-w-fit flex-col gap-8"
+          className="flex w-full flex-col gap-8 rounded-2xl border border-white/10 bg-gradient-to-bl from-gray-900 via-black to-gray-900 px-8 py-16 shadow-lg shadow-black/50 backdrop-blur-sm"
         >
           <div className="flex flex-col gap-8 md:flex-row">
             <FormField
@@ -165,7 +165,11 @@ export default function Contact() {
               </FormItem>
             )}
           />
-          <Button type="submit" size="lg" className="mx-auto h-12 w-1/2">
+          <Button
+            type="submit"
+            size="lg"
+            className="mx-auto mt-8 h-12 w-1/2 min-w-40"
+          >
             Let&apos;s connect!
           </Button>
         </form>

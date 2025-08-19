@@ -31,7 +31,7 @@ export default function Footer() {
           <li className="w-full text-center">
             <a
               href="mailto:rylander.media@gmail.com"
-              className="inline-block max-w-full overflow-hidden text-xs font-light text-ellipsis whitespace-nowrap hover:overflow-visible hover:whitespace-normal sm:text-sm"
+              className="inline-block max-w-full overflow-hidden text-xs font-light text-ellipsis whitespace-nowrap sm:text-sm"
               title="rylander.media@gmail.com"
             >
               rylander.media@gmail.com
