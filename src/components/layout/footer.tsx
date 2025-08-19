@@ -2,6 +2,7 @@ import Link from 'next/link';
 import SocialLinks from '../shared/socialLinks';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="mx-0 grid w-full grid-cols-1 gap-4 px-4 pt-14 pb-8 sm:grid-cols-3 sm:px-8">
       <SocialLinks
@@ -19,7 +20,7 @@ export default function Footer() {
           </li>
           <li className="w-full text-center">
             <Link href="/resume" className="text-xs font-light sm:text-sm">
-              Resume
+              Resumé
             </Link>
           </li>
         </ul>
@@ -42,7 +43,7 @@ export default function Footer() {
 
       <div className="col-span-1 mt-4 flex items-center justify-center border-t border-white/20 pt-6 sm:col-span-3">
         <p className="text-center text-xs font-light capitalize sm:text-sm">
-          all rights reserved &copy; rylander media {new Date().getFullYear()}
+          all rights reserved &copy; rylander media {currentYear}
         </p>
       </div>
     </footer>

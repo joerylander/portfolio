@@ -28,7 +28,7 @@ export default function SocialLinks({ className, iconSize }: SocialLinksProps) {
           alt="LinkedIn"
           width={iconSize}
           height={iconSize}
-          className="size-4 brightness-0 invert transition-transform duration-300"
+          className="brightness-0 invert transition-transform duration-300"
         />
       </a>
       <a
