@@ -23,48 +23,48 @@ export default function Home() {
 
   return (
     <>
-      <SectionWrapper
-        id="hero"
-        className="snap-center p-0 lg:p-0"
-        animate={true}
-        fullWidth
-      >
+      <SectionWrapper id="hero" className="p-0 lg:p-0" animate={true} fullWidth>
         <Hero />
       </SectionWrapper>
 
       <SectionWrapper
         id="services"
-        className="snap-start flex-col items-center"
+        className="flex-col items-center"
+        animate={true}
       >
         <Services />
       </SectionWrapper>
 
       <SectionWrapper
         id="projects"
-        className="snap-start flex-col items-center"
+        className="flex-col items-center"
+        animate={true}
       >
         <Projects />
       </SectionWrapper>
 
       <SectionWrapper
         id="testimonials"
-        className="snap-start flex-col items-center"
+        className="flex-col items-center"
+        animate={true}
       >
         <Testimonials />
       </SectionWrapper>
 
       <SectionWrapper
         id="about"
-        className="snap-center flex-col items-center gap-8"
+        className="flex-col items-center gap-8"
+        animate={true}
       >
         <About variant="homePage" />
       </SectionWrapper>
-      <SectionWrapper id="techskills" className="snap-start flex-col">
+      <SectionWrapper id="techskills" className="flex-col" animate={true}>
         <TechSkills />
       </SectionWrapper>
       <SectionWrapper
         id="contact"
-        className="snap-center flex-col items-center"
+        className="flex-col items-center"
+        animate={true}
       >
         <Contact />
       </SectionWrapper>
