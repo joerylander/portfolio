@@ -35,6 +35,7 @@ export default function Home() {
       <SectionWrapper
         id="services"
         className="snap-start flex-col items-center"
+        animate={true}
       >
         <Services />
       </SectionWrapper>
@@ -42,6 +43,7 @@ export default function Home() {
       <SectionWrapper
         id="projects"
         className="snap-start flex-col items-center"
+        animate={true}
       >
         <Projects />
       </SectionWrapper>
@@ -49,6 +51,7 @@ export default function Home() {
       <SectionWrapper
         id="testimonials"
         className="snap-start flex-col items-center"
+        animate={true}
       >
         <Testimonials />
       </SectionWrapper>
@@ -56,15 +59,21 @@ export default function Home() {
       <SectionWrapper
         id="about"
         className="snap-center flex-col items-center gap-8"
+        animate={true}
       >
         <About variant="homePage" />
       </SectionWrapper>
-      <SectionWrapper id="techskills" className="snap-start flex-col">
+      <SectionWrapper
+        id="techskills"
+        className="snap-start flex-col"
+        animate={true}
+      >
         <TechSkills />
       </SectionWrapper>
       <SectionWrapper
         id="contact"
         className="snap-center flex-col items-center"
+        animate={true}
       >
         <Contact />
       </SectionWrapper>

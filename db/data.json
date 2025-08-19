@@ -25,7 +25,7 @@
       "imgAlt": "Homepage of Napparaten, a Stockholm naprapathy clinic, with clean layout, calming visuals and a prominent call-to-action to book an appointment",
       "imgSrc": "napparaten.png",
       "externalLink": "https://napparaten.se/",
-      "techStack": ["WordPress"],
+      "techStack": ["WordPress", "Elementor"],
       "startYear": 2024,
       "endYear": null,
       "type": "client",
