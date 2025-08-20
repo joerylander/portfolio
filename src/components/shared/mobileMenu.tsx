@@ -15,7 +15,7 @@ import { MenuItem } from '@/types/types';
 import { scrollToSection } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import CalendlyBtn from './calendlyBtn';
+import CalendlyExtLink from './calendlyExtLink';
 
 type MobileMenuProps = {
   openNav: boolean;
@@ -107,9 +107,8 @@ export default function MobileMenu({
           </Link>
 
           {isHomePage && (
-            <CalendlyBtn<void>
-              text="Book now"
-              className="mx-auto mt-4 w-1/2"
+            <CalendlyExtLink
+              className="mx-auto mt-4 flex flex-nowrap px-3 py-2"
               callback={() => setOpenNav(false)}
             />
           )}

@@ -9,7 +9,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from '@/components/ui/navigation-menu';
-import CalendlyBtn from '../shared/calendlyBtn';
+import CalendlyExtLink from '../shared/calendlyExtLink';
 import MobileMenu from '../shared/mobileMenu';
 
 const menuItems = [
@@ -39,13 +39,13 @@ export default function Header() {
       <Logo />
 
       {/* Desktop Navigation */}
-      <NavigationMenu className="hidden md:flex">
+      <NavigationMenu className="mx-4 hidden md:flex">
         <NavigationMenuList className="gap-10">
           {menuItems.map((item, i) => (
             <NavigationMenuItem key={i}>
               <Link
                 href={`#${item.link}`}
-                className={`${azaret_mono.className} hover:text-primary text-sm font-medium capitalize transition-colors lg:text-base`}
+                className={`${azaret_mono.className} hover:text-primary text-sm font-medium tracking-tight capitalize transition-colors lg:text-base`}
               >
                 {item.text}
               </Link>
@@ -54,7 +54,7 @@ export default function Header() {
         </NavigationMenuList>
       </NavigationMenu>
 
-      <CalendlyBtn text="Book us" className="hidden md:block" />
+      <CalendlyExtLink className="hidden px-4 py-2 md:flex" />
 
       <MobileMenu
         menuItems={menuItems}

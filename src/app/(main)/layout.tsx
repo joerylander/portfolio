@@ -28,12 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link
-          href="https://assets.calendly.com/assets/external/widget.css"
-          rel="stylesheet"
-        ></link>
-      </head>
       <body
         className={`${inter.variable} ${azaret_mono.variable} flex h-screen w-full flex-col justify-self-center antialiased`}
       >
