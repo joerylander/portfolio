@@ -1,6 +1,3 @@
-'use client';
-
-import { useEffect } from 'react';
 import SectionWrapper from '@/components/layout/sectionWrapper';
 import Hero from '@/components/page/hero';
 import Services from '@/components/page/services';
@@ -11,16 +8,6 @@ import About from '@/components/page/about';
 import TechSkills from '@/components/page/techSkills';
 
 export default function Home() {
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const element = document.querySelector(hash);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }, []);
-
   return (
     <>
       <SectionWrapper id="hero" className="p-0 lg:p-0" animate={true} fullWidth>

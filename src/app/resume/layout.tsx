@@ -4,8 +4,9 @@ import { azaret_mono, inter } from '@/lib/fonts';
 import ResumeLayoutClient from './resumeClientLayout';
 
 export const metadata: Metadata = {
-  title: 'Resume | Rylander Media',
-  description: 'Professional resume of Joe Rylander - Full Stack Developer',
+  title: 'Resumé | Joe Rylander',
+  description:
+    'Full-stack developer with 3+ years experience building modern web applications. Specialized in React, Next.js, and creating scalable solutions for businesses.',
 };
 
 export const viewport: Viewport = {
