@@ -12,14 +12,16 @@ export default function Hero() {
         fill
         className="-z-10 object-cover object-right"
         priority
-        quality={90}
-        sizes="100vw"
+        quality={75}
+        sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
       />
       <section className="z-10 flex max-w-3xl min-w-xs flex-col items-center gap-5 px-4 sm:w-full sm:items-start sm:px-0 sm:pl-20">
         <h3 className="h3-responsive text-center font-normal text-balance sm:text-left">
           Hey, I&apos;m Joe - a digital artisan.
         </h3>
-        <h1 className="h1-responsive text-center text-balance sm:text-left">
+        <h1 className="text-center text-4xl font-extrabold tracking-tight text-balance transition-colors sm:text-left sm:text-5xl md:text-6xl">
           Designer &amp; Developer
         </h1>
         <h4 className="h4-responsive text-center text-pretty sm:text-left">
