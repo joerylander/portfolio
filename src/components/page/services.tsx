@@ -1,3 +1,5 @@
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
 import { useFetch } from '@/lib/fetch';
 import { Service } from '@/types/types';

@@ -8,12 +8,12 @@ import { Toaster } from '@/components/ui/sonner';
 // static metadata
 export const metadata: Metadata = {
   title: {
-    default: 'Rylander Media',
+    default: 'Joe Rylander - Web Designer & Developer',
     template: '%s | Rylander Media',
     absolute: '',
   },
   description:
-    'Portfolio of Rylander Media - web developer and designer crafting impactful, responsive websites for businesses and creators',
+    'Digital artisan crafting fast, impactful websites that help grow your brand. Specialized in modern web development, responsive design, and user-focused experiences.',
 };
 
 export const viewport: Viewport = {

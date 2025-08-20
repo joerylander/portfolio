@@ -11,12 +11,16 @@ export default function ResumeHero() {
         alt="Hero profile image"
         fill
         priority
-        className="-z-10 object-cover"
-        quality={90}
-        sizes="100vw"
+        className="-z-10 object-cover object-right sm:object-center"
+        quality={80}
+        sizes="(max-width: 640px) 640px, (max-width: 1024px) 1024px, 1920px"
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
       />
-      <div className="flex min-w-xs flex-col gap-4 pl-20 text-center md:text-left">
-        <h1 className="h1-responsive">Joe Rylander</h1>
+      <div className="flex min-w-xs flex-col gap-4 text-center md:pl-20 md:text-left">
+        <h1 className="text-4xl font-extrabold tracking-tight text-balance transition-colors sm:text-5xl md:text-6xl">
+          Joe Rylander
+        </h1>
         <Typewriter
           prefix="I'm a"
           words={['Freelancer', 'Full-stack Developer', 'Designer']}
