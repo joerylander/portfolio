@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <>
       <header className="mb-16 text-center lg:mb-24">
-        <h2 className="h2-responsive font-bold text-balance capitalize">
+        <h2 className="h2-responsive font-bold text-balance">
           Featured projects
         </h2>
       </header>

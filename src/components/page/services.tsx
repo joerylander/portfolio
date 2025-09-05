@@ -12,7 +12,7 @@ export default function Services() {
     <>
       <header className="mb-16 text-center lg:mb-24">
         <h2 className="h2-responsive text-center text-balance">
-          Your Website Should Do more Than Just Look Good - It Should Convert
+          Your website should do more than just look good - it should convert
         </h2>
       </header>
       <div className="flex flex-col gap-10 lg:flex-row">
@@ -40,11 +40,13 @@ export default function Services() {
             data.map((service) => (
               <Card
                 key={service.id}
-                className="flex w-full max-w-sm bg-[#262626] text-center capitalize"
+                className="flex w-full max-w-sm bg-[#262626] text-center"
               >
                 <CardHeader>
                   <CardTitle>
-                    <h5 className="h5-responsive">{service.title}</h5>
+                    <h5 className="h5-responsive capitalize">
+                      {service.title}
+                    </h5>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
