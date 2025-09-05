@@ -12,7 +12,6 @@ import { ApiEndpoints } from '@/lib/constants';
 
 export default function Testimonials() {
   const { data, loading } = useFetch<Testimonial[]>(ApiEndpoints.testimonials);
-
   const autoplay = useRef(Autoplay({ delay: 3000 }));
 
   return (
