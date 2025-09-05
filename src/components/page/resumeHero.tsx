@@ -19,7 +19,7 @@ export default function ResumeHero() {
       />
       <div className="flex min-w-xs flex-col gap-4 text-center md:pl-20 md:text-left">
         <h1 className="text-4xl font-extrabold tracking-tight text-balance transition-colors sm:text-5xl md:text-6xl">
-          Joe Rylander
+          Joakim &quot;Joe&quot; Rylander
         </h1>
         <Typewriter
           prefix="I'm a"

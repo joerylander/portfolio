@@ -2,17 +2,17 @@
   "services": [
     {
       "id": 1,
-      "title": "modern design",
+      "title": "Modern design",
       "description": "Your website will look stunning and function perfectly on any device - desktop, tablet, or mobile. No outdated designs, just sleek, modern, and user-friendly experiences."
     },
     {
       "id": 2,
-      "title": "comprehensive",
+      "title": "Comprehensive",
       "description": "What's the point of a website if no one finds it? We build websites with SEO best practices to help you rank on Google and attract organic traffic."
     },
     {
       "id": 3,
-      "title": "support & maintenance",
+      "title": "Support & Maintenance",
       "description": "A website needs updates, security checks, and tweaks to stay relevant. We offer post-launch support, troubleshooting, and maintenance so you never have to worry."
     }
   ],

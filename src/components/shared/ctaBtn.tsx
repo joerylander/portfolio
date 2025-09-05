@@ -45,7 +45,7 @@ export default function CtaBtn({
       variant={variant}
       size="lg"
       onClick={handleClick}
-      className={`${className} capitalize`}
+      className={className}
     >
       {text}
     </Button>

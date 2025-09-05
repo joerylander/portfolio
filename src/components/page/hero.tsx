@@ -19,18 +19,18 @@ export default function Hero() {
       />
       <section className="z-10 flex max-w-3xl min-w-xs flex-col items-center gap-5 px-4 sm:w-full sm:items-start sm:px-0 sm:pl-20">
         <h3 className="h3-responsive text-center font-normal text-balance sm:text-left">
-          Hey, I&apos;m Joe - a digital artisan.
+          Hey, I&apos;m Joe - a digital artisan
         </h3>
         <h1 className="text-center text-4xl font-extrabold tracking-tight text-balance transition-colors sm:text-left sm:text-5xl md:text-6xl">
           Designer &amp; Developer
         </h1>
         <h4 className="h4-responsive text-center text-pretty sm:text-left">
-          I craft fast, beautiful websites that help grow your brand.
+          I craft fast &amp; beautiful websites that help grow your brand
         </h4>
         <div className="mt-8 flex w-full flex-col items-center justify-center gap-6 sm:flex-row sm:justify-start sm:gap-8">
           <CtaBtn text="Let's talk" className="w-1/2 min-w-48" />
           <CtaBtn
-            text="View my work"
+            text="View our work"
             navigateTo="projects"
             className="w-1/3 min-w-40"
             variant="secondary"

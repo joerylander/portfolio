@@ -12,13 +12,12 @@ import { ApiEndpoints } from '@/lib/constants';
 
 export default function Testimonials() {
   const { data, loading } = useFetch<Testimonial[]>(ApiEndpoints.testimonials);
-
   const autoplay = useRef(Autoplay({ delay: 3000 }));
 
   return (
     <>
       <header className="mb-16 text-center lg:mb-24">
-        <h2 className="h2-responsive font-bold text-balance capitalize">
+        <h2 className="h2-responsive font-bold text-balance">
           What people say about us
         </h2>
       </header>

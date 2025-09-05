@@ -37,11 +37,9 @@ export default function About({ variant }: AboutProps) {
         />
       </div>
       <header className="text-center">
-        <h2 className="h2-responsive font-bold text-balance capitalize">
-          About me
-        </h2>
+        <h2 className="h2-responsive font-bold capitalize">About</h2>
       </header>
-      <article className="flex max-w-2xl flex-col gap-4 text-justify text-pretty hyphens-auto">
+      <article className="flex max-w-2xl flex-col gap-4 text-pretty hyphens-auto">
         {content[variant].map((paragraph, i) => (
           <p key={i} className="text-responsive">
             {paragraph}
