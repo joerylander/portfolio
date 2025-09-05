@@ -44,9 +44,7 @@ export default function Services() {
               >
                 <CardHeader>
                   <CardTitle>
-                    <h5 className="h5-responsive capitalize">
-                      {service.title}
-                    </h5>
+                    <h5 className="h5-responsive">{service.title}</h5>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
