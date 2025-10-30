@@ -1,3 +1,10 @@
+## License
+
+This project’s source code is made public for demonstration and educational purposes only.  
+**Reproduction, redistribution, or commercial use is prohibited** without written consent.
+
+## Nextjs
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
